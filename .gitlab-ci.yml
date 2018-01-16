@@ -28,7 +28,7 @@ test-game:
 pages:
    stage: deploy
    dependencies:
-      - testGame
+      - test-game
    script:
       - make coverage
       - make docs
