@@ -34,7 +34,7 @@ pages:
       - make docs
    artifacts:
       paths:
-         - coverage
+        - coverage
         - docs
       expire_in: 14 days
    only:
