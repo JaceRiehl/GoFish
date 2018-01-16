@@ -1,51 +1,41 @@
 build-game:
    stage: build
    script:
-      - make game
+      - make cardGame
    artifacts:
       paths:
-         - game
+         - cardGame
 
 build-test:
    stage: build
    script:
-      - make test
+      - make testGame
    artifacts:
       paths:
-         - test
+         - testGame
 
 test-game:
    stage: test
    script:
-      - test
+      - testGame
       - make memcheck-test
       - make static
    artifacts:
       paths:
-         - results.memcheck
-         - results.static
+         - ValgrindOutput.xml
+         - CppCheckResults.xml
 
 pages:
    stage: deploy
    dependencies:
-      - test
+      - testGame
    script:
       - make coverage
-   artifacts:
-      paths:
-         - coverage
-      expire_in: 30 days
-   only:
-      - master
-
-pages:
-   stage: deploy
-   script:
       - make docs
    artifacts:
       paths:
-         - docs
-      expire_in: 30 days
+         - coverage
+        - docs
+      expire_in: 14 days
    only:
       - master
-
