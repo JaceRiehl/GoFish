@@ -27,3 +27,15 @@
 	"Card.h"
 	"Deck.h"
 
+1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
+	<string>
+	<ctype.h>
+	<stdio.h>
+
+1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
+	<vector>
+	<string>
+	"Card.h"
+	<iostream>
+	<algorithm>
+
