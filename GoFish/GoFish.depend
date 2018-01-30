@@ -4,15 +4,15 @@
 	"Card.h"
 	"Deck.h"
 
-1517177333 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
+1517264890 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
 	"Card.h"
 
-1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
+1517264836 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
 	<string>
 	<ctype.h>
 	<stdio.h>
 
-1517177333 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+1517263254 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
 1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
@@ -22,20 +22,30 @@
 	<iostream>
 	<algorithm>
 
-1517177333 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
+1517265620 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
 	<iostream>
 	"Card.h"
 	"Deck.h"
+	"TestCard.h"
+	"gtest/gtest.h"
 
-1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
+1517265003 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
 	<string>
 	<ctype.h>
 	<stdio.h>
 
-1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
+1517263254 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
 	<vector>
 	<string>
 	"Card.h"
 	<iostream>
 	<algorithm>
+
+1517274344 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
+	"TestCard.h"
+	"Card.h"
+
+1517274412 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
+	"gtest/gtest.h"
+	"Card.h"
 

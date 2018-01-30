@@ -17,6 +17,8 @@ class Card
     private:
         string suit;
         string face;
+        string faces[13] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King","Ace"};
+        string suits[4] = {"Spades", "Clubs", "Hearts", "Diamonds"};
 };
 
 #endif // CARD_H
