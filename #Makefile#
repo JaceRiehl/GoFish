@@ -3,10 +3,10 @@ CXXFLAGS= -std=c++0x -g -fprofile-arcs -ftest-coverage
 
 LINKFLAGS= -lgtest
 
-SRC_DIR = GoFish/src
+SRC_DIR = src
 SRCS =
 
-TEST_DIR = GoFish/test
+TEST_DIR = test
 
 SRC_INCLUDE = include
 TEST_INCLUDE = test

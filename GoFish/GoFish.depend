@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1517175978 source:/home/riehlj4/sEngAsn1/asn1/GoFish/main.cpp
+	<iostream>
+	"Card.h"
+	"Deck.h"
+
+1517264890 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
+	"Card.h"
+
+1517264836 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
+	<string>
+	<ctype.h>
+	<stdio.h>
+
+1517277117 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+	"Deck.h"
+
+1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
+	<vector>
+	<string>
+	"Card.h"
+	<iostream>
+	<algorithm>
+
+1517277203 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
+	<iostream>
+	"Card.h"
+	"Deck.h"
+	"gtest/gtest.h"
+
+1517265003 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
+	<string>
+	<ctype.h>
+	<stdio.h>
+
+1517277104 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
+	<vector>
+	<string>
+	"Card.h"
+	<iostream>
+	<algorithm>
+
+1517275531 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
+	"TestCard.h"
+
+1517276101 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
+	"gtest/gtest.h"
+	"../src/Card.h"
+
+1517277145 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
+	"TestDeck.h"
+
+1517276706 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
+	"gtest/gtest.h"
+	"../src/Deck.h"
+	"../src/Card.h"
+	<vector>
+
