@@ -25,8 +25,21 @@ void Deck::printDeck()
         cout << deck[i].getSuit() << " " << deck[i].getFace() << endl;
     }
 }
+vector<Card> Deck::getDeck()
+{
+    return deck;
+}
 
 Card Deck::dealCard()
 {
-    return deck[1];
+    if(indexCurrent%52 == 0 && indexCurrent != 0)
+        shuffleDeck();
+    int ind = indexCurrent % maxCards;
+    ++indexCurrent;
+    return deck[ind];
+}
+
+int Deck::getDeckSize()
+{
+    return maxCards - indexCurrent;
 }

@@ -15,6 +15,8 @@ class Deck
         void shuffleDeck();
         Card dealCard();
         void printDeck();
+        vector<Card> getDeck();
+        int getDeckSize();
 
     protected:
 

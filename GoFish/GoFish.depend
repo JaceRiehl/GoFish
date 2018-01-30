@@ -12,7 +12,7 @@
 	<ctype.h>
 	<stdio.h>
 
-1517263254 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+1517277117 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
 1517177333 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
@@ -22,11 +22,10 @@
 	<iostream>
 	<algorithm>
 
-1517265620 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
+1517277203 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
 	<iostream>
 	"Card.h"
 	"Deck.h"
-	"TestCard.h"
 	"gtest/gtest.h"
 
 1517265003 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
@@ -34,18 +33,26 @@
 	<ctype.h>
 	<stdio.h>
 
-1517263254 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
+1517277104 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.h
 	<vector>
 	<string>
 	"Card.h"
 	<iostream>
 	<algorithm>
 
-1517274344 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
+1517275531 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
 	"TestCard.h"
-	"Card.h"
 
-1517274412 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
+1517276101 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
 	"gtest/gtest.h"
-	"Card.h"
+	"../src/Card.h"
+
+1517277145 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
+	"TestDeck.h"
+
+1517276706 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
+	"gtest/gtest.h"
+	"../src/Deck.h"
+	"../src/Card.h"
+	<vector>
 

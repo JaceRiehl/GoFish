@@ -1,7 +1,7 @@
 #ifndef TESTCARD_H
 #define TESTCARD_H
 #include "gtest/gtest.h"
-#include "Card.h"
+#include "../src/Card.h"
 class TestCard : public ::testing::Test
 {
     public:

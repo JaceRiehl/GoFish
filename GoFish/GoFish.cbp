@@ -43,6 +43,8 @@
 		<Unit filename="src/main.cpp" />
 		<Unit filename="test/TestCard.cpp" />
 		<Unit filename="test/TestCard.h" />
+		<Unit filename="test/TestDeck.cpp" />
+		<Unit filename="test/TestDeck.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
