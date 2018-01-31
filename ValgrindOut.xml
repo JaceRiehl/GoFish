@@ -12,8 +12,8 @@
   <line>Command: testGame</line>
 </preamble>
 
-<pid>5046</pid>
-<ppid>5020</ppid>
+<pid>5467</pid>
+<ppid>5441</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -31,13 +31,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.014 </time>
+  <time>00:00:00:00.034 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.504 </time>
+  <time>00:00:00:00.531 </time>
 </status>
 
 <errorcounts>
