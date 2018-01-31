@@ -36,10 +36,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../Makefile" />
+		<Unit filename="include/Card.h" />
+		<Unit filename="include/Deck.h" />
 		<Unit filename="src/Card.cpp" />
-		<Unit filename="src/Card.h" />
 		<Unit filename="src/Deck.cpp" />
-		<Unit filename="src/Deck.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="test/TestCard.cpp" />
 		<Unit filename="test/TestCard.h" />
