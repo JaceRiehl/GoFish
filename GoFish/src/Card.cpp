@@ -32,3 +32,16 @@ string Card::getSuit()
 {
     return suit;
 }
+
+string Card::getSomething()
+{
+    return "sefew";
+}
+
+bool Card::operator==(Card c)
+{
+    if(this->face== c.getFace() && this->suit == c.getSuit())
+        return true;
+    else
+        return false;
+}

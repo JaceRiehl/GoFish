@@ -9,8 +9,8 @@ TEST_DIR = GoFish/test
 
 GMOCK = /usr/src/gmock/gmock-all.cc -lpthread
 
-SRC_INCLUDE = include
-TEST_INCLUDE = test
+SRC_INCLUDE = GoFish/include
+TEST_INCLUDE = GoFish/test
 INCLUDE = -I ${SRC_INCLUDE} -I ${TEST_INCLUDE}
 
 GCOV = gcov

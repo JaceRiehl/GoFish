@@ -31,6 +31,15 @@ class Deck
         *Prints the deck to console - to be deleted.
         */
         void printDeck();
+        /**
+        *For Testing purposes
+        */
+        vector<Card> getDeck();
+        /**
+        *For Testing purposes
+        */
+        int getDeckSize();
+
 
     protected:
 

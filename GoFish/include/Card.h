@@ -14,6 +14,10 @@ class Card
         */
         Card(string f, string s);
         /**
+        *Destructor
+        */
+        virtual ~Card();
+        /**
         *Getter for the suit of the card.
         *@return string suit
         */
@@ -24,9 +28,11 @@ class Card
         */
         string getFace();
         /**
-        *Destructor
+        *Overloading ==
         */
-        virtual ~Card();
+        bool operator==(Card c);
+        string getSomething();
+
 
     protected:
 

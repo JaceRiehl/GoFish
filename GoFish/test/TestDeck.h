@@ -1,8 +1,8 @@
 #ifndef TESTDECK_H
 #define TESTDECK_H
 #include "gtest/gtest.h"
-#include "../src/Deck.h"
-#include "../src/Card.h"
+#include "Deck.h"
+#include "Card.h"
 #include <vector>
 class TestDeck : public ::testing::Test
 {
