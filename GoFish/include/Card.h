@@ -31,7 +31,7 @@ class Card
         *Overloading ==
         */
         bool operator==(Card c);
-        string getSomething();
+
 
 
     protected:
