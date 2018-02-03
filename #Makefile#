@@ -1,15 +1,18 @@
 CXX=g++
 CXXFLAGS= -std=c++0x -g -fprofile-arcs -ftest-coverage
-
+$(PROGRAM_TEST):
+	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(INCLUDE) $(TEST_DIR)/*.cpp $(SRC_DIR)/*.cpp $(LINKFLAGS) $(GMOCK)
+	$(PROGRAM_TEST)
 LINKFLAGS= -lgtest
 
-SRC_DIR = src
-SRCS =
+SRC_DIR = GoFish/src
 
-TEST_DIR = test
+TEST_DIR = GoFish/test
 
-SRC_INCLUDE = include
-TEST_INCLUDE = test
+GMOCK = /usr/src/gmock/gmock-all.cc -lpthread
+
+SRC_INCLUDE = GoFish/include
+TEST_INCLUDE = GoFish/test
 INCLUDE = -I ${SRC_INCLUDE} -I ${TEST_INCLUDE}
 
 GCOV = gcov
@@ -44,11 +47,10 @@ $(PROGRAM):
 	$(CXX) $(CXXFLAGS) -o $(PROGRAM) -I $(SRC_INCLUDE) $(SRC_DIR)/*.cpp $(LINKFLAGS)
 
 $(PROGRAM_TEST):
-	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(INCLUDE) $(TEST_DIR)/*.cpp $(SRCS) $(LINKFLAGS)
+	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(INCLUDE) $(TEST_DIR)/*.cpp $(SRC_DIR)/*.cpp $(LINKFLAGS) $(GMOCK)
 	$(PROGRAM_TEST)
 
 memcheck-game: $(PROGRAM)
-	rm -f
 	valgrind --tool=memcheck --leak-check=yes --xml=yes --xml-file=$(MEMCHECK_RESULTS) $(PROGRAM)
 
 
@@ -56,9 +58,13 @@ memcheck-test: $(PROGRAM_TEST)
 	valgrind --tool=memcheck --leak-check=yes --xml=yes --xml-file=$(MEMCHECK_RESULTS) $(PROGRAM_TEST)
 
 coverage: $(PROGRAM_TEST)
+	# Determine code coverage
 	$(LCOV) --capture --gcov-tool $(GCOV) --directory . --output-file $(COVERAGE_RESULTS)
-	$(LCOV) --extract $(COVERAGE_RESULTS) "*/src/*" -o $(COVERAGE_RESULTS)
+	# Only show code coverage for the source code files (not library files)
+	$(LCOV) --extract $(COVERAGE_RESULTS) "*/asn1/GoFish/src/*" -o $(COVERAGE_RESULTS)
+	#Generate the HTML reports
 	genhtml $(COVERAGE_RESULTS) --output-directory $(COVERAGE_DIR)
+	#Remove all of the generated files from gcov
 	rm -f *.gc*
 
 static: ${SRC_DIR}
