@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="test" />
+					<Add directory="GoFish/test" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="test" />
+					<Add directory="GoFish/test" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -48,6 +50,8 @@
 		<Unit filename="test/TestCard.h" />
 		<Unit filename="test/TestDeck.cpp" />
 		<Unit filename="test/TestDeck.h" />
+		<Unit filename="test/TestPlayer.cpp" />
+		<Unit filename="test/TestPlayer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
