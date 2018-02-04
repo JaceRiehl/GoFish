@@ -1,7 +1,5 @@
 #include "Player.h"
 
-using namespace std;
-
 bool sortBy(Card, Card);
 
 Player::Player(int pN)
@@ -16,43 +14,74 @@ int Player::getPlayerNumber()
 
 void Player::addToHand(vector<Card> c)
 {
-    for(int i=0; i<c.size();i++)
+    int vector_size = c.size();
+    for(int i=0; i<vector_size;i++)
         currentHand.push_back(c[i]);
-    sortHand();
+    //sortHand();
 }
 
-vector<Card> Player::takeFromHand(Card c)
+Card Player::takeFromHand(Card c)
 {
+    for(int i = 0; i<currentHand.size();i++)
+    {
+        if(c == currentHand[i])
+        {
+            Card cR = currentHand[i];
+            currentHand.erase(currentHand.begin()+i);
+            return cR;
+        }
+    }
+
+    /*
     vector<int> er;
     vector<Card> ret;
+    vector<Card> newVec;
     for(int i=0;i<currentHand.size();i++)
     {
         if(c == currentHand[i])
             ret.push_back(currentHand[i]);
             er.push_back(i);
     }
-    for(int i=0;i<er.size();i++)
-        currentHand.erase(currentHand.begin()+er[i]);
+    for(int j=0;j<currentHand.size()){
+        for(int i=0;i<er.size();i++){
+            if(j == )
+        }
+    }
     return ret;
+    */
 }
 
 bool Player::checkMatchingPairs()
 {
+    sortHand();
     int numMatched;
     for(int i=0;i<currentHand.size();i++)
     {
         numMatched = 0;
-        for(int j=0;j<i;j++)
+        for(int j=i+1;j<currentHand.size();j++){
             if(currentHand[i].getFace() == currentHand[j].getFace())
+            {
                 numMatched +=1;
+            }
+            if(numMatched == 3)
+            {
+                matchingPairs += 1;
+                for(int k=i;k<=j;k++)
+                    matchingPairsInHand.push_back(currentHand[k]);
+                currentHand.erase(currentHand.begin()+i,currentHand.begin()+i+4);
+                /*
+                for(int k=0;k<currentHand.size();k++)
+                    cout << "Member of hand: " << currentHand[k].getFace() << " " << currentHand[k].getSuit() << " " << endl;;
+                cout << endl;
+                for(int k=0;k<matchingPairsInHand.size();k++)
+                    cout << "Member of matching: " << matchingPairsInHand[k].getFace() << " " << matchingPairsInHand[k].getSuit() << " " << endl;;
+                cout << endl;
+                */
+                return true;
+            }
+        }
     }
-    if(numMatched == 3)
-    {
-        matchingPairs += 1;
-        return true;
-    }
-    else
-        return false;
+    return false;
 
 }
 bool sortBy(Card c1, Card c2)

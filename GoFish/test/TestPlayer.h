@@ -26,10 +26,12 @@ class TestPlayer : public ::testing::Test
             p3 = new Player(3);
             p4 = new Player(4);
             p5 = new Player(5);
+            p6 = new Player(6);
             addCard.push_back(*c4);
             addCard.push_back(*c3);
             addCard.push_back(*c2);
             addCard.push_back(*c1);
+            addCard.push_back(*c5);
             sortedCard.push_back(*c1);
             sortedCard.push_back(*c5);
             sortedCard.push_back(*c2);
@@ -53,6 +55,8 @@ class TestPlayer : public ::testing::Test
             delete c2;
             delete c3;
             delete c4;
+            delete c5;
+            delete c6;
         }
 
 
@@ -64,6 +68,7 @@ class TestPlayer : public ::testing::Test
         Player* p3;
         Player* p4;
         Player* p5;
+        Player* p6;
         Card* c1;
         Card* c2;
         Card* c3;
@@ -72,7 +77,6 @@ class TestPlayer : public ::testing::Test
         Card* c6;
         vector<Card> currentHand;
         vector<Card> addCard;
-        vector<Card> takeCard;
         vector<Card> sortedCard;
 
     private:

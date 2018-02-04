@@ -4,6 +4,7 @@
 #include "Card.h"
 #include <algorithm>
 #include <string>
+#include <iostream>
 using namespace std;
 class Player
 {
@@ -31,7 +32,7 @@ class Player
         *@param Card to take
         *@return The matching cards
         */
-        vector<Card> takeFromHand(Card);
+        Card takeFromHand(Card);
         /**
         *Check if there is any matching pairs in the players hand
         *@return bool
@@ -63,6 +64,10 @@ class Player
         *The players current hand.
         */
         vector<Card> currentHand;
+        /**
+        *The players current matches.
+        */
+        vector<Card> matchingPairsInHand;
 
 };
 

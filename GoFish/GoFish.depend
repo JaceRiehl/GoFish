@@ -56,19 +56,20 @@
 	"Card.h"
 	<vector>
 
-1517701237 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
+1517707640 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
 	"Player.h"
 
-1517701329 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
+1517706099 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
 	<vector>
 	"Card.h"
 	<algorithm>
 	<string>
+	<iostream>
 
-1517700065 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
+1517706412 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
 	"TestPlayer.h"
 
-1517697996 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
+1517705278 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
 	"gtest/gtest.h"
 	"Player.h"
 	<vector>
