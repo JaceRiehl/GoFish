@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="test" />
+					<Add directory="GoFish/test" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="test" />
+					<Add directory="GoFish/test" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,15 +38,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../Makefile" />
+		<Unit filename="include/Card.h" />
+		<Unit filename="include/Deck.h" />
+		<Unit filename="include/Player.h" />
 		<Unit filename="src/Card.cpp" />
-		<Unit filename="src/Card.h" />
 		<Unit filename="src/Deck.cpp" />
-		<Unit filename="src/Deck.h" />
+		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="test/TestCard.cpp" />
 		<Unit filename="test/TestCard.h" />
 		<Unit filename="test/TestDeck.cpp" />
 		<Unit filename="test/TestDeck.h" />
+		<Unit filename="test/TestPlayer.cpp" />
+		<Unit filename="test/TestPlayer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

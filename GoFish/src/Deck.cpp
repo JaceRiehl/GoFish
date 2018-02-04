@@ -15,6 +15,7 @@ Deck::~Deck()
 
 void Deck::shuffleDeck()
 {
+    srand(time(0));
     random_shuffle(deck.begin(), deck.end());
 }
 
@@ -41,5 +42,5 @@ Card Deck::dealCard()
 
 int Deck::getDeckSize()
 {
-    return maxCards - indexCurrent;
+    return deck.size();
 }

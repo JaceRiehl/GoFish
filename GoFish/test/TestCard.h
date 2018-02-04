@@ -1,10 +1,13 @@
 #ifndef TESTCARD_H
 #define TESTCARD_H
 #include "gtest/gtest.h"
-#include "../src/Card.h"
+#include "Card.h"
 class TestCard : public ::testing::Test
 {
     public:
+        /**
+        *Google Test Setup function override to build testing objects
+        */
         virtual void SetUp()
         {
             card1 = new Card("2", "Hearts");
@@ -13,7 +16,9 @@ class TestCard : public ::testing::Test
             card4 = new Card("4", "Diamonds");
             card5 = new Card("King", "Diamonds");
         }
-
+        /**
+        *Google Test TearDown function override to delete testing objects
+        */
         virtual void TearDown()
         {
             delete card1;

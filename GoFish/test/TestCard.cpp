@@ -1,7 +1,7 @@
 #include "TestCard.h"
 
 
-TEST_F(TestCard,DefaultConstructor)
+TEST_F(TestCard,testDefaultConstructor)
 {
     ASSERT_TRUE(card1->getFace() == "2");
     ASSERT_TRUE(card2->getFace() == "6");

@@ -4,14 +4,13 @@ CXXFLAGS= -std=c++0x -g -fprofile-arcs -ftest-coverage
 LINKFLAGS= -lgtest
 
 SRC_DIR = GoFish/src
-SRCS =
 
 TEST_DIR = GoFish/test
 
 GMOCK = /usr/src/gmock/gmock-all.cc -lpthread
 
-SRC_INCLUDE = include
-TEST_INCLUDE = test
+SRC_INCLUDE = GoFish/include
+TEST_INCLUDE = GoFish/test
 INCLUDE = -I ${SRC_INCLUDE} -I ${TEST_INCLUDE}
 
 GCOV = gcov
@@ -46,7 +45,7 @@ $(PROGRAM):
 	$(CXX) $(CXXFLAGS) -o $(PROGRAM) -I $(SRC_INCLUDE) $(SRC_DIR)/*.cpp $(LINKFLAGS)
 
 $(PROGRAM_TEST):
-	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(INCLUDE) $(TEST_DIR)/*.cpp $(SRCS) $(LINKFLAGS) $(GMOCK)
+	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(INCLUDE) $(TEST_DIR)/*.cpp $(SRC_DIR)/*.cpp $(LINKFLAGS) $(GMOCK)
 	$(PROGRAM_TEST)
 
 memcheck-game: $(PROGRAM)
@@ -60,7 +59,7 @@ coverage: $(PROGRAM_TEST)
 	# Determine code coverage
 	$(LCOV) --capture --gcov-tool $(GCOV) --directory . --output-file $(COVERAGE_RESULTS)
 	# Only show code coverage for the source code files (not library files)
-	$(LCOV) --extract $(COVERAGE_RESULTS) "*/asn1/src/*" -o $(COVERAGE_RESULTS)
+	$(LCOV) --extract $(COVERAGE_RESULTS) "*/asn1/GoFish/src/*" -o $(COVERAGE_RESULTS)
 	#Generate the HTML reports
 	genhtml $(COVERAGE_RESULTS) --output-directory $(COVERAGE_DIR)
 	#Remove all of the generated files from gcov
