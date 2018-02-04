@@ -33,12 +33,12 @@ vector<Card> Deck::getDeck()
 
 Card Deck::dealCard()
 {
-    int ind = indexCurrent % maxCards;
+    int ind = indexCurrent;
     ++indexCurrent;
     return deck[ind];
 }
 
 int Deck::getDeckSize()
 {
-    return deck.size();
+    return maxCards-indexCurrent;
 }

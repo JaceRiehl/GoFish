@@ -20,7 +20,7 @@ class ViewIn
         /**
         *ViewIn destructor
         */
-        ~ViewIn();
+        ~ViewIn(){}
         /**
         *Choose the player that will be checked for cards
         *@return The players choice of player to fish

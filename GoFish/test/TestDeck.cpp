@@ -18,10 +18,18 @@ TEST_F(TestDeck,testShuffleDeck)
 
 TEST_F(TestDeck,testDealCard)
 {
-    ASSERT_TRUE(returnedDeck[0].getFace() == deck->dealCard().getFace());
-    ASSERT_TRUE(returnedDeck[0].getSuit() == deck->dealCard().getSuit());
     Card c1 = deck->dealCard();
-    ASSERT_TRUE(deck->getDeckSize() == 52);
+    Card c2 = deck->dealCard();
+    Card c3 = deck->dealCard();
+    ASSERT_TRUE(returnedDeck[0].getFace() == c1.getFace());
+    ASSERT_TRUE(returnedDeck[0].getSuit() == c1.getSuit());
+    ASSERT_TRUE(returnedDeck[1].getFace() == c2.getFace());
+    ASSERT_TRUE(returnedDeck[1].getSuit() == c2.getSuit());
+    ASSERT_TRUE(returnedDeck[2].getFace() == c3.getFace());
+    ASSERT_TRUE(returnedDeck[2].getSuit() == c3.getSuit());
+
+
+    ASSERT_EQ(49,deck->getDeckSize());
     ASSERT_TRUE(returnedDeck[3].getFace() == deck->dealCard().getFace());
     ASSERT_TRUE(returnedDeck[3].getSuit() == deck->dealCard().getSuit());
 
