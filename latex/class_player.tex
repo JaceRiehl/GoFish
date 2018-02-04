@@ -10,6 +10,8 @@
 \item 
 int \hyperlink{class_player_ae72235dee0a2f7abbcb82002164623aa}{get\-Player\-Number} ()
 \item 
+int \hyperlink{class_player_abdea2b45e1a98e9942bdaca85f451734}{get\-Num\-Matches} ()
+\item 
 void \hyperlink{class_player_ace93c12489cea500770591ccb47a2a0c}{add\-To\-Hand} (vector$<$ \hyperlink{class_card}{Card} $>$ c)
 \item 
 \hyperlink{class_card}{Card} \hyperlink{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}{take\-From\-Hand} (\hyperlink{class_card}{Card})
@@ -17,6 +19,8 @@ void \hyperlink{class_player_ace93c12489cea500770591ccb47a2a0c}{add\-To\-Hand} (
 bool \hyperlink{class_player_adf635ce5997b0d4647a6f7d09b526dac}{check\-Matching\-Pairs} ()
 \item 
 vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a6ca673336972f29fdc094b3f0f1f7f84}{get\-Hand} ()
+\item 
+vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a09fbf15e6a001feea60cb53d02ec3912}{get\-Matched\-Hand} ()
 \item 
 void \hyperlink{class_player_a2369527c90f1168eac2dc3f7bfaefc43}{sort\-Hand} ()
 \end{DoxyCompactItemize}
@@ -77,7 +81,24 @@ bool
 Get players hand \begin{DoxyReturn}{Returns}
 vector$<$\-Card$>$ hand 
 \end{DoxyReturn}
-\hypertarget{class_player_ae72235dee0a2f7abbcb82002164623aa}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
+\hypertarget{class_player_a09fbf15e6a001feea60cb53d02ec3912}{\index{Player@{Player}!get\-Matched\-Hand@{get\-Matched\-Hand}}
+\index{get\-Matched\-Hand@{get\-Matched\-Hand}!Player@{Player}}
+\subsubsection[{get\-Matched\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Card}$>$ Player\-::get\-Matched\-Hand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_player_a09fbf15e6a001feea60cb53d02ec3912}
+Get players matched hand \begin{DoxyReturn}{Returns}
+vector$<$\-Card$>$ hand 
+\end{DoxyReturn}
+\hypertarget{class_player_abdea2b45e1a98e9942bdaca85f451734}{\index{Player@{Player}!get\-Num\-Matches@{get\-Num\-Matches}}
+\index{get\-Num\-Matches@{get\-Num\-Matches}!Player@{Player}}
+\subsubsection[{get\-Num\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Num\-Matches (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_player_abdea2b45e1a98e9942bdaca85f451734}
+Getter for the number of matches \hypertarget{class_player_ae72235dee0a2f7abbcb82002164623aa}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
 \index{get\-Player\-Number@{get\-Player\-Number}!Player@{Player}}
 \subsubsection[{get\-Player\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Player\-Number (
 \begin{DoxyParamCaption}
