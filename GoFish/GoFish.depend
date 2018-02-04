@@ -12,7 +12,7 @@
 	<ctype.h>
 	<stdio.h>
 
-1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+1517773145 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
 1517708590 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
@@ -75,4 +75,11 @@
 	<vector>
 	"Card.h"
 	<iostream>
+
+1517777998 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
+	"ViewIn.h"
+
+1517778067 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
+	<iostream>
+	<string>
 
