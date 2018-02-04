@@ -46,6 +46,9 @@ TEST_F(TestPlayer, testTakeFromHand)
     //    cout << " __ _ _ __--- - " << takeCard[i].getFace() << endl;
     //ASSERT_FALSE(takeCard[0].getSuit() == );
     ASSERT_TRUE(takeCard == *c1);
+    Card cTest = p2->takeFromHand(*c6);
+    ASSERT_TRUE(cTest.getFace() == "NULL");
+    ASSERT_TRUE(cTest.getSuit() == "NULL");
 
 }
 
@@ -87,6 +90,17 @@ TEST_F(TestPlayer,testCheckMatchingPairs)
     ASSERT_TRUE(p1->checkMatchingPairs());
     p2->addToHand(addCard);
     ASSERT_TRUE(p2->checkMatchingPairs());
+    matches = p1->getMatchedHand();
+    ASSERT_TRUE(matches.size() == 4);
+    ASSERT_TRUE(matches[0].getFace() == "2");
+    ASSERT_TRUE(matches[1].getFace() == "2");
+    ASSERT_TRUE(matches[2].getFace() == "2");
+    ASSERT_TRUE(matches[3].getFace() == "2");
+    int mat = p2->getNumMatches();
+    ASSERT_TRUE(mat == 1);
+
+    p3->addToHand(noMatches);
+    ASSERT_FALSE(p3->checkMatchingPairs());
 
 }
 

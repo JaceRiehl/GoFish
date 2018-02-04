@@ -35,7 +35,9 @@ Card Player::takeFromHand(Card c)
             return cR;
         }
     }
+    return Card("NULL", "NULL");
 
+}
     /*
     vector<int> er;
     vector<Card> ret;
@@ -53,7 +55,7 @@ Card Player::takeFromHand(Card c)
     }
     return ret;
     */
-}
+
 
 bool Player::checkMatchingPairs()
 {
