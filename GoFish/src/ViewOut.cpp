@@ -11,15 +11,25 @@ void ViewOut::welcomeMessage()
     cout << "For rules and regulations see: https://www.bicyclecards.com/how-to-play/go-fish/" << endl;
 
 }
-void ViewOut::coutDisplayPlayersHand(Player p1)
+void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
 {
-    vector<Card> c1 = p1.getHand();
     cout << "Your hand is: " << endl;
-    for(int hand=0; hand<c1.size();hand++)
+    for(int hand=0; hand<playersHand.size();hand++)
     {
-        if(hand == c1.size()-1)
-            cout << c1[hand].getFace() << " " << c1[hand].getSuit() << endl;
+        if(hand == playersHand.size()-1)
+            cout << playersHand[hand].getFace() << " " << playersHand[hand].getSuit() << endl;
         else
-            cout << c1[hand].getFace() << " " << c1[hand].getSuit() << ", ";
+            cout << playersHand[hand].getFace() << " " << playersHand[hand].getSuit() << ", ";
     }
+}
+
+void ViewOut::displayTurn(Player p1)
+{
+    cout << "Player " << p1.getPlayerNumber() << "'s turn:" << endl;
+    coutDisplayPlayersHand(p1.getHand());
+}
+
+void ViewOut::endingMessage()
+{
+    cout << "Thanks for playing GoFish";
 }

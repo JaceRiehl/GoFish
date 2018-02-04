@@ -79,7 +79,17 @@
 1517777998 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
 	"ViewIn.h"
 
-1517778067 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
+1517779281 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
 	<iostream>
 	<string>
+
+1517779497 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
+	"ViewOut.h"
+
+1517779407 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
+	<iostream>
+	<string>
+	"Player.h"
+	"Card.h"
+	<vector>
 

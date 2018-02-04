@@ -34,3 +34,25 @@ int ViewIn::chooseNumPlayers()
     }
     return numPlayers;
 }
+
+bool ViewIn::endTurn()
+{
+    string strInput;
+    char c;
+    cout << "Do you want to end your turn? (Y/N): ";
+    cin >> strInput;
+    c = strInput[0];
+    putchar(c.toupper());
+    while(c != "Y" || c != "N")
+    {
+        cin >> strInput;
+        c = strInput[0]
+        putchar(c.toupper());
+    }
+    if(c == "Y")
+        return true;
+    else
+        return false;
+}
+
+

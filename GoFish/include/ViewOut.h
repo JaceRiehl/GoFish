@@ -11,8 +11,10 @@ class ViewOut
     public:
         ViewOut();
         ~ViewOut(){}
-        void welcomeMessage();
-        void coutDisplayPlayersHand(Player);
+        virtual void welcomeMessage();
+        void coutDisplayPlayersHand(vector<Card>);
+        void displayTurn(Player);
+        virtual void endingMessage();
 
     protected:
 
