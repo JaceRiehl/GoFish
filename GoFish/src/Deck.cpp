@@ -33,8 +33,6 @@ vector<Card> Deck::getDeck()
 
 Card Deck::dealCard()
 {
-    if(indexCurrent%52 == 0 && indexCurrent != 0)
-        shuffleDeck();
     int ind = indexCurrent % maxCards;
     ++indexCurrent;
     return deck[ind];

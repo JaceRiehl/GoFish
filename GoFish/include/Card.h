@@ -48,11 +48,11 @@ class Card
         /**
         *The faces that the card can be.
         */
-        string faces[13] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King","Ace"};
+        string faces[14] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King","Ace","NULL"};
         /**
         *The suits that the card can be.
         */
-        string suits[4] = {"Spades", "Clubs", "Hearts", "Diamonds"};
+        string suits[5] = {"Spades", "Clubs", "Hearts", "Diamonds","NULL"};
 };
 
 #endif // CARD_H

@@ -39,6 +39,10 @@ class TestPlayer : public ::testing::Test
             sortedCard.push_back(*c3);
             sortedCard.push_back(*c6);
             sortedCard.push_back(*c4);
+            noMatches.push_back(*c1);
+            noMatches.push_back(*c5);
+            noMatches.push_back(*c6);
+
 
         }
         /**
@@ -78,6 +82,8 @@ class TestPlayer : public ::testing::Test
         vector<Card> currentHand;
         vector<Card> addCard;
         vector<Card> sortedCard;
+        vector<Card> matches;
+        vector<Card> noMatches;
 
     private:
 };

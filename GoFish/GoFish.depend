@@ -4,18 +4,18 @@
 	"Card.h"
 	"Deck.h"
 
-1517529024 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
+1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
 	"Card.h"
 
-1517529024 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
+1517772877 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
 	<string>
 	<ctype.h>
 	<stdio.h>
 
-1517694528 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
-1517529024 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
+1517708590 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
 	<vector>
 	<string>
 	"Card.h"
@@ -40,36 +40,36 @@
 	<iostream>
 	<algorithm>
 
-1517692684 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
+1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
 	"TestCard.h"
 
-1517526602 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
+1517708591 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
 	"gtest/gtest.h"
 	"Card.h"
 
-1517692684 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
+1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
 	"TestDeck.h"
 
-1517526585 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
+1517708591 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
 	"gtest/gtest.h"
 	"Deck.h"
 	"Card.h"
 	<vector>
 
-1517707640 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
+1517772855 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
 	"Player.h"
 
-1517708257 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
+1517708590 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
 	<vector>
 	"Card.h"
 	<algorithm>
 	<string>
 	<iostream>
 
-1517707897 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
+1517773076 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
 	"TestPlayer.h"
 
-1517705278 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
+1517772632 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
 	"gtest/gtest.h"
 	"Player.h"
 	<vector>
