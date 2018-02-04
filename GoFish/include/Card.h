@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include <stdio.h>
 using namespace std;
+/**
+*The class representation of a card.
+*/
 class Card
 {
     public:

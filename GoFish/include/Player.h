@@ -6,6 +6,10 @@
 #include <string>
 #include <iostream>
 using namespace std;
+
+/**
+*Class to represent a player to the game.
+*/
 class Player
 {
     public:

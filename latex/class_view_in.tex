@@ -1,18 +1,84 @@
 \hypertarget{class_view_in}{\section{View\-In Class Reference}
 \label{class_view_in}\index{View\-In@{View\-In}}
 }
+
+
+{\ttfamily \#include $<$View\-In.\-h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_view_in_ab300d2831c402f1eff4039fbf915a6b6}{int {\bfseries choose\-Player} (int, int)}\label{class_view_in_ab300d2831c402f1eff4039fbf915a6b6}
-
+\hyperlink{class_view_in_ad24777c474d271b2758106d9ed4b3515}{View\-In} ()
 \item 
-\hypertarget{class_view_in_a81408b8c0292c5680da91c75525c8d3b}{int {\bfseries choose\-Num\-Players} ()}\label{class_view_in_a81408b8c0292c5680da91c75525c8d3b}
-
+\hyperlink{class_view_in_a2ac9c7807cd417cddfbcf9f9f3141057}{$\sim$\-View\-In} ()
 \item 
-\hypertarget{class_view_in_a4c5430a20d6f69b989443a0bc2b94593}{bool {\bfseries end\-Turn} ()}\label{class_view_in_a4c5430a20d6f69b989443a0bc2b94593}
-
+int \hyperlink{class_view_in_ab300d2831c402f1eff4039fbf915a6b6}{choose\-Player} (int, int)
+\item 
+int \hyperlink{class_view_in_a81408b8c0292c5680da91c75525c8d3b}{choose\-Num\-Players} ()
+\item 
+bool \hyperlink{class_view_in_a4c5430a20d6f69b989443a0bc2b94593}{end\-Turn} ()
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+View for the input statements. (View class) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_view_in_ad24777c474d271b2758106d9ed4b3515}{\index{View\-In@{View\-In}!View\-In@{View\-In}}
+\index{View\-In@{View\-In}!ViewIn@{View\-In}}
+\subsubsection[{View\-In}]{\setlength{\rightskip}{0pt plus 5cm}View\-In\-::\-View\-In (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_in_ad24777c474d271b2758106d9ed4b3515}
+\hyperlink{class_view_in}{View\-In} constructor \hypertarget{class_view_in_a2ac9c7807cd417cddfbcf9f9f3141057}{\index{View\-In@{View\-In}!$\sim$\-View\-In@{$\sim$\-View\-In}}
+\index{$\sim$\-View\-In@{$\sim$\-View\-In}!ViewIn@{View\-In}}
+\subsubsection[{$\sim$\-View\-In}]{\setlength{\rightskip}{0pt plus 5cm}View\-In\-::$\sim$\-View\-In (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_in_a2ac9c7807cd417cddfbcf9f9f3141057}
+\hyperlink{class_view_in}{View\-In} destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_view_in_a81408b8c0292c5680da91c75525c8d3b}{\index{View\-In@{View\-In}!choose\-Num\-Players@{choose\-Num\-Players}}
+\index{choose\-Num\-Players@{choose\-Num\-Players}!ViewIn@{View\-In}}
+\subsubsection[{choose\-Num\-Players}]{\setlength{\rightskip}{0pt plus 5cm}int View\-In\-::choose\-Num\-Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_in_a81408b8c0292c5680da91c75525c8d3b}
+Chooses the number of players that will play the came \begin{DoxyReturn}{Returns}
+The number of players 
+\end{DoxyReturn}
+\hypertarget{class_view_in_ab300d2831c402f1eff4039fbf915a6b6}{\index{View\-In@{View\-In}!choose\-Player@{choose\-Player}}
+\index{choose\-Player@{choose\-Player}!ViewIn@{View\-In}}
+\subsubsection[{choose\-Player}]{\setlength{\rightskip}{0pt plus 5cm}int View\-In\-::choose\-Player (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{class_view_in_ab300d2831c402f1eff4039fbf915a6b6}
+Choose the player that will be checked for cards \begin{DoxyReturn}{Returns}
+The players choice of player to fish 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em The} & number of players currently playing \\
+\hline
+{\em The} & player number of the person fishing \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_view_in_a4c5430a20d6f69b989443a0bc2b94593}{\index{View\-In@{View\-In}!end\-Turn@{end\-Turn}}
+\index{end\-Turn@{end\-Turn}!ViewIn@{View\-In}}
+\subsubsection[{end\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-In\-::end\-Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_in_a4c5430a20d6f69b989443a0bc2b94593}
+Ask if the turn is ending \begin{DoxyReturn}{Returns}
+True if the turn is ending, False if the player wants to fish another player 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

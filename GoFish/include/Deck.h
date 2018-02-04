@@ -6,7 +6,9 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
+/**
+*Class to represent a deck of a standard 52 card deck.
+*/
 class Deck
 {
     public:
