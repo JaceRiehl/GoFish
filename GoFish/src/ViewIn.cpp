@@ -42,14 +42,14 @@ bool ViewIn::endTurn()
     cout << "Do you want to end your turn? (Y/N): ";
     cin >> strInput;
     c = strInput[0];
-    putchar(c.toupper());
-    while(c != "Y" || c != "N")
+    putchar(toupper(c));
+    while(c != 'Y' || c != 'N')
     {
         cin >> strInput;
-        c = strInput[0]
-        putchar(c.toupper());
+        c = strInput[0];
+        putchar(toupper(c));
     }
-    if(c == "Y")
+    if(c == 'Y')
         return true;
     else
         return false;

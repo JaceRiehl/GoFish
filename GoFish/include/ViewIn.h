@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include "ViewOut.h"
+#include <ctype.h>
+#include <stdio.h>
 using namespace std;
 class ViewIn
 {
