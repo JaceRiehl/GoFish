@@ -23,6 +23,10 @@ class Player
         */
         int getPlayerNumber();
         /**
+        *Getter for the number of matches
+        */
+        int getNumMatches();
+        /**
         *Add a card to the players hand
         *@param Card(s) to add
         */
@@ -43,6 +47,12 @@ class Player
         *@return vector<Card> hand
         */
         vector<Card> getHand();
+                /**
+        *Get players matched hand
+        *@return vector<Card> hand
+        */
+        vector<Card> getMatchedHand();
+
         /**
         *Sorting hand helper function.
         */

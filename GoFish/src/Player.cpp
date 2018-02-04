@@ -11,6 +11,10 @@ int Player::getPlayerNumber()
 {
     return playerNumber;
 }
+int Player::getNumMatches()
+{
+    return matchingPairs;
+}
 
 void Player::addToHand(vector<Card> c)
 {
@@ -98,5 +102,9 @@ void Player::sortHand()
 vector<Card> Player::getHand()
 {
     return currentHand;
+}
+vector<Card> Player::getMatchedHand()
+{
+    return matchingPairsInHand;
 }
 
