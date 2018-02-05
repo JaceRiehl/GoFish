@@ -23,11 +23,14 @@ void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
     }
 }
 
-void ViewOut::goFish()
+void ViewOut::goFish(bool canGoFish)
 {
     cout << endl;
-    cout << "Go Fish! ";
-    cout << endl;
+    if(canGoFish)
+        cout << "Go Fish! " << endl;
+    else
+        cout << "The deck is empty, your turn has ended";
+
 }
 
 void ViewOut::displayTurn(Player p1)

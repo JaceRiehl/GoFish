@@ -32,8 +32,9 @@ class ViewOut
         void coutDisplayPlayersHand(vector<Card>);
         /**
         *Tell the Player that they had to GoFish.
+        *@param bool that is true if the player can go fish and false if the deck is empty.
         */
-        void goFish();
+        void goFish(bool);
         /**
         *Displays which Players' turn it is.
         */

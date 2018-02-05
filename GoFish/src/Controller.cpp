@@ -93,11 +93,16 @@ void Controller::turn(int p)
 
 void Controller::goFishDeal(int p)
 {
-    vO.goFish();
-    vector<Card> addToPlayersHand;
-    addToPlayersHand.push_back(dealersDeck.dealCard());
-    players[p].addToHand(addToPlayersHand);
-    vO.coutDisplayPlayersHand(players[p].getHand());
+    if(dealersDeck.getDeckSize() == 0)
+        vO.goFish(false);
+    else
+    {
+        vO.goFish(true);
+        vector<Card> addToPlayersHand;
+        addToPlayersHand.push_back(dealersDeck.dealCard());
+        players[p].addToHand(addToPlayersHand);
+        vO.coutDisplayPlayersHand(players[p].getHand());
+    }
 
 }
 
