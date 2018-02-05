@@ -23,12 +23,22 @@ void Player::addToHand(vector<Card> c)
         currentHand.push_back(c[i]);
     //sortHand();
 }
-
+bool Player::checkIfInHand(Card c)
+{
+    for(int i = 0; i<currentHand.size();i++)
+    {
+        if(c.getFace() == currentHand[i].getFace())
+        {
+            return true;
+        }
+    }
+    return false;
+}
 Card Player::takeFromHand(Card c)
 {
     for(int i = 0; i<currentHand.size();i++)
     {
-        if(c == currentHand[i])
+        if(c.getFace() == currentHand[i].getFace())
         {
             Card cR = currentHand[i];
             currentHand.erase(currentHand.begin()+i);

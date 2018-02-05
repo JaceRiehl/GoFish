@@ -65,5 +65,11 @@ void Controller::turn(int p)
     vO.displayTurn(players[p]);
     vO.coutDisplayPlayersHand(players[p].getHand());
     int fishPlayer = vI.choosePlayer(players.size(),p+1);
+    vector<Card> hand = players[p].getHand();
+    int cardNum = vI.chooseCard(hand.size());
+    bool canFish = players[fishPlayer-1].checkIfInHand(hand[cardNum-1]);
+    cout << "Player Number : " << players[fishPlayer-1].getPlayerNumber() << " Card: " << hand[cardNum-1].getFace();
+    cout << "Can Fish: " << canFish << endl;
 
 }
+

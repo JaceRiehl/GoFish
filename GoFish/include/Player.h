@@ -36,11 +36,17 @@ class Player
         */
         void addToHand(vector<Card> c);
         /**
-        *Take one or more of the same card Face from the players hand
+        *Take one of the same card Face from the players hand
         *@param Card to take
         *@return The matching cards
         */
         Card takeFromHand(Card);
+        /**
+        *Take one or more of the same card Face from the players hand
+        *@param Card to check against
+        *@return true if it's in the hand, false otherwise
+        */
+        bool checkIfInHand(Card);
         /**
         *Check if there is any matching pairs in the players hand
         *@return bool
@@ -51,12 +57,11 @@ class Player
         *@return vector<Card> hand
         */
         vector<Card> getHand();
-                /**
+        /**
         *Get players matched hand
         *@return vector<Card> hand
         */
         vector<Card> getMatchedHand();
-
         /**
         *Sorting hand helper function.
         */

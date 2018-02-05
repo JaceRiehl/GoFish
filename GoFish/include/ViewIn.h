@@ -29,6 +29,12 @@ class ViewIn
         */
         int choosePlayer(int,int);
         /**
+        *Choose the Card number that will be checked against a player
+        *@return The players choice of Card
+        *@param int that is the size of the hand.
+        */
+        int chooseCard(int);
+        /**
         *Chooses the number of players that will play the came
         *@return The number of players
         */
