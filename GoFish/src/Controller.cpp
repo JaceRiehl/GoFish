@@ -43,4 +43,27 @@ void Controller::initalDeal()
         vector<Card> pr = players[i].getHand();
         vO.coutDisplayPlayersHand(pr);
     }
+    runGame();
+}
+
+void Controller::runGame()
+{
+    int index = 0;
+    while(true)
+    {
+        turn(index);
+        index += 1;
+        index = index % players.size();
+        if(dealersDeck.getDeckSize() == 0)
+            break;
+        break;
+    }
+}
+
+void Controller::turn(int p)
+{
+    vO.displayTurn(players[p]);
+    vO.coutDisplayPlayersHand(players[p].getHand());
+    int fishPlayer = vI.choosePlayer(players.size(),p+1);
+
 }

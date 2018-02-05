@@ -29,11 +29,18 @@ class Controller
         void initalDeal();
         /**
         *Deals a card to the player if they get a 'GoFish'
+        @param int that is the players number
         */
         void goFishDeal(int);
         /**
-        *
+        *runGame does the loop that calls the appropriate functions to run the game until the game is won.
         */
+        void runGame();
+        /**
+        *Calls a turn
+        *@param int that is the players number
+        */
+        void turn(int);
 
 
     protected:

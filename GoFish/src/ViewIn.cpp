@@ -11,7 +11,7 @@ int ViewIn::choosePlayer(int numPlayers, int playerNum)
     cout << "Which Player do you want to fish: ";
     cin >> playerChoice;
     cout << endl;
-    while(playerChoice <= 0 && playerChoice >= numPlayers && playerChoice != playerNum)
+    while(playerChoice <= 0 || playerChoice >= numPlayers || playerChoice != playerNum)
     {
         cout << "Enter a valid choice: ";
         cin >> playerChoice;

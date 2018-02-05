@@ -25,8 +25,9 @@ void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
 
 void ViewOut::displayTurn(Player p1)
 {
+    cout << endl;
     cout << "Player " << p1.getPlayerNumber() << "'s turn:" << endl;
-    coutDisplayPlayersHand(p1.getHand());
+    //coutDisplayPlayersHand(p1.getHand());
 }
 
 void ViewOut::endingMessage()
