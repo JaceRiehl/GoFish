@@ -6,7 +6,8 @@ void Controller::startGame()
 {
     dealersDeck.shuffleDeck();
     vO.welcomeMessage();
-    numPlayers = vI.chooseNumPlayers();
+    //numPlayers = vI.chooseNumPlayers();
+    numPlayers = 3;
     for(int player=0;player<numPlayers;player++)
     {
         players.push_back(Player(player+1));
