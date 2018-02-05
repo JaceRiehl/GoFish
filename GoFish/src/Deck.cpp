@@ -35,6 +35,8 @@ Card Deck::dealCard()
 {
     int ind = indexCurrent;
     ++indexCurrent;
+    if(indexCurrent == 52)
+        return deck[0];
     return deck[ind];
 }
 

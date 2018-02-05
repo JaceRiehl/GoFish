@@ -16,6 +16,8 @@ void Controller::startGame()
 
 void Controller::initalDeal()
 {
+    if(numPlayers > 5 || numPlayers < 0)
+        numPlayers = 5;
     cout << "Num PlayersL " << numPlayers << endl;
     int cardPerPlayer = 7;
     if(numPlayers == 2 || numPlayers == 3)
@@ -29,8 +31,8 @@ void Controller::initalDeal()
             vector<Card> addCard;
             Card temp = dealersDeck.dealCard();
             addCard.push_back(temp);
-            cout << dealersDeck.getDeckSize() << endl;
-            cout << "-_----- " << temp.getFace() << " " << temp.getSuit() << endl;
+//            cout << dealersDeck.getDeckSize() << endl;
+//            cout << "-_----- " << temp.getFace() << " " << temp.getSuit() << endl;
             players[player].addToHand(addCard);
         }
     }

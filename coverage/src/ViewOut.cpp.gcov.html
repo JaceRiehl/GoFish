@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - results.coverage - src/ViewOut.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - ViewOut.cpp<span style="font-size: 80%;"> (source / <a href="ViewOut.cpp.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">results.coverage</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntryLo">70.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-02-04</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryLo">71.4 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;ViewOut.h&quot;</a>
+<span class="lineNum">       2 </span>            : 
+<span class="lineNum">       3 </span><span class="lineCov">          2 : ViewOut::ViewOut()</span>
+<span class="lineNum">       4 </span>            : {
+<span class="lineNum">       5 </span>            :     //ctor
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">          2 : }</span></a>
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span><span class="lineCov">          2 : void ViewOut::welcomeMessage()</span>
+<span class="lineNum">       9 </span>            : {
+<span class="lineNum">      10 </span><span class="lineCov">          2 :     cout &lt;&lt; &quot;Welcome to Go Fish!&quot; &lt;&lt; endl;</span>
+<span class="lineNum">      11 </span><span class="lineCov">          2 :     cout &lt;&lt; &quot;For rules and regulations see: https://www.bicyclecards.com/how-to-play/go-fish/&quot; &lt;&lt; endl;</span>
+<a name="12"><span class="lineNum">      12 </span>            : </a>
+<span class="lineNum">      13 </span><span class="lineCov">          2 : }</span>
+<span class="lineNum">      14 </span><span class="lineCov">          6 : void ViewOut::coutDisplayPlayersHand(vector&lt;Card&gt; playersHand)</span>
+<span class="lineNum">      15 </span>            : {
+<span class="lineNum">      16 </span><span class="lineCov">          6 :     cout &lt;&lt; &quot;Your hand is: &quot; &lt;&lt; endl;</span>
+<span class="lineNum">      17 </span><span class="lineCov">         48 :     for(int hand=0; hand&lt;playersHand.size();hand++)</span>
+<span class="lineNum">      18 </span>            :     {
+<span class="lineNum">      19 </span><span class="lineCov">         42 :         if(hand == playersHand.size()-1)</span>
+<span class="lineNum">      20 </span><span class="lineCov">          6 :             cout &lt;&lt; playersHand[hand].getFace() &lt;&lt; &quot; &quot; &lt;&lt; playersHand[hand].getSuit() &lt;&lt; endl;</span>
+<span class="lineNum">      21 </span>            :         else
+<span class="lineNum">      22 </span><span class="lineCov">         36 :             cout &lt;&lt; playersHand[hand].getFace() &lt;&lt; &quot; &quot; &lt;&lt; playersHand[hand].getSuit() &lt;&lt; &quot;, &quot;;</span>
+<span class="lineNum">      23 </span>            :     }
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          6 : }</span></a>
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span><span class="lineNoCov">          0 : void ViewOut::displayTurn(Player p1)</span>
+<span class="lineNum">      27 </span>            : {
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :     cout &lt;&lt; &quot;Player &quot; &lt;&lt; p1.getPlayerNumber() &lt;&lt; &quot;'s turn:&quot; &lt;&lt; endl;</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 :     coutDisplayPlayersHand(p1.getHand());</span>
+<a name="30"><span class="lineNum">      30 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 : void ViewOut::endingMessage()</span>
+<a name="33"><span class="lineNum">      33 </span>            : {</a>
+<span class="lineNum">      34 </span><span class="lineNoCov">          0 :     cout &lt;&lt; &quot;Thanks for playing GoFish&quot;;</span>
+<span class="lineNum">      35 </span><span class="lineCov">          6 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.10</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
