@@ -6,8 +6,8 @@ void Controller::startGame()
 {
     dealersDeck.shuffleDeck();
     vO.welcomeMessage();
-    //numPlayers = vI.chooseNumPlayers();
-    numPlayers = 3;
+    numPlayers = vI.chooseNumPlayers();
+    //numPlayers = 3;
     for(int player=0;player<numPlayers;player++)
     {
         players.push_back(Player(player+1));
@@ -54,9 +54,8 @@ void Controller::runGame()
         turn(index);
         index += 1;
         index = index % players.size();
-        if(dealersDeck.getDeckSize() == 0)
+        if(numMatches = 13)
             break;
-        break;
     }
 }
 
@@ -89,12 +88,15 @@ void Controller::turn(int p)
         vO.coutDisplayPlayersHand(players[p].getHand());
     }
     goFishDeal(p);
+
 }
 
 void Controller::goFishDeal(int p)
 {
     if(dealersDeck.getDeckSize() == 0)
+    {
         vO.goFish(false);
+    }
     else
     {
         vO.goFish(true);
@@ -103,6 +105,6 @@ void Controller::goFishDeal(int p)
         players[p].addToHand(addToPlayersHand);
         vO.coutDisplayPlayersHand(players[p].getHand());
     }
-
+    vO.endTurn();
 }
 

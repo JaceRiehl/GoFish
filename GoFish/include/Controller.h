@@ -49,6 +49,7 @@ class Controller
         vector<Player> players;
         Deck dealersDeck;
         int numPlayers;
+        int numMatches;
         ViewOut vO;
         ViewIn vI;
 };

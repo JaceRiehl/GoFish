@@ -37,8 +37,13 @@ class ViewOut
         void goFish(bool);
         /**
         *Displays which Players' turn it is.
+        *@param The Player who's turn is ending.
         */
         void displayTurn(Player);
+        /**
+        *The display message for the end of a players turn
+        */
+        void endTurn();
         /**
         *Displays the ending message to the game. To be displayed when the game has ended.
         */

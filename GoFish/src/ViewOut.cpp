@@ -25,19 +25,22 @@ void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
 
 void ViewOut::goFish(bool canGoFish)
 {
-    cout << endl;
     if(canGoFish)
         cout << "Go Fish! " << endl;
     else
-        cout << "The deck is empty, your turn has ended";
+        cout << "The deck is empty. " << endl;;
 
 }
 
 void ViewOut::displayTurn(Player p1)
 {
-    cout << endl;
     cout << "Player " << p1.getPlayerNumber() << "'s turn:" << endl;
     //coutDisplayPlayersHand(p1.getHand());
+}
+
+void ViewOut::endTurn()
+{
+    cout << "Your turn is ending." << endl;
 }
 
 void ViewOut::endingMessage()

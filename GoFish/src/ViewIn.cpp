@@ -24,14 +24,12 @@ int ViewIn::choosePlayer(int numPlayers, int playerNum)
 int ViewIn::chooseNumPlayers()
 {
     int numPlayers;
-    cout << "How many players do you want to add? ";
+    cout << "How many players do you want to add (2-5)? ";
     cin >> numPlayers;
-    cout << endl;
     while(numPlayers <= 1 || numPlayers > 5)
     {
-        cout << "Enter a valid choice";
+        cout << "Enter a valid choice (2-5): ";
         cin >> numPlayers;
-        cout << endl;
     }
 
     return numPlayers;
