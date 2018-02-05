@@ -23,6 +23,13 @@ void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
     }
 }
 
+void ViewOut::goFish()
+{
+    cout << endl;
+    cout << "Go Fish! ";
+    cout << endl;
+}
+
 void ViewOut::displayTurn(Player p1)
 {
     cout << endl;

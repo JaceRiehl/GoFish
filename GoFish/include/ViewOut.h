@@ -31,6 +31,10 @@ class ViewOut
         */
         void coutDisplayPlayersHand(vector<Card>);
         /**
+        *Tell the Player that they had to GoFish.
+        */
+        void goFish();
+        /**
         *Displays which Players' turn it is.
         */
         void displayTurn(Player);
