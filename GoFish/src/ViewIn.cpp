@@ -22,7 +22,7 @@ int ViewIn::choosePlayer(int numPlayers, int playerNum)
 
 int ViewIn::chooseNumPlayers()
 {
-    int numPlayers = 2;
+    int numPlayers;
     cout << "How many players do you want to add? ";
     cin >> numPlayers;
     cout << endl;
@@ -32,6 +32,7 @@ int ViewIn::chooseNumPlayers()
         cin >> numPlayers;
         cout << endl;
     }
+
     return numPlayers;
 }
 

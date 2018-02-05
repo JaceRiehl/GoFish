@@ -4,7 +4,6 @@
 
 void Controller::startGame()
 {
-    int numPlayers;
     dealersDeck.shuffleDeck();
     vO.welcomeMessage();
     numPlayers = vI.chooseNumPlayers();
@@ -12,17 +11,17 @@ void Controller::startGame()
     {
         players.push_back(Player(player+1));
     }
-    initalDeal();
+    this->initalDeal();
 }
 
 void Controller::initalDeal()
 {
+    cout << "Num PlayersL " << numPlayers << endl;
     int cardPerPlayer = 7;
     if(numPlayers == 2 || numPlayers == 3)
         cardPerPlayer = 7;
     else if(numPlayers == 4 || numPlayers == 5)
         cardPerPlayer = 5;
-    cout << "NUMBRT CARDS " << dealersDeck.getDeckSize() << endl;
     for(int cardsDealt=0;cardsDealt<cardPerPlayer;cardsDealt++)
     {
         for(int player=0;player<numPlayers;player++)
