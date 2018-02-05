@@ -67,9 +67,34 @@ void Controller::turn(int p)
     int fishPlayer = vI.choosePlayer(players.size(),p+1);
     vector<Card> hand = players[p].getHand();
     int cardNum = vI.chooseCard(hand.size());
-    bool canFish = players[fishPlayer-1].checkIfInHand(hand[cardNum-1]);
-    cout << "Player Number : " << players[fishPlayer-1].getPlayerNumber() << " Card: " << hand[cardNum-1].getFace();
-    cout << "Can Fish: " << canFish << endl;
+//    bool canFish = players[fishPlayer-1].checkIfInHand(hand[cardNum-1]);
+//    cout << "Player Number : " << players[fishPlayer-1].getPlayerNumber() << " Card: " << hand[cardNum-1].getFace();
+//    cout << "Can Fish: " << canFish << endl;
+    if(players[fishPlayer-1].checkIfInHand(hand[cardNum-1]))
+    {
+        vector<Card> add;
+        add.push_back(players[fishPlayer-1].takeFromHand(hand[cardNum-1]));
+        //players[p].addToHand(players[fishPlayer-1].takeFromHand(hand[cardNum-1]);
+        if(players[fishPlayer-1].checkIfInHand(hand[cardNum-1]))
+        {
+            add.push_back(players[fishPlayer-1].takeFromHand(hand[cardNum-1]));
+            //players[p].addToHand(players[fishPlayer-1].takeFromHand(hand[cardNum-1]));
+            if(players[fishPlayer-1].checkIfInHand(hand[cardNum-1]))
+            {
+                add.push_back(players[fishPlayer-1].takeFromHand(hand[cardNum-1]));
+                //players[p].addToHand(players[fishPlayer-1].takeFromHand(hand[cardNum-1]);
+            }
+        }
+        players[p].addToHand(add);
+        vO.coutDisplayPlayersHand(players[p].getHand());
+    }
+    goFishDeal(p);
+}
 
+void Controller::goFishDeal(int p)
+{
+    vector<Card> addToPlayersHand;
+    addToPlayersHand.push_back(dealersDeck.dealCard());
+    players[p].addToHand(addToPlayersHand);
 }
 
