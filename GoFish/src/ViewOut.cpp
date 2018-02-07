@@ -43,7 +43,15 @@ void ViewOut::endTurn()
     cout << "Your turn is ending." << endl;
 }
 
-void ViewOut::endingMessage()
+void ViewOut::clearTerminal()
 {
+    for(int i=0;i<100;i++)
+        cout << '\n';
+}
+
+
+void ViewOut::endingMessage(int winner)
+{
+    cout << "The winner is: Player " << winner << "! "<< endl;
     cout << "Thanks for playing GoFish";
 }

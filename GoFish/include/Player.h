@@ -24,12 +24,19 @@ class Player
         ~Player(){}
         /**
         *Getter for the players number
+        *@return The player number
         */
         int getPlayerNumber();
         /**
         *Getter for the number of matches
+        *@return The number of matches
         */
         int getNumMatches();
+        /**
+        *Getter for the number of cards in their hand
+        *@return The number of cards in their hand
+        */
+        int getNumCards();
         /**
         *Add a card to the players hand
         *@param Card(s) to add

@@ -39,17 +39,25 @@ class Controller
         /**
         *Calls a turn
         *@param int that is the players number
+        *@return The Player that the current Player fished
         */
-        void turn(int);
+        int turn(int);
+
 
 
     protected:
 
     private:
+        /**
+        *Checks who has the most matches
+        *@return The index of the player who has the most matches.
+        */
+        int mostMatches();
+
         vector<Player> players;
         Deck dealersDeck;
         int numPlayers;
-        int numMatches;
+        int numMatches = 0;
         ViewOut vO;
         ViewIn vI;
 };

@@ -47,7 +47,11 @@ class ViewOut
         /**
         *Displays the ending message to the game. To be displayed when the game has ended.
         */
-        virtual void endingMessage();
+        virtual void endingMessage(int);
+        /**
+        *Clears the terminal so that the player doesn't see the other players hand
+        */
+        void clearTerminal();
 
     protected:
 

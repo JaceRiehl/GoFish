@@ -119,4 +119,8 @@ vector<Card> Player::getMatchedHand()
 {
     return matchingPairsInHand;
 }
+int Player::getNumCards()
+{
+    return currentHand.size();
+}
 

@@ -51,15 +51,29 @@ void Controller::runGame()
     int index = 0;
     while(true)
     {
-        turn(index);
+        //vO.clearTerminal();
+        int fishedPlayer = turn(index);
+        if(players[index].checkMatchingPairs())
+        {
+            numMatches++;
+            if(players[index].getNumCards() == 0 || players[fishedPlayer].getNumCards() == 0)
+            {
+                int winner = mostMatches();
+                vO.endingMessage(winner);
+                break;
+            }
+        }
+
         index += 1;
         index = index % players.size();
-        if(numMatches = 13)
+
+        cout << numMatches;
+        if(numMatches == 13)
             break;
     }
 }
 
-void Controller::turn(int p)
+int Controller::turn(int p)
 {
     vO.displayTurn(players[p]);
     vO.coutDisplayPlayersHand(players[p].getHand());
@@ -87,7 +101,10 @@ void Controller::turn(int p)
         players[p].addToHand(add);
         vO.coutDisplayPlayersHand(players[p].getHand());
     }
-    goFishDeal(p);
+    else
+        goFishDeal(p);
+
+    return fishPlayer-1;
 
 }
 
@@ -105,6 +122,17 @@ void Controller::goFishDeal(int p)
         players[p].addToHand(addToPlayersHand);
         vO.coutDisplayPlayersHand(players[p].getHand());
     }
-    vO.endTurn();
+}
+
+int Controller::mostMatches()
+{
+    int indexOfMostMatches;
+    int mostMatches = 0;
+    for(int i=0;i<players.size();i++)
+    {
+        if(players[i].getNumMatches() > mostMatches)
+            indexOfMostMatches = i;
+    }
+    return indexOfMostMatches;
 }
 

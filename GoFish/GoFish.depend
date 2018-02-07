@@ -57,10 +57,10 @@
 	"Card.h"
 	<vector>
 
-1517871345 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
+1517961563 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
 	"Player.h"
 
-1517869554 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
+1517961553 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
 	<vector>
 	"Card.h"
 	<algorithm>
@@ -77,7 +77,7 @@
 	"Card.h"
 	<iostream>
 
-1517870437 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
+1517967107 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
 	"ViewIn.h"
 
 1517870256 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
@@ -87,20 +87,20 @@
 	<ctype.h>
 	<stdio.h>
 
-1517874366 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
+1517962254 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
 	"ViewOut.h"
 
-1517874366 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
+1517962254 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
 	<iostream>
 	<string>
 	"Player.h"
 	"Card.h"
 	<vector>
 
-1517874626 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
+1517967240 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
 	"Controller.h"
 
-1517874494 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
+1517962254 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
 	"Player.h"
 	"Deck.h"
 	"ViewIn.h"

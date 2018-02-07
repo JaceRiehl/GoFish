@@ -8,46 +8,54 @@ ViewIn::ViewIn()
 int ViewIn::choosePlayer(int numPlayers, int playerNum)
 {
     cout << "Player Number: " << playerNum << endl;
-    int playerChoice;
+    char playerChoice;
+    int choice;
     cout << "Which Player do you want to fish: (1-" << numPlayers << ") ";
-    cin >> playerChoice;
-    cout << endl;
-    while(playerChoice <= 0 || playerChoice > numPlayers || playerChoice == playerNum)
+    while(cin >> playerChoice)
     {
-        cout << "Enter a valid choice: ";
-        cin >> playerChoice;
-        cout << endl;
+        choice = playerChoice - '0';
+        if(choice > 0 && choice <= numPlayers && choice != playerNum)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid choice (1-" << numPlayers << "): ";
     }
-    return playerChoice;
+    return choice;
 }
 
 int ViewIn::chooseNumPlayers()
 {
-    int numPlayers;
+    int players;
+    char numPlayers = 0;
+    int test = 0;
     cout << "How many players do you want to add (2-5)? ";
-    cin >> numPlayers;
-    while(numPlayers <= 1 || numPlayers > 5)
+    while(cin >> numPlayers)
     {
-        cout << "Enter a valid choice (2-5): ";
-        cin >> numPlayers;
+        players = numPlayers - '0';
+        if(players >= 2 && players <= 5)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid input (2-5): ";
     }
 
-    return numPlayers;
+    return players;
 }
 
 int ViewIn::chooseCard(int maxCard)
 {
-    int cardNum;
+    int card;
+    char cardNum;
     cout << "Which card number do you fish? (1-" << maxCard << ") ";
-    cin >> cardNum;
-    cout << endl;
-    while(cardNum < 1 || cardNum > maxCard)
+    //cin >> cardNum;
+    //cout << endl;
+    while(cin >> cardNum)
     {
-        cout << "Enter a valid choice (1-" << maxCard << ") ";
-        cin >> cardNum;
-        cout << endl;
+        card = cardNum - '0';
+        if(card >= 1 && card <= maxCard)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid input (1-" << maxCard << ") ";
     }
-    return cardNum;
+    return card;
 }
 
 bool ViewIn::endTurn()
