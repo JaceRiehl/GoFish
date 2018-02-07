@@ -16,9 +16,15 @@ virtual void \hyperlink{class_view_out_a4689f97048cd61ab7df83a3158d03ee7}{welcom
 \item 
 void \hyperlink{class_view_out_aa284dd2c46946728bfbeb61f79bdbc1c}{cout\-Display\-Players\-Hand} (vector$<$ \hyperlink{class_card}{Card} $>$)
 \item 
+void \hyperlink{class_view_out_a58d07bdb6de0532e22c60cf047d9c759}{go\-Fish} (bool)
+\item 
 void \hyperlink{class_view_out_adc9f94c7824bbaf97193cf51a06088dc}{display\-Turn} (\hyperlink{class_player}{Player})
 \item 
-virtual void \hyperlink{class_view_out_a6b8f759a8a7a05ed0f271ee564258f9e}{ending\-Message} ()
+void \hyperlink{class_view_out_aa291feabf462bcc2144290372692ef93}{end\-Turn} ()
+\item 
+virtual void \hyperlink{class_view_out_a638e1964ff9b7f796dcf4aec4056ac47}{ending\-Message} (int)
+\item 
+void \hyperlink{class_view_out_a1414ca6b1726f56c7f1592d6d7b3ecc6}{clear\-Terminal} ()
 \end{DoxyCompactItemize}
 
 
@@ -43,7 +49,14 @@ Constructor for \hyperlink{class_view_out}{View\-Out} \hypertarget{class_view_ou
 Destructor for \hyperlink{class_view_out}{View\-Out} 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_view_out_aa284dd2c46946728bfbeb61f79bdbc1c}{\index{View\-Out@{View\-Out}!cout\-Display\-Players\-Hand@{cout\-Display\-Players\-Hand}}
+\hypertarget{class_view_out_a1414ca6b1726f56c7f1592d6d7b3ecc6}{\index{View\-Out@{View\-Out}!clear\-Terminal@{clear\-Terminal}}
+\index{clear\-Terminal@{clear\-Terminal}!ViewOut@{View\-Out}}
+\subsubsection[{clear\-Terminal}]{\setlength{\rightskip}{0pt plus 5cm}void View\-Out\-::clear\-Terminal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_view_out_a1414ca6b1726f56c7f1592d6d7b3ecc6}
+Clears the terminal so that the player doesn't see the other players hand \hypertarget{class_view_out_aa284dd2c46946728bfbeb61f79bdbc1c}{\index{View\-Out@{View\-Out}!cout\-Display\-Players\-Hand@{cout\-Display\-Players\-Hand}}
 \index{cout\-Display\-Players\-Hand@{cout\-Display\-Players\-Hand}!ViewOut@{View\-Out}}
 \subsubsection[{cout\-Display\-Players\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}void View\-Out\-::cout\-Display\-Players\-Hand (
 \begin{DoxyParamCaption}
@@ -62,14 +75,38 @@ Display the hand of the person inputted
 \item[{{\bf Player}}]{}
 \end{DoxyParamCaption}
 )}}\label{class_view_out_adc9f94c7824bbaf97193cf51a06088dc}
-Displays which Players' turn it is. \hypertarget{class_view_out_a6b8f759a8a7a05ed0f271ee564258f9e}{\index{View\-Out@{View\-Out}!ending\-Message@{ending\-Message}}
+Displays which Players' turn it is. 
+\begin{DoxyParams}{Parameters}
+{\em The} & \hyperlink{class_player}{Player} who's turn is ending. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_view_out_a638e1964ff9b7f796dcf4aec4056ac47}{\index{View\-Out@{View\-Out}!ending\-Message@{ending\-Message}}
 \index{ending\-Message@{ending\-Message}!ViewOut@{View\-Out}}
 \subsubsection[{ending\-Message}]{\setlength{\rightskip}{0pt plus 5cm}virtual void View\-Out\-::ending\-Message (
 \begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_view_out_a638e1964ff9b7f796dcf4aec4056ac47}
+Displays the ending message to the game. To be displayed when the game has ended. \hypertarget{class_view_out_aa291feabf462bcc2144290372692ef93}{\index{View\-Out@{View\-Out}!end\-Turn@{end\-Turn}}
+\index{end\-Turn@{end\-Turn}!ViewOut@{View\-Out}}
+\subsubsection[{end\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}void View\-Out\-::end\-Turn (
+\begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_view_out_a6b8f759a8a7a05ed0f271ee564258f9e}
-Displays the ending message to the game. To be displayed when the game has ended. \hypertarget{class_view_out_a4689f97048cd61ab7df83a3158d03ee7}{\index{View\-Out@{View\-Out}!welcome\-Message@{welcome\-Message}}
+)}}\label{class_view_out_aa291feabf462bcc2144290372692ef93}
+The display message for the end of a players turn \hypertarget{class_view_out_a58d07bdb6de0532e22c60cf047d9c759}{\index{View\-Out@{View\-Out}!go\-Fish@{go\-Fish}}
+\index{go\-Fish@{go\-Fish}!ViewOut@{View\-Out}}
+\subsubsection[{go\-Fish}]{\setlength{\rightskip}{0pt plus 5cm}void View\-Out\-::go\-Fish (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}}\label{class_view_out_a58d07bdb6de0532e22c60cf047d9c759}
+Tell the \hyperlink{class_player}{Player} that they had to Go\-Fish. 
+\begin{DoxyParams}{Parameters}
+{\em bool} & that is true if the player can go fish and false if the deck is empty. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_view_out_a4689f97048cd61ab7df83a3158d03ee7}{\index{View\-Out@{View\-Out}!welcome\-Message@{welcome\-Message}}
 \index{welcome\-Message@{welcome\-Message}!ViewOut@{View\-Out}}
 \subsubsection[{welcome\-Message}]{\setlength{\rightskip}{0pt plus 5cm}virtual void View\-Out\-::welcome\-Message (
 \begin{DoxyParamCaption}

@@ -16,9 +16,13 @@ int \hyperlink{class_player_ae72235dee0a2f7abbcb82002164623aa}{get\-Player\-Numb
 \item 
 int \hyperlink{class_player_abdea2b45e1a98e9942bdaca85f451734}{get\-Num\-Matches} ()
 \item 
+int \hyperlink{class_player_a8157f88bbd4048e52e4fca94e92b49ac}{get\-Num\-Cards} ()
+\item 
 void \hyperlink{class_player_ace93c12489cea500770591ccb47a2a0c}{add\-To\-Hand} (vector$<$ \hyperlink{class_card}{Card} $>$ c)
 \item 
 \hyperlink{class_card}{Card} \hyperlink{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}{take\-From\-Hand} (\hyperlink{class_card}{Card})
+\item 
+bool \hyperlink{class_player_ac9576fddfaa9c54a11f50df5604ec10c}{check\-If\-In\-Hand} (\hyperlink{class_card}{Card})
 \item 
 bool \hyperlink{class_player_adf635ce5997b0d4647a6f7d09b526dac}{check\-Matching\-Pairs} ()
 \item 
@@ -68,6 +72,21 @@ Add a card to the players hand
 {\em \hyperlink{class_card}{Card(s)}} & to add \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_player_ac9576fddfaa9c54a11f50df5604ec10c}{\index{Player@{Player}!check\-If\-In\-Hand@{check\-If\-In\-Hand}}
+\index{check\-If\-In\-Hand@{check\-If\-In\-Hand}!Player@{Player}}
+\subsubsection[{check\-If\-In\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::check\-If\-In\-Hand (
+\begin{DoxyParamCaption}
+\item[{{\bf Card}}]{}
+\end{DoxyParamCaption}
+)}}\label{class_player_ac9576fddfaa9c54a11f50df5604ec10c}
+Take one or more of the same card Face from the players hand 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_card}{Card}} & to check against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it's in the hand, false otherwise 
+\end{DoxyReturn}
 \hypertarget{class_player_adf635ce5997b0d4647a6f7d09b526dac}{\index{Player@{Player}!check\-Matching\-Pairs@{check\-Matching\-Pairs}}
 \index{check\-Matching\-Pairs@{check\-Matching\-Pairs}!Player@{Player}}
 \subsubsection[{check\-Matching\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::check\-Matching\-Pairs (
@@ -98,6 +117,16 @@ vector$<$\-Card$>$ hand
 Get players matched hand \begin{DoxyReturn}{Returns}
 vector$<$\-Card$>$ hand 
 \end{DoxyReturn}
+\hypertarget{class_player_a8157f88bbd4048e52e4fca94e92b49ac}{\index{Player@{Player}!get\-Num\-Cards@{get\-Num\-Cards}}
+\index{get\-Num\-Cards@{get\-Num\-Cards}!Player@{Player}}
+\subsubsection[{get\-Num\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Num\-Cards (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_player_a8157f88bbd4048e52e4fca94e92b49ac}
+Getter for the number of cards in their hand \begin{DoxyReturn}{Returns}
+The number of cards in their hand 
+\end{DoxyReturn}
 \hypertarget{class_player_abdea2b45e1a98e9942bdaca85f451734}{\index{Player@{Player}!get\-Num\-Matches@{get\-Num\-Matches}}
 \index{get\-Num\-Matches@{get\-Num\-Matches}!Player@{Player}}
 \subsubsection[{get\-Num\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Num\-Matches (
@@ -105,14 +134,20 @@ vector$<$\-Card$>$ hand
 {}
 \end{DoxyParamCaption}
 )}}\label{class_player_abdea2b45e1a98e9942bdaca85f451734}
-Getter for the number of matches \hypertarget{class_player_ae72235dee0a2f7abbcb82002164623aa}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
+Getter for the number of matches \begin{DoxyReturn}{Returns}
+The number of matches 
+\end{DoxyReturn}
+\hypertarget{class_player_ae72235dee0a2f7abbcb82002164623aa}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
 \index{get\-Player\-Number@{get\-Player\-Number}!Player@{Player}}
 \subsubsection[{get\-Player\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Player\-Number (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_player_ae72235dee0a2f7abbcb82002164623aa}
-Getter for the players number \hypertarget{class_player_a2369527c90f1168eac2dc3f7bfaefc43}{\index{Player@{Player}!sort\-Hand@{sort\-Hand}}
+Getter for the players number \begin{DoxyReturn}{Returns}
+The player number 
+\end{DoxyReturn}
+\hypertarget{class_player_a2369527c90f1168eac2dc3f7bfaefc43}{\index{Player@{Player}!sort\-Hand@{sort\-Hand}}
 \index{sort\-Hand@{sort\-Hand}!Player@{Player}}
 \subsubsection[{sort\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::sort\-Hand (
 \begin{DoxyParamCaption}
@@ -126,7 +161,7 @@ Sorting hand helper function. \hypertarget{class_player_aa98f63d75da7cae403510b4
 \item[{{\bf Card}}]{}
 \end{DoxyParamCaption}
 )}}\label{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}
-Take one or more of the same card Face from the players hand 
+Take one of the same card Face from the players hand 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{class_card}{Card}} & to take \\
 \hline

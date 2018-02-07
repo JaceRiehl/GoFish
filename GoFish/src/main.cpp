@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 //    tempDeck.printDeck();
 //    Card c = tempDeck.dealCard();
 //    cout << "Size: " << tempDeck.getDeckSize() << endl;
-
+//
 //    Controller cont;
 //    cont.startGame();
     ::testing::InitGoogleTest(&argc, argv);

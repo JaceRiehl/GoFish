@@ -100,10 +100,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae72235dee0a2f7abbcb82002164623aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdea2b45e1a98e9942bdaca85f451734"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#abdea2b45e1a98e9942bdaca85f451734">getNumMatches</a> ()</td></tr>
 <tr class="separator:abdea2b45e1a98e9942bdaca85f451734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8157f88bbd4048e52e4fca94e92b49ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8157f88bbd4048e52e4fca94e92b49ac">getNumCards</a> ()</td></tr>
+<tr class="separator:a8157f88bbd4048e52e4fca94e92b49ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace93c12489cea500770591ccb47a2a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ace93c12489cea500770591ccb47a2a0c">addToHand</a> (vector&lt; <a class="el" href="class_card.html">Card</a> &gt; c)</td></tr>
 <tr class="separator:ace93c12489cea500770591ccb47a2a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa98f63d75da7cae403510b4c1e2a6ce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa98f63d75da7cae403510b4c1e2a6ce9">takeFromHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
 <tr class="separator:aa98f63d75da7cae403510b4c1e2a6ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9576fddfaa9c54a11f50df5604ec10c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac9576fddfaa9c54a11f50df5604ec10c">checkIfInHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
+<tr class="separator:ac9576fddfaa9c54a11f50df5604ec10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf635ce5997b0d4647a6f7d09b526dac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adf635ce5997b0d4647a6f7d09b526dac">checkMatchingPairs</a> ()</td></tr>
 <tr class="separator:adf635ce5997b0d4647a6f7d09b526dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca673336972f29fdc094b3f0f1f7f84"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6ca673336972f29fdc094b3f0f1f7f84">getHand</a> ()</td></tr>
@@ -187,6 +191,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac9576fddfaa9c54a11f50df5604ec10c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::checkIfInHand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_card.html">Card</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take one or more of the same card Face from the players hand </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_card.html">Card</a></td><td>to check against </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if it's in the hand, false otherwise </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="adf635ce5997b0d4647a6f7d09b526dac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -238,6 +266,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8157f88bbd4048e52e4fca94e92b49ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::getNumCards </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter for the number of cards in their hand </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of cards in their hand </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="abdea2b45e1a98e9942bdaca85f451734"></a>
 <div class="memitem">
 <div class="memproto">
@@ -251,6 +296,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Getter for the number of matches </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of matches </dd></dl>
 
 </div>
 </div>
@@ -267,6 +313,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Getter for the players number </p>
+<dl class="section return"><dt>Returns</dt><dd>The player number </dd></dl>
 
 </div>
 </div>
@@ -299,7 +346,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Take one or more of the same card Face from the players hand </p>
+<p>Take one of the same card Face from the players hand </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="class_card.html">Card</a></td><td>to take </td></tr>
@@ -316,7 +363,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 4 2018 18:08:10 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 7 2018 13:07:03 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

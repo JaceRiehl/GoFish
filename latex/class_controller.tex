@@ -17,6 +17,10 @@ void \hyperlink{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}{start\-Game}
 void \hyperlink{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}{inital\-Deal} ()
 \item 
 void \hyperlink{class_controller_aa93207ee72313ca40934a10bf36adca9}{go\-Fish\-Deal} (int)
+\item 
+void \hyperlink{class_controller_ad65603733541eb7698575f02de8f639d}{run\-Game} ()
+\item 
+int \hyperlink{class_controller_a9f08004e5e9c6462d188be01d07befe8}{turn} (int)
 \end{DoxyCompactItemize}
 
 
@@ -48,21 +52,48 @@ Destructor for \hyperlink{class_controller}{Controller}
 \item[{int}]{}
 \end{DoxyParamCaption}
 )}}\label{class_controller_aa93207ee72313ca40934a10bf36adca9}
-Deals a card to the player if they get a 'Go\-Fish' \hypertarget{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}{\index{Controller@{Controller}!inital\-Deal@{inital\-Deal}}
+Deals a card to the player if they get a 'Go\-Fish' 
+\begin{DoxyParams}{Parameters}
+{\em int} & that is the players number \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}{\index{Controller@{Controller}!inital\-Deal@{inital\-Deal}}
 \index{inital\-Deal@{inital\-Deal}!Controller@{Controller}}
 \subsubsection[{inital\-Deal}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::inital\-Deal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}
-Deals Cards to all Players \hypertarget{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}{\index{Controller@{Controller}!start\-Game@{start\-Game}}
+Deals Cards to all Players \hypertarget{class_controller_ad65603733541eb7698575f02de8f639d}{\index{Controller@{Controller}!run\-Game@{run\-Game}}
+\index{run\-Game@{run\-Game}!Controller@{Controller}}
+\subsubsection[{run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::run\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_ad65603733541eb7698575f02de8f639d}
+run\-Game does the loop that calls the appropriate functions to run the game until the game is won. \hypertarget{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}{\index{Controller@{Controller}!start\-Game@{start\-Game}}
 \index{start\-Game@{start\-Game}!Controller@{Controller}}
 \subsubsection[{start\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::start\-Game (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}
-Starts the game, creates players, and cascades events. 
+Starts the game, creates players, and cascades events. \hypertarget{class_controller_a9f08004e5e9c6462d188be01d07befe8}{\index{Controller@{Controller}!turn@{turn}}
+\index{turn@{turn}!Controller@{Controller}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}int Controller\-::turn (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_a9f08004e5e9c6462d188be01d07befe8}
+Calls a turn 
+\begin{DoxyParams}{Parameters}
+{\em int} & that is the players number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_player}{Player} that the current \hyperlink{class_player}{Player} fished 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

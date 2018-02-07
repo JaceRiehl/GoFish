@@ -102,6 +102,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa2a6716682fa463fc3d6bbdb510630e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93207ee72313ca40934a10bf36adca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa93207ee72313ca40934a10bf36adca9">goFishDeal</a> (int)</td></tr>
 <tr class="separator:aa93207ee72313ca40934a10bf36adca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65603733541eb7698575f02de8f639d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad65603733541eb7698575f02de8f639d">runGame</a> ()</td></tr>
+<tr class="separator:ad65603733541eb7698575f02de8f639d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f08004e5e9c6462d188be01d07befe8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9f08004e5e9c6462d188be01d07befe8">turn</a> (int)</td></tr>
+<tr class="separator:a9f08004e5e9c6462d188be01d07befe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The 'game' aspect of GoFish, it controls everything that happens in the game. </p>
@@ -169,6 +173,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Deals a card to the player if they get a 'GoFish' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>that is the players number </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -188,6 +198,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad65603733541eb7698575f02de8f639d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::runGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>runGame does the loop that calls the appropriate functions to run the game until the game is won. </p>
+
+</div>
+</div>
 <a class="anchor" id="a3a9e81ea10c63eea81c2612ba3beb5c4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -204,13 +230,37 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9f08004e5e9c6462d188be01d07befe8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Controller::turn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calls a turn </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>that is the players number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="class_player.html">Player</a> that the current <a class="el" href="class_player.html">Player</a> fished </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GoFish/include/<a class="el" href="_controller_8h_source.html">Controller.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 4 2018 18:08:10 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 7 2018 13:07:03 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -98,10 +98,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2ac9c7807cd417cddfbcf9f9f3141057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab300d2831c402f1eff4039fbf915a6b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_in.html#ab300d2831c402f1eff4039fbf915a6b6">choosePlayer</a> (int, int)</td></tr>
 <tr class="separator:ab300d2831c402f1eff4039fbf915a6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf98e259a5c4dce803722c2f18d2209"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_in.html#aedf98e259a5c4dce803722c2f18d2209">chooseCard</a> (int)</td></tr>
+<tr class="separator:aedf98e259a5c4dce803722c2f18d2209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81408b8c0292c5680da91c75525c8d3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_in.html#a81408b8c0292c5680da91c75525c8d3b">chooseNumPlayers</a> ()</td></tr>
 <tr class="separator:a81408b8c0292c5680da91c75525c8d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c5430a20d6f69b989443a0bc2b94593"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_in.html#a4c5430a20d6f69b989443a0bc2b94593">endTurn</a> ()</td></tr>
-<tr class="separator:a4c5430a20d6f69b989443a0bc2b94593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>View for the input statements. (View class) </p>
@@ -147,6 +147,30 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aedf98e259a5c4dce803722c2f18d2209"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ViewIn::chooseCard </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Choose the <a class="el" href="class_card.html">Card</a> number that will be checked against a player </p>
+<dl class="section return"><dt>Returns</dt><dd>The players choice of <a class="el" href="class_card.html">Card</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>that is the size of the hand. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a81408b8c0292c5680da91c75525c8d3b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -199,30 +223,13 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4c5430a20d6f69b989443a0bc2b94593"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ViewIn::endTurn </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Ask if the turn is ending </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the turn is ending, False if the player wants to fish another player </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GoFish/include/<a class="el" href="_view_in_8h_source.html">ViewIn.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 4 2018 18:08:10 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 7 2018 13:07:03 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

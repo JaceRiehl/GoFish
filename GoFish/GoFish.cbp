@@ -55,6 +55,8 @@
 		<Unit filename="src/ViewIn.cpp" />
 		<Unit filename="src/ViewOut.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="test/DeckMock.cpp" />
+		<Unit filename="test/DeckMock.h" />
 		<Unit filename="test/TestCard.cpp" />
 		<Unit filename="test/TestCard.h" />
 		<Unit filename="test/TestDeck.cpp" />
