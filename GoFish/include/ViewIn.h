@@ -39,11 +39,6 @@ class ViewIn
         *@return The number of players
         */
         int chooseNumPlayers();
-        /**
-        *Ask if the turn is ending
-        *@return True if the turn is ending, False if the player wants to fish another player
-        */
-        bool endTurn();
     protected:
 
     private:

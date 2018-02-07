@@ -22,7 +22,7 @@
 	<iostream>
 	<algorithm>
 
-1517787222 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
+1517968107 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
 	<iostream>
 	"Card.h"
 	"Deck.h"
@@ -77,10 +77,10 @@
 	"Card.h"
 	<iostream>
 
-1517967107 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
+1517968107 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
 	"ViewIn.h"
 
-1517870256 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
+1517967840 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
 	<iostream>
 	<string>
 	"ViewOut.h"
@@ -100,7 +100,7 @@
 1517967240 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
 	"Controller.h"
 
-1517962254 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
+1517967711 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
 	"Player.h"
 	"Deck.h"
 	"ViewIn.h"

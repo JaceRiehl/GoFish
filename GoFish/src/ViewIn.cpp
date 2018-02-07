@@ -57,25 +57,25 @@ int ViewIn::chooseCard(int maxCard)
     }
     return card;
 }
-
-bool ViewIn::endTurn()
-{
-    string strInput;
-    char c;
-    cout << "Do you want to end your turn? (Y/N): ";
-    cin >> strInput;
-    c = strInput[0];
-    putchar(toupper(c));
-    while(c != 'Y' || c != 'N')
-    {
-        cin >> strInput;
-        c = strInput[0];
-        putchar(toupper(c));
-    }
-    if(c == 'Y')
-        return true;
-    else
-        return false;
-}
+//
+//bool ViewIn::endTurn()
+//{
+//    string strInput;
+//    char c;
+//    cout << "Do you want to end your turn? (Y/N): ";
+//    cin >> strInput;
+//    c = strInput[0];
+//    putchar(toupper(c));
+//    while(c != 'Y' || c != 'N')
+//    {
+//        cin >> strInput;
+//        c = strInput[0];
+//        putchar(toupper(c));
+//    }
+//    if(c == 'Y')
+//        return true;
+//    else
+//        return false;
+//}
 
 

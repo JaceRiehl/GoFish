@@ -7,64 +7,24 @@
 			<Cursor1 position="388" topLine="11" />
 		</Cursor>
 	</File>
+	<File name="include/ViewIn.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="828" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="src/ViewIn.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1554" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="test/TestViewIn.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="307" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="test/TestDeck.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="391" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="test/TestDeck.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="761" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="../Makefile" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1645" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="include/Deck.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1128" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="src/ViewOut.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="803" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="include/ViewIn.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="866" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="test/TestCard.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="22" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/ViewOut.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1145" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="include/Card.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="151" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="378" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Player.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="20" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/Controller.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1185" topLine="28" />
 		</Cursor>
 	</File>
 	<File name="test/TestPlayer.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -72,9 +32,29 @@
 			<Cursor1 position="1366" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="include/Player.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/main.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="572" topLine="32" />
+			<Cursor1 position="381" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="test/TestViewIn.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="108" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Controller.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="230" topLine="110" />
+		</Cursor>
+	</File>
+	<File name="include/Controller.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1767" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="../Makefile" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1645" topLine="26" />
 		</Cursor>
 	</File>
 	<File name="src/Deck.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -82,24 +62,54 @@
 			<Cursor1 position="550" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="test/TestCard.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/ViewOut.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="266" topLine="0" />
+			<Cursor1 position="1145" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="src/ViewIn.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/Player.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="757" topLine="12" />
+			<Cursor1 position="316" topLine="51" />
 		</Cursor>
 	</File>
-	<File name="src/Controller.cpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/ViewOut.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="628" topLine="21" />
+			<Cursor1 position="803" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include/Deck.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1128" topLine="39" />
 		</Cursor>
 	</File>
 	<File name="test/TestPlayer.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1382" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="test/TestCard.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="22" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="test/TestCard.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="266" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/Card.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="test/TestDeck.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="607" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src/Player.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

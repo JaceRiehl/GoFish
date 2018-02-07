@@ -38,6 +38,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="../Makefile" />
@@ -60,6 +61,8 @@
 		<Unit filename="test/TestDeck.h" />
 		<Unit filename="test/TestPlayer.cpp" />
 		<Unit filename="test/TestPlayer.h" />
+		<Unit filename="test/TestViewIn.cpp" />
+		<Unit filename="test/TestViewIn.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

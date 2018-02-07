@@ -53,12 +53,29 @@ class Controller
         *@return The index of the player who has the most matches.
         */
         int mostMatches();
-
+        /**
+        *The players in the game.
+        */
         vector<Player> players;
+        /**
+        *The deck to be used for the game.
+        */
         Deck dealersDeck;
+        /**
+        *The number of players
+        */
         int numPlayers;
+        /**
+        *The total number of matches
+        */
         int numMatches = 0;
+        /**
+        *The View cout object
+        */
         ViewOut vO;
+        /**
+        *The View cin object for input
+        */
         ViewIn vI;
 };
 
