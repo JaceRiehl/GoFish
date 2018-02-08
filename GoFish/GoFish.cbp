@@ -57,6 +57,8 @@
 		<Unit filename="src/main.cpp">
 			<Option target="Release" />
 		</Unit>
+		<Unit filename="test/ControllerTest.cpp" />
+		<Unit filename="test/ControllerTest.h" />
 		<Unit filename="test/DeckMock.cpp" />
 		<Unit filename="test/DeckMock.h" />
 		<Unit filename="test/PlayerMock.cpp" />

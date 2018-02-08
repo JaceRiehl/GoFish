@@ -14,11 +14,11 @@ class Controller
         /**
         *Constructor for Controller
         */
-        Controller(){}
+        Controller(Deck*, vector<Player*>);
         /**
         *Destructor for Controller
         */
-        ~Controller(){}
+        ~Controller();
         /**
         *Starts the game, creates players, and cascades events.
         */
@@ -56,11 +56,11 @@ class Controller
         /**
         *The players in the game.
         */
-        vector<Player> players;
+        vector<Player*> players;
         /**
         *The deck to be used for the game.
         */
-        Deck dealersDeck;
+        Deck* dealersDeck;
         /**
         *The number of players
         */

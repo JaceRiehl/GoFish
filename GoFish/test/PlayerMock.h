@@ -13,6 +13,9 @@ class PlayerMock : public Player
         MOCK_METHOD1(takeFromHand,Card(Card));
         MOCK_METHOD1(checkIfInHand,bool(Card));
         MOCK_METHOD0(checkMatchingPairs, int());
+        MOCK_METHOD0(getHand,vector<Card>());
+        MOCK_METHOD0(getMatchedHand,vector<Card>());
+        MOCK_METHOD0(shuffleHand,void());
     protected:
 
     private:

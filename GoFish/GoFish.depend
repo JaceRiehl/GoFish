@@ -97,7 +97,7 @@
 	"Card.h"
 	<vector>
 
-1517967240 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
+1518054875 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
 	"Controller.h"
 
 1517967711 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
@@ -126,4 +126,12 @@
 1518049241 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/main.cpp
 	<iostream>
 	"gtest/gtest.h"
+
+1518054876 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.cpp
+	"PlayerMock.h"
+
+1518055444 /home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.h
+	"Player.h"
+	"Card.h"
+	"gmock/gmock.h"
 
