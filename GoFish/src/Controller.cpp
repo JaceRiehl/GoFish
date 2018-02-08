@@ -66,8 +66,6 @@ void Controller::runGame()
 
         index += 1;
         index = index % players.size();
-
-        cout << numMatches;
         if(numMatches == 13)
             break;
     }

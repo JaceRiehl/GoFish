@@ -11,6 +11,7 @@ class DeckMock : public Deck
         MOCK_METHOD0(shuffleDeck, void());
         MOCK_METHOD0(getDeck, vector<Card>());
         MOCK_METHOD0(dealCard, Card());
+        MOCK_METHOD0(getDeckSize,int());
 
     protected:
 
