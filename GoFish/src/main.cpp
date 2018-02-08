@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 //    Card c = tempDeck.dealCard();
 //    cout << "Size: " << tempDeck.getDeckSize() << endl;
 //
-    Controller cont;
-    cont.startGame();
-
+    //Controller cont;
+    //cont.startGame();
+    return 0;
 }

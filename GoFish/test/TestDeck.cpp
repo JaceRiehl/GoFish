@@ -12,7 +12,7 @@ TEST_F(TestDeck,testConstructor)
 TEST_F(TestDeck,testShuffleDeck)
 {
     //not sure how to test this, revisit
-    ASSERT_FALSE(retShufDeck[0].getFace() == "2");
+    ASSERT_FALSE(retShufDeck[0].getFace() == "2" || retShufDeck[1].getFace() == "2"|| retShufDeck[2].getFace() == "2"|| retShufDeck[3].getFace() == "2");
 
 }
 
