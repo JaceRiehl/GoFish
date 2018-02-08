@@ -23,24 +23,24 @@ class Deck
         /**
         Shuffles the current deck, no matter what the size is
         */
-        void shuffleDeck();
+        virtual void shuffleDeck();
         /**
         *Constructor to build a card.
         *@param The Card that is dealt that is removed from the deck
         */
-        Card dealCard();
+        virtual Card dealCard();
         /**
         *Prints the deck to console - to be deleted.
         */
-        void printDeck();
+        virtual void printDeck();
         /**
         *For Testing purposes
         */
-        vector<Card> getDeck();
+        virtual vector<Card> getDeck();
         /**
         *For Testing purposes
         */
-        int getDeckSize();
+        virtual int getDeckSize();
 
 
     protected:

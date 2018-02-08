@@ -61,7 +61,6 @@
 		<Unit filename="test/ControllerTest.h" />
 		<Unit filename="test/DeckMock.cpp" />
 		<Unit filename="test/DeckMock.h" />
-		<Unit filename="test/PlayerMock.cpp" />
 		<Unit filename="test/PlayerMock.h" />
 		<Unit filename="test/TestCard.cpp" />
 		<Unit filename="test/TestCard.h" />
@@ -70,6 +69,7 @@
 		<Unit filename="test/TestPlayer.cpp" />
 		<Unit filename="test/TestPlayer.h" />
 		<Unit filename="test/ViewInMock.h" />
+		<Unit filename="test/ViewOutMock.h" />
 		<Unit filename="test/main.cpp">
 			<Option target="Debug" />
 		</Unit>

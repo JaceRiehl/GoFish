@@ -1,6 +1,6 @@
 #ifndef VIEWOUTMOCK_H
 #define VIEWOUTMOCK_H
-#inlcude "ViewIn.h"
+#include "ViewIn.h"
 #include "gmock/gmock.h"
 #include "Player.h"
 #include <vector>

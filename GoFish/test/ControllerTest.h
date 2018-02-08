@@ -3,8 +3,19 @@
 #include "Controller.h"
 #include "DeckMock.h"
 #include "PlayerMock.h"
+#include "ViewInMock.h"
+#include "ViewOutMock.h"
+#include "Player.h"
+#include "Deck.h"
+#include "ViewIn.h"
+#include "ViewOut.h"
+#include "Card.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
+using namespace std;
 
-class ControllerTest
+
+class ControllerTest : public ::testing::Test
 {
     public:
         /**
@@ -12,7 +23,17 @@ class ControllerTest
         */
         virtual void SetUp()
         {
-
+            vI = new ViewInMock();
+            vO = new ViewOutMock();
+            p1 = new PlayerMock(1);
+            players.push_back(p1);
+            players.push_back(p1);
+            players.push_back(p1);
+            players.push_back(p1);
+            players.push_back(p1);
+            deck = new DeckMock();
+            c = new Controller(deck,players,vI,vO);
+            vI = dynamic_cast<ViewIn*>(vI);
         }
 
         /**
@@ -20,13 +41,20 @@ class ControllerTest
         */
         virtual void TearDown()
         {
-            delete c1;
-            delete c2;
+            delete c;
+            delete vI;
+            delete vO;
+            delete deck;
+            delete p1;
         }
 
     protected:
-        Controller* c1;
-        Controller* c2;
+        Controller* c;
+        ViewIn* vI;
+        ViewOut* vO;
+        Deck* deck;
+        Player* p1;
+        vector<Player*> players;
     private:
 };
 

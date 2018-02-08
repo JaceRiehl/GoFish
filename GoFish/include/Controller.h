@@ -14,7 +14,7 @@ class Controller
         /**
         *Constructor for Controller
         */
-        Controller(Deck*, vector<Player*>);
+        Controller(Deck*, vector<Player*>, ViewIn*, ViewOut*);
         /**
         *Destructor for Controller
         */
@@ -72,11 +72,11 @@ class Controller
         /**
         *The View cout object
         */
-        ViewOut vO;
+        ViewOut* vO;
         /**
         *The View cin object for input
         */
-        ViewIn vI;
+        ViewIn* vI;
 };
 
 #endif // CONTROLLER_H

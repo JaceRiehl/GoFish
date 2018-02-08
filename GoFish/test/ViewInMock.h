@@ -1,6 +1,6 @@
 #ifndef VIEWINMOCK_H
 #define VIEWINMOCK_H
-#inlcude "ViewIn.h"
+#include "ViewIn.h"
 #include "gmock/gmock.h"
 
 class ViewInMock : public ViewIn

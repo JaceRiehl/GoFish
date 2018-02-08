@@ -20,7 +20,7 @@ class ViewOut
         /**
         *Destructor for ViewOut
         */
-        ~ViewOut(){}
+        virtual ~ViewOut(){}
         /**
         *The welcome message to the game. It's the first message to be displayed when the game starts.
         */
@@ -29,21 +29,21 @@ class ViewOut
         *Display the hand of the person inputted
         *@param Vector of Card objects
         */
-        void coutDisplayPlayersHand(vector<Card>);
+        virtual void coutDisplayPlayersHand(vector<Card>);
         /**
         *Tell the Player that they had to GoFish.
         *@param bool that is true if the player can go fish and false if the deck is empty.
         */
-        void goFish(bool);
+        virtual void goFish(bool);
         /**
         *Displays which Players' turn it is.
         *@param The Player who's turn is ending.
         */
-        void displayTurn(Player);
+        virtual void displayTurn(Player);
         /**
         *The display message for the end of a players turn
         */
-        void endTurn();
+        virtual void endTurn();
         /**
         *Displays the ending message to the game. To be displayed when the game has ended.
         */
@@ -51,7 +51,7 @@ class ViewOut
         /**
         *Clears the terminal so that the player doesn't see the other players hand
         */
-        void clearTerminal();
+        virtual void clearTerminal();
 
     protected:
 

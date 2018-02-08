@@ -15,7 +15,7 @@
 1518053414 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
-1517788142 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
+1518131015 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
 	<vector>
 	<string>
 	"Card.h"
@@ -48,7 +48,7 @@
 	"gtest/gtest.h"
 	"Card.h"
 
-1518059576 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
+1518129276 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
 	"TestDeck.h"
 
 1518050436 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
@@ -60,7 +60,7 @@
 1518051742 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
 	"Player.h"
 
-1517961553 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
+1518131896 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
 	<vector>
 	"Card.h"
 	<algorithm>
@@ -80,7 +80,7 @@
 1517968107 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
 	"ViewIn.h"
 
-1517967840 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
+1518131028 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
 	<iostream>
 	<string>
 	"ViewOut.h"
@@ -90,17 +90,17 @@
 1517962254 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
 	"ViewOut.h"
 
-1517962254 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
+1518131025 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
 	<iostream>
 	<string>
 	"Player.h"
 	"Card.h"
 	<vector>
 
-1518059243 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
+1518133994 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
 	"Controller.h"
 
-1518058027 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
+1518129716 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
 	"Player.h"
 	"Deck.h"
 	"ViewIn.h"
@@ -130,10 +130,11 @@
 1518054876 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.cpp
 	"PlayerMock.h"
 
-1518055444 /home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.h
+1518131283 /home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.h
 	"Player.h"
 	"Card.h"
 	"gmock/gmock.h"
+	"gtest/gtest.h"
 
 1518059243 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/ControllerTest.cpp
 	"ControllerTest.h"

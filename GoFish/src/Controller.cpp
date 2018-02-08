@@ -1,9 +1,12 @@
 #include "Controller.h"
 
-Controller::Controller(Deck* dealer, vector<Player*> play)
+Controller::Controller(Deck* dealer, vector<Player*> play, ViewIn* viewIn, ViewOut* viewOut)
 {
     players = play;
     dealersDeck = dealer;
+    vI = viewIn;
+    vO = viewOut;
+
 }
 
 Controller::~Controller()
@@ -14,14 +17,14 @@ Controller::~Controller()
 void Controller::startGame()
 {
     dealersDeck->shuffleDeck();
-    vO.welcomeMessage();
-    numPlayers = vI.chooseNumPlayers();
+    vO->welcomeMessage();
+    numPlayers = vI->chooseNumPlayers();
     //numPlayers = 3;
 //    for(int player=0;player<numPlayers;player++)
 //    {
 //        players.push_back(Player(player+1));
 //    }
-    initalDeal();
+//    initalDeal();
 }
 
 void Controller::initalDeal()
@@ -50,9 +53,9 @@ void Controller::initalDeal()
     for(int i=0;i<numPlayers;i++)
     {
         vector<Card> pr = players[i]->getHand();
-        vO.coutDisplayPlayersHand(pr);
+        vO->coutDisplayPlayersHand(pr);
     }
-    runGame();
+//    runGame();
 }
 
 void Controller::runGame()
@@ -68,7 +71,7 @@ void Controller::runGame()
             if(players[index]->getNumCards() == 0 || players[fishedPlayer]->getNumCards() == 0)
             {
                 int winner = mostMatches();
-                vO.endingMessage(winner);
+                vO->endingMessage(winner);
                 break;
             }
         }
@@ -82,11 +85,11 @@ void Controller::runGame()
 
 int Controller::turn(int p)
 {
-    vO.displayTurn(*players[p]);
-    vO.coutDisplayPlayersHand(players[p]->getHand());
-    int fishPlayer = vI.choosePlayer(numPlayers,p+1);
+    vO->displayTurn(*players[p]);
+    vO->coutDisplayPlayersHand(players[p]->getHand());
+    int fishPlayer = vI->choosePlayer(numPlayers,p+1);
     vector<Card> hand = players[p]->getHand();
-    int cardNum = vI.chooseCard(hand.size());
+    int cardNum = vI->chooseCard(hand.size());
 //    bool canFish = players[fishPlayer-1].checkIfInHand(hand[cardNum-1]);
 //    cout << "Player Number : " << players[fishPlayer-1].getPlayerNumber() << " Card: " << hand[cardNum-1].getFace();
 //    cout << "Can Fish: " << canFish << endl;
@@ -106,7 +109,7 @@ int Controller::turn(int p)
             }
         }
         players[p]->addToHand(add);
-        vO.coutDisplayPlayersHand(players[p]->getHand());
+        vO->coutDisplayPlayersHand(players[p]->getHand());
     }
     else
         goFishDeal(p);
@@ -119,15 +122,15 @@ void Controller::goFishDeal(int p)
 {
     if(dealersDeck->getDeckSize() == 0)
     {
-        vO.goFish(false);
+        vO->goFish(false);
     }
     else
     {
-        vO.goFish(true);
+        vO->goFish(true);
         vector<Card> addToPlayersHand;
         addToPlayersHand.push_back(dealersDeck->dealCard());
         players[p]->addToHand(addToPlayersHand);
-        vO.coutDisplayPlayersHand(players[p]->getHand());
+        vO->coutDisplayPlayersHand(players[p]->getHand());
     }
 }
 

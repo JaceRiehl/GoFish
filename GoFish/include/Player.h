@@ -21,67 +21,67 @@ class Player
         /**
         *Destructor for Player
         */
-        ~Player(){}
+        virtual ~Player(){}
         /**
         *Getter for the players number
         *@return The player number
         */
-        int getPlayerNumber();
+        virtual int getPlayerNumber();
         /**
         *Getter for the number of matches
         *@return The number of matches
         */
-        int getNumMatches();
+        virtual int getNumMatches();
         /**
         *Getter for the number of cards in their hand
         *@return The number of cards in their hand
         */
-        int getNumCards();
+        virtual int getNumCards();
         /**
         *Add a card to the players hand
         *@param Card(s) to add
         */
-        void addToHand(vector<Card> c);
+        virtual void addToHand(vector<Card> c);
         /**
         *Take one of the same card Face from the players hand
         *@param Card to take
         *@return The matching cards
         */
-        Card takeFromHand(Card);
+        virtual Card takeFromHand(Card);
         /**
         *Take one or more of the same card Face from the players hand
         *@param Card to check against
         *@return true if it's in the hand, false otherwise
         */
-        bool checkIfInHand(Card);
+        virtual bool checkIfInHand(Card);
         /**
         *Check if there is any matching pairs in the players hand
         *@return bool
         */
-        bool checkMatchingPairs();
+        virtual bool checkMatchingPairs();
         /**
         *Get players hand
         *@return vector<Card> hand
         */
-        vector<Card> getHand();
+        virtual vector<Card> getHand();
         /**
         *Get players matched hand
         *@return vector<Card> hand
         */
-        vector<Card> getMatchedHand();
+        virtual vector<Card> getMatchedHand();
         /**
         *Sorting hand helper function.
         */
-        void sortHand();
+        virtual void sortHand();
 
 
     protected:
-
-    private:
         /**
         *The players number.
         */
         int playerNumber;
+    private:
+
         /**
         *The number of matching pairs the player has gained.
         */
