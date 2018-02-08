@@ -1,11 +1,16 @@
 #ifndef DECKMOCK_H
 #define DECKMOCK_H
-
-//using namespace ::testing
-class DeckMock
+#include "Deck.h"
+#include "Card.h"
+#include "gmock/gmock.h"
+//using namespace ::testing;
+class DeckMock : public Deck
 {
     public:
-        DeckMock();
+        //explicit DeckMock(){}
+        MOCK_METHOD0(shuffleDeck, void());
+        MOCK_METHOD0(getDeck, vector<Card>());
+        MOCK_METHOD0(dealCard, Card());
 
     protected:
 

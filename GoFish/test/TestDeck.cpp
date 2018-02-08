@@ -33,5 +33,10 @@ TEST_F(TestDeck,testDealCard)
     ASSERT_TRUE(returnedDeck[3].getFace() == deck->dealCard().getFace());
     ASSERT_TRUE(returnedDeck[3].getSuit() == deck->dealCard().getSuit());
 
+    for(int i=0;i<52;i++)
+        Card c4 = fullDeck->dealCard();
+    Card c4 = fullDeck->dealCard();
+    ASSERT_TRUE(c4 == Card("NULL","NULL"));
+
 }
 

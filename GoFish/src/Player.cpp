@@ -45,7 +45,8 @@ Card Player::takeFromHand(Card c)
             return cR;
         }
     }
-    return Card("NULL", "NULL");
+    Card ret("NULL","NULL");
+    return ret;
 
 }
     /*

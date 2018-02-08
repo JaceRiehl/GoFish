@@ -26,6 +26,7 @@ void Deck::printDeck()
         cout << deck[i].getSuit() << " " << deck[i].getFace() << endl;
     }
 }
+
 vector<Card> Deck::getDeck()
 {
     return deck;
@@ -35,8 +36,11 @@ Card Deck::dealCard()
 {
     int ind = indexCurrent;
     ++indexCurrent;
-    if(indexCurrent == 52)
-        return deck[0];
+    if(indexCurrent >= 52)
+    {
+        Card endDeck("NULL","NULL");
+        return endDeck;
+    }
     return deck[ind];
 }
 
