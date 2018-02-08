@@ -69,6 +69,7 @@
 		<Unit filename="test/TestDeck.h" />
 		<Unit filename="test/TestPlayer.cpp" />
 		<Unit filename="test/TestPlayer.h" />
+		<Unit filename="test/ViewInMock.h" />
 		<Unit filename="test/main.cpp">
 			<Option target="Debug" />
 		</Unit>
