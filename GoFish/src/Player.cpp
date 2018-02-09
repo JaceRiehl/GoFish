@@ -25,7 +25,7 @@ void Player::addToHand(vector<Card> c)
 }
 bool Player::checkIfInHand(Card c)
 {
-    for(int i = 0; i<currentHand.size();i++)
+    for(int i = 0; i<(int)currentHand.size();i++)
     {
         if(c.getFace() == currentHand[i].getFace())
         {
