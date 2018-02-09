@@ -18,6 +18,11 @@
 					<Add directory="GoFish/test" />
 					<Add directory="GoFish/include" />
 				</Compiler>
+				<Linker>
+					<Add option="-lgtest" />
+					<Add option="/usr/src/gmock/gmock-all.cc" />
+					<Add option="-lpthread" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/GoFish" prefix_auto="1" extension_auto="1" />

@@ -12,6 +12,8 @@ Controller::Controller(Deck* dealer, vector<Player*> play, ViewIn* viewIn, ViewO
 Controller::~Controller()
 {
     delete dealersDeck;
+    delete vI;
+    delete vO;
 }
 
 void Controller::startGame()

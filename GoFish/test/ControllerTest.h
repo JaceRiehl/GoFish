@@ -27,17 +27,25 @@ class ControllerTest : public ::testing::Test
             vI = new ViewInMock();
             vO = new ViewOutMock();
             p1 = new PlayerMock(1);
+            p2 = new PlayerMock(2);
+            p3 = new PlayerMock(3);
+            p4 = new PlayerMock(4);
+            p5 = new PlayerMock(5);
             players.push_back(p1);
-            players.push_back(p1);
-            players.push_back(p1);
-            players.push_back(p1);
-            players.push_back(p1);
+            players.push_back(p2);
+            players.push_back(p3);
+            players.push_back(p4);
+            players.push_back(p5);
             deck = new DeckMock();
             c = new Controller(deck,players,vI,vO);
-            vI = dynamic_cast<ViewIn*>(vI);
-            vO = dynamic_cast<ViewOut*>(vO);
-            p1 = dynamic_cast<Player*>(p1);
-            deck = dynamic_cast<Deck*>(deck);
+            vIMock = dynamic_cast<ViewInMock*>(vI);
+            vOMock = dynamic_cast<ViewOutMock*>(vO);
+            p1Mock = dynamic_cast<PlayerMock*>(p1);
+            p2Mock = dynamic_cast<PlayerMock*>(p2);
+            p3Mock = dynamic_cast<PlayerMock*>(p3);
+            p4Mock = dynamic_cast<PlayerMock*>(p4);
+            p5Mock = dynamic_cast<PlayerMock*>(p5);
+            deckMock = dynamic_cast<DeckMock*>(deck);
         }
 
         /**
@@ -46,18 +54,34 @@ class ControllerTest : public ::testing::Test
         virtual void TearDown()
         {
             delete c;
-            delete vI;
-            delete vO;
-            delete deck;
-            delete p1;
+//            delete vIMock;
+//            delete vOMock;
+//            delete deckMock;
+            delete p1Mock;
+            delete p2Mock;
+            delete p3Mock;
+            delete p4Mock;
+            delete p5Mock;
         }
 
     protected:
         Controller* c;
         ViewIn* vI;
+        ViewInMock* vIMock;
         ViewOut* vO;
+        ViewOutMock* vOMock;
         Deck* deck;
+        DeckMock* deckMock;
         Player* p1;
+        Player* p2;
+        Player* p3;
+        Player* p4;
+        Player* p5;
+        PlayerMock* p1Mock;
+        PlayerMock* p2Mock;
+        PlayerMock* p3Mock;
+        PlayerMock* p4Mock;
+        PlayerMock* p5Mock;
         vector<Player*> players;
     private:
 };
