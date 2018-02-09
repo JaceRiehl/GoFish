@@ -71,10 +71,10 @@ Card Player::takeFromHand(Card c)
 bool Player::checkMatchingPairs()
 {
     sortHand();
-    int numMatched;
+    //int numMatched = 0;
     for(int i=0;i<currentHand.size();i++)
     {
-        numMatched = 0;
+        int numMatched = 0;
         for(int j=i+1;j<currentHand.size();j++){
             if(currentHand[i].getFace() == currentHand[j].getFace())
             {

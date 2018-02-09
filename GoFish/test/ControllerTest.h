@@ -12,8 +12,9 @@
 #include "Card.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
+#include <vector>
 using namespace std;
-
+using namespace ::testing;
 
 class ControllerTest : public ::testing::Test
 {
@@ -34,6 +35,9 @@ class ControllerTest : public ::testing::Test
             deck = new DeckMock();
             c = new Controller(deck,players,vI,vO);
             vI = dynamic_cast<ViewIn*>(vI);
+            vO = dynamic_cast<ViewOut*>(vO);
+            p1 = dynamic_cast<Player*>(p1);
+            deck = dynamic_cast<Deck*>(deck);
         }
 
         /**

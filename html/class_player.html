@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_player-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Player Class Reference</div>  </div>
@@ -94,28 +95,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a80d1293f6f49b886db318f1dae7be23b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a80d1293f6f49b886db318f1dae7be23b">Player</a> (int pN)</td></tr>
 <tr class="separator:a80d1293f6f49b886db318f1dae7be23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
-<tr class="separator:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae72235dee0a2f7abbcb82002164623aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae72235dee0a2f7abbcb82002164623aa">getPlayerNumber</a> ()</td></tr>
-<tr class="separator:ae72235dee0a2f7abbcb82002164623aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdea2b45e1a98e9942bdaca85f451734"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#abdea2b45e1a98e9942bdaca85f451734">getNumMatches</a> ()</td></tr>
-<tr class="separator:abdea2b45e1a98e9942bdaca85f451734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8157f88bbd4048e52e4fca94e92b49ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8157f88bbd4048e52e4fca94e92b49ac">getNumCards</a> ()</td></tr>
-<tr class="separator:a8157f88bbd4048e52e4fca94e92b49ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace93c12489cea500770591ccb47a2a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ace93c12489cea500770591ccb47a2a0c">addToHand</a> (vector&lt; <a class="el" href="class_card.html">Card</a> &gt; c)</td></tr>
-<tr class="separator:ace93c12489cea500770591ccb47a2a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98f63d75da7cae403510b4c1e2a6ce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa98f63d75da7cae403510b4c1e2a6ce9">takeFromHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
-<tr class="separator:aa98f63d75da7cae403510b4c1e2a6ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9576fddfaa9c54a11f50df5604ec10c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac9576fddfaa9c54a11f50df5604ec10c">checkIfInHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
-<tr class="separator:ac9576fddfaa9c54a11f50df5604ec10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf635ce5997b0d4647a6f7d09b526dac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adf635ce5997b0d4647a6f7d09b526dac">checkMatchingPairs</a> ()</td></tr>
-<tr class="separator:adf635ce5997b0d4647a6f7d09b526dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca673336972f29fdc094b3f0f1f7f84"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6ca673336972f29fdc094b3f0f1f7f84">getHand</a> ()</td></tr>
-<tr class="separator:a6ca673336972f29fdc094b3f0f1f7f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09fbf15e6a001feea60cb53d02ec3912"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a09fbf15e6a001feea60cb53d02ec3912">getMatchedHand</a> ()</td></tr>
-<tr class="separator:a09fbf15e6a001feea60cb53d02ec3912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2369527c90f1168eac2dc3f7bfaefc43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2369527c90f1168eac2dc3f7bfaefc43">sortHand</a> ()</td></tr>
-<tr class="separator:a2369527c90f1168eac2dc3f7bfaefc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8981c201ffb2270c0b6dbd467b627376"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8981c201ffb2270c0b6dbd467b627376">~Player</a> ()</td></tr>
+<tr class="separator:a8981c201ffb2270c0b6dbd467b627376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fbbc1c4386e4cc59622561707de58f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a31fbbc1c4386e4cc59622561707de58f">getPlayerNumber</a> ()</td></tr>
+<tr class="separator:a31fbbc1c4386e4cc59622561707de58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529073d2d9fe03d4a257264165fd254d"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a529073d2d9fe03d4a257264165fd254d">getNumMatches</a> ()</td></tr>
+<tr class="separator:a529073d2d9fe03d4a257264165fd254d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeea001d79927a2a5fd78610e971f789"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afeea001d79927a2a5fd78610e971f789">getNumCards</a> ()</td></tr>
+<tr class="separator:afeea001d79927a2a5fd78610e971f789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cd88ac5969bf7a9f18ae85a3e7ef90"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a39cd88ac5969bf7a9f18ae85a3e7ef90">addToHand</a> (vector&lt; <a class="el" href="class_card.html">Card</a> &gt; c)</td></tr>
+<tr class="separator:a39cd88ac5969bf7a9f18ae85a3e7ef90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4de307960ce9cef2e2704a7a73a931"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9e4de307960ce9cef2e2704a7a73a931">takeFromHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
+<tr class="separator:a9e4de307960ce9cef2e2704a7a73a931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5373406c782e50ca655e09e712e9f9a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad5373406c782e50ca655e09e712e9f9a">checkIfInHand</a> (<a class="el" href="class_card.html">Card</a>)</td></tr>
+<tr class="separator:ad5373406c782e50ca655e09e712e9f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f4860c059f1eba073c0e46ef8442266"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8f4860c059f1eba073c0e46ef8442266">checkMatchingPairs</a> ()</td></tr>
+<tr class="separator:a8f4860c059f1eba073c0e46ef8442266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd21ebb55fff1b382bc1c4ed73c3a29"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3fd21ebb55fff1b382bc1c4ed73c3a29">getHand</a> ()</td></tr>
+<tr class="separator:a3fd21ebb55fff1b382bc1c4ed73c3a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccce21812baacf099a025fb90c3862d"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4ccce21812baacf099a025fb90c3862d">getMatchedHand</a> ()</td></tr>
+<tr class="separator:a4ccce21812baacf099a025fb90c3862d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0498ce6dc3fbbf21d42e010466c41a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2e0498ce6dc3fbbf21d42e010466c41a">sortHand</a> ()</td></tr>
+<tr class="separator:a2e0498ce6dc3fbbf21d42e010466c41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:adfea67ca8c4a03b59fee1bb09789f1bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adfea67ca8c4a03b59fee1bb09789f1bc">playerNumber</a></td></tr>
+<tr class="separator:adfea67ca8c4a03b59fee1bb09789f1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to represent a player to the game. </p>
@@ -143,7 +149,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a>
+<a class="anchor" id="a8981c201ffb2270c0b6dbd467b627376"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -151,7 +157,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Player::~Player </td>
+          <td class="memname">virtual Player::~Player </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -159,7 +165,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -168,18 +174,26 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ace93c12489cea500770591ccb47a2a0c"></a>
+<a class="anchor" id="a39cd88ac5969bf7a9f18ae85a3e7ef90"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::addToHand </td>
+          <td class="memname">virtual void Player::addToHand </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td>
           <td class="paramname"><em>c</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Add a card to the players hand </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -191,18 +205,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac9576fddfaa9c54a11f50df5604ec10c"></a>
+<a class="anchor" id="ad5373406c782e50ca655e09e712e9f9a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Player::checkIfInHand </td>
+          <td class="memname">virtual bool Player::checkIfInHand </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_card.html">Card</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Take one or more of the same card Face from the players hand </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -215,136 +237,200 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adf635ce5997b0d4647a6f7d09b526dac"></a>
+<a class="anchor" id="a8f4860c059f1eba073c0e46ef8442266"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Player::checkMatchingPairs </td>
+          <td class="memname">virtual bool Player::checkMatchingPairs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Check if there is any matching pairs in the players hand </p>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6ca673336972f29fdc094b3f0f1f7f84"></a>
+<a class="anchor" id="a3fd21ebb55fff1b382bc1c4ed73c3a29"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Player::getHand </td>
+          <td class="memname">virtual vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Player::getHand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Get players hand </p>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;Card&gt; hand </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a09fbf15e6a001feea60cb53d02ec3912"></a>
+<a class="anchor" id="a4ccce21812baacf099a025fb90c3862d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Player::getMatchedHand </td>
+          <td class="memname">virtual vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Player::getMatchedHand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Get players matched hand </p>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;Card&gt; hand </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8157f88bbd4048e52e4fca94e92b49ac"></a>
+<a class="anchor" id="afeea001d79927a2a5fd78610e971f789"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Player::getNumCards </td>
+          <td class="memname">virtual int Player::getNumCards </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Getter for the number of cards in their hand </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of cards in their hand </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="abdea2b45e1a98e9942bdaca85f451734"></a>
+<a class="anchor" id="a529073d2d9fe03d4a257264165fd254d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Player::getNumMatches </td>
+          <td class="memname">virtual int Player::getNumMatches </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Getter for the number of matches </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of matches </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae72235dee0a2f7abbcb82002164623aa"></a>
+<a class="anchor" id="a31fbbc1c4386e4cc59622561707de58f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Player::getPlayerNumber </td>
+          <td class="memname">virtual int Player::getPlayerNumber </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Getter for the players number </p>
 <dl class="section return"><dt>Returns</dt><dd>The player number </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a2369527c90f1168eac2dc3f7bfaefc43"></a>
+<a class="anchor" id="a2e0498ce6dc3fbbf21d42e010466c41a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::sortHand </td>
+          <td class="memname">virtual void Player::sortHand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Sorting hand helper function. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa98f63d75da7cae403510b4c1e2a6ce9"></a>
+<a class="anchor" id="a9e4de307960ce9cef2e2704a7a73a931"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_card.html">Card</a> Player::takeFromHand </td>
+          <td class="memname">virtual <a class="el" href="class_card.html">Card</a> Player::takeFromHand </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_card.html">Card</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Take one of the same card Face from the players hand </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -357,13 +443,35 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="adfea67ca8c4a03b59fee1bb09789f1bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::playerNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The players number. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GoFish/include/<a class="el" href="_player_8h_source.html">Player.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 7 2018 20:11:07 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 8 2018 17:46:25 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

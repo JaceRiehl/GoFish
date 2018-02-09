@@ -17,7 +17,7 @@ class Player
         *Constructor for Player
         *@param the players number
         */
-        Player(int pN);
+        explicit Player(int pN);
         /**
         *Destructor for Player
         */

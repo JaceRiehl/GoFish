@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_controller.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller.html">Controller</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_controller.html#a8b7a23e164dc092ae540501ea698dd6e">Controller</a>(<a class="code" href="class_deck.html">Deck</a>*, vector&lt;Player*&gt;);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_controller.html#acc5b83a368d1b5985f34d28e23c0f4c5">Controller</a>(<a class="code" href="class_deck.html">Deck</a>*, vector&lt;Player*&gt;, <a class="code" href="class_view_in.html">ViewIn</a>*, <a class="code" href="class_view_out.html">ViewOut</a>*);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a3a9e81ea10c63eea81c2612ba3beb5c4">startGame</a>();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_controller.html#aa2a6716682fa463fc3d6bbdb510630e5">initalDeal</a>();</div>
@@ -114,8 +114,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_deck.html">Deck</a>* dealersDeck;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> numPlayers;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">int</span> numMatches = 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_view_out.html">ViewOut</a> vO;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_view_in.html">ViewIn</a> vI;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_view_out.html">ViewOut</a>* vO;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_view_in.html">ViewIn</a>* vI;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif // CONTROLLER_H</span></div>
@@ -126,14 +126,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdef"><b>Definition:</b> Deck.h:12</div></div>
 <div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> Controller.h:11</div></div>
 <div class="ttc" id="class_controller_html_a3a9e81ea10c63eea81c2612ba3beb5c4"><div class="ttname"><a href="class_controller.html#a3a9e81ea10c63eea81c2612ba3beb5c4">Controller::startGame</a></div><div class="ttdeci">void startGame()</div></div>
-<div class="ttc" id="class_controller_html_a8b7a23e164dc092ae540501ea698dd6e"><div class="ttname"><a href="class_controller.html#a8b7a23e164dc092ae540501ea698dd6e">Controller::Controller</a></div><div class="ttdeci">Controller(Deck *, vector&lt; Player * &gt;)</div></div>
+<div class="ttc" id="class_controller_html_acc5b83a368d1b5985f34d28e23c0f4c5"><div class="ttname"><a href="class_controller.html#acc5b83a368d1b5985f34d28e23c0f4c5">Controller::Controller</a></div><div class="ttdeci">Controller(Deck *, vector&lt; Player * &gt;, ViewIn *, ViewOut *)</div></div>
 <div class="ttc" id="class_controller_html_a9f08004e5e9c6462d188be01d07befe8"><div class="ttname"><a href="class_controller.html#a9f08004e5e9c6462d188be01d07befe8">Controller::turn</a></div><div class="ttdeci">int turn(int)</div></div>
 <div class="ttc" id="class_controller_html_ad65603733541eb7698575f02de8f639d"><div class="ttname"><a href="class_controller.html#ad65603733541eb7698575f02de8f639d">Controller::runGame</a></div><div class="ttdeci">void runGame()</div></div>
 <div class="ttc" id="class_view_in_html"><div class="ttname"><a href="class_view_in.html">ViewIn</a></div><div class="ttdef"><b>Definition:</b> ViewIn.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 7 2018 20:11:07 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 8 2018 17:46:25 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

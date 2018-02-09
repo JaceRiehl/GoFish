@@ -29,8 +29,6 @@ void Controller::startGame()
 
 void Controller::initalDeal()
 {
-    if(numPlayers > 5 || numPlayers < 0)
-        numPlayers = 5;
     cout << "Num PlayersL " << numPlayers << endl;
     int cardPerPlayer = 7;
     if(numPlayers == 2 || numPlayers == 3)

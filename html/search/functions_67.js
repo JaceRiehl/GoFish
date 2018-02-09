@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['getdeck',['getDeck',['../class_deck.html#a4a2163e4829f910ec687311ddff45e98',1,'Deck']]],
-  ['getdecksize',['getDeckSize',['../class_deck.html#ad775d4b99ec86991402ad12266b1b157',1,'Deck']]],
+  ['getdeck',['getDeck',['../class_deck.html#a95171bc96437f86ce24aa0103eafcea6',1,'Deck']]],
+  ['getdecksize',['getDeckSize',['../class_deck.html#a43795439864d704d33feffd43d10adb7',1,'Deck']]],
   ['getface',['getFace',['../class_card.html#afb2b73b451cc753663edab09abfc4bd6',1,'Card']]],
-  ['gethand',['getHand',['../class_player.html#a6ca673336972f29fdc094b3f0f1f7f84',1,'Player']]],
-  ['getmatchedhand',['getMatchedHand',['../class_player.html#a09fbf15e6a001feea60cb53d02ec3912',1,'Player']]],
-  ['getnumcards',['getNumCards',['../class_player.html#a8157f88bbd4048e52e4fca94e92b49ac',1,'Player']]],
-  ['getnummatches',['getNumMatches',['../class_player.html#abdea2b45e1a98e9942bdaca85f451734',1,'Player']]],
-  ['getplayernumber',['getPlayerNumber',['../class_player.html#ae72235dee0a2f7abbcb82002164623aa',1,'Player']]],
+  ['gethand',['getHand',['../class_player.html#a3fd21ebb55fff1b382bc1c4ed73c3a29',1,'Player']]],
+  ['getmatchedhand',['getMatchedHand',['../class_player.html#a4ccce21812baacf099a025fb90c3862d',1,'Player']]],
+  ['getnumcards',['getNumCards',['../class_player.html#afeea001d79927a2a5fd78610e971f789',1,'Player']]],
+  ['getnummatches',['getNumMatches',['../class_player.html#a529073d2d9fe03d4a257264165fd254d',1,'Player']]],
+  ['getplayernumber',['getPlayerNumber',['../class_player.html#a31fbbc1c4386e4cc59622561707de58f',1,'Player']]],
   ['getsuit',['getSuit',['../class_card.html#a6bda7d706eb87b009c94ae2a9654f6d9',1,'Card']]],
-  ['gofish',['goFish',['../class_view_out.html#a58d07bdb6de0532e22c60cf047d9c759',1,'ViewOut']]],
+  ['gofish',['goFish',['../class_view_out.html#af105d2c4d0404c4c31ef4ac6daa1fdf8',1,'ViewOut']]],
   ['gofishdeal',['goFishDeal',['../class_controller.html#aa93207ee72313ca40934a10bf36adca9',1,'Controller']]]
 ];

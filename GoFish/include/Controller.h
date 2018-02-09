@@ -64,7 +64,7 @@ class Controller
         /**
         *The number of players
         */
-        int numPlayers;
+        int numPlayers = 0;
         /**
         *The total number of matches
         */

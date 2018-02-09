@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,22 +87,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="class_player.html">Player</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_player.html#ace93c12489cea500770591ccb47a2a0c">addToHand</a>(vector&lt; Card &gt; c)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#ac9576fddfaa9c54a11f50df5604ec10c">checkIfInHand</a>(Card)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_player.html#adf635ce5997b0d4647a6f7d09b526dac">checkMatchingPairs</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#a6ca673336972f29fdc094b3f0f1f7f84">getHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a09fbf15e6a001feea60cb53d02ec3912">getMatchedHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#a8157f88bbd4048e52e4fca94e92b49ac">getNumCards</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_player.html#abdea2b45e1a98e9942bdaca85f451734">getNumMatches</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#ae72235dee0a2f7abbcb82002164623aa">getPlayerNumber</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a39cd88ac5969bf7a9f18ae85a3e7ef90">addToHand</a>(vector&lt; Card &gt; c)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#ad5373406c782e50ca655e09e712e9f9a">checkIfInHand</a>(Card)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a8f4860c059f1eba073c0e46ef8442266">checkMatchingPairs</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#a3fd21ebb55fff1b382bc1c4ed73c3a29">getHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a4ccce21812baacf099a025fb90c3862d">getMatchedHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#afeea001d79927a2a5fd78610e971f789">getNumCards</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a529073d2d9fe03d4a257264165fd254d">getNumMatches</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#a31fbbc1c4386e4cc59622561707de58f">getPlayerNumber</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_player.html#a80d1293f6f49b886db318f1dae7be23b">Player</a>(int pN)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#a2369527c90f1168eac2dc3f7bfaefc43">sortHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_player.html#aa98f63d75da7cae403510b4c1e2a6ce9">takeFromHand</a>(Card)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#adfea67ca8c4a03b59fee1bb09789f1bc">playerNumber</a></td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a2e0498ce6dc3fbbf21d42e010466c41a">sortHand</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_player.html#a9e4de307960ce9cef2e2704a7a73a931">takeFromHand</a>(Card)</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_player.html#a8981c201ffb2270c0b6dbd467b627376">~Player</a>()</td><td class="entry"><a class="el" href="class_player.html">Player</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 7 2018 20:11:07 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 8 2018 17:46:25 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

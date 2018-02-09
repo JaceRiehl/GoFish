@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,16 +96,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a57ae1cb4ac6fd61c249cefb2db85eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0455563eccd460a9ff84e74b858beb30"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a0455563eccd460a9ff84e74b858beb30">~Deck</a> ()</td></tr>
 <tr class="separator:a0455563eccd460a9ff84e74b858beb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44577729d5b8cc5f5b416adb46ac3cd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a44577729d5b8cc5f5b416adb46ac3cd5">shuffleDeck</a> ()</td></tr>
-<tr class="separator:a44577729d5b8cc5f5b416adb46ac3cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a0547af6395feb13f4402a2a63b79fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a7a0547af6395feb13f4402a2a63b79fe">dealCard</a> ()</td></tr>
-<tr class="separator:a7a0547af6395feb13f4402a2a63b79fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1737fb34704fc23e268725848ecd15ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a1737fb34704fc23e268725848ecd15ed">printDeck</a> ()</td></tr>
-<tr class="separator:a1737fb34704fc23e268725848ecd15ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a2163e4829f910ec687311ddff45e98"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a4a2163e4829f910ec687311ddff45e98">getDeck</a> ()</td></tr>
-<tr class="separator:a4a2163e4829f910ec687311ddff45e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad775d4b99ec86991402ad12266b1b157"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#ad775d4b99ec86991402ad12266b1b157">getDeckSize</a> ()</td></tr>
-<tr class="separator:ad775d4b99ec86991402ad12266b1b157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7487a75ebb6b729a97b5250b101324b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a7487a75ebb6b729a97b5250b101324b4">shuffleDeck</a> ()</td></tr>
+<tr class="separator:a7487a75ebb6b729a97b5250b101324b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621e5f6f80e45ee17176686833c3299c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a621e5f6f80e45ee17176686833c3299c">dealCard</a> ()</td></tr>
+<tr class="separator:a621e5f6f80e45ee17176686833c3299c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8bef2632fd7c823218e83491a60abf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a2e8bef2632fd7c823218e83491a60abf">printDeck</a> ()</td></tr>
+<tr class="separator:a2e8bef2632fd7c823218e83491a60abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95171bc96437f86ce24aa0103eafcea6"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="class_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a95171bc96437f86ce24aa0103eafcea6">getDeck</a> ()</td></tr>
+<tr class="separator:a95171bc96437f86ce24aa0103eafcea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43795439864d704d33feffd43d10adb7"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deck.html#a43795439864d704d33feffd43d10adb7">getDeckSize</a> ()</td></tr>
+<tr class="separator:a43795439864d704d33feffd43d10adb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to represent a deck of a standard 52 card deck. </p>
@@ -151,17 +151,25 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7a0547af6395feb13f4402a2a63b79fe"></a>
+<a class="anchor" id="a621e5f6f80e45ee17176686833c3299c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_card.html">Card</a> Deck::dealCard </td>
+          <td class="memname">virtual <a class="el" href="class_card.html">Card</a> Deck::dealCard </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Constructor to build a card. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -173,65 +181,97 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4a2163e4829f910ec687311ddff45e98"></a>
+<a class="anchor" id="a95171bc96437f86ce24aa0103eafcea6"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Deck::getDeck </td>
+          <td class="memname">virtual vector&lt;<a class="el" href="class_card.html">Card</a>&gt; Deck::getDeck </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>For Testing purposes </p>
 
 </div>
 </div>
-<a class="anchor" id="ad775d4b99ec86991402ad12266b1b157"></a>
+<a class="anchor" id="a43795439864d704d33feffd43d10adb7"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Deck::getDeckSize </td>
+          <td class="memname">virtual int Deck::getDeckSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>For Testing purposes </p>
 
 </div>
 </div>
-<a class="anchor" id="a1737fb34704fc23e268725848ecd15ed"></a>
+<a class="anchor" id="a2e8bef2632fd7c823218e83491a60abf"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Deck::printDeck </td>
+          <td class="memname">virtual void Deck::printDeck </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Prints the deck to console - to be deleted. </p>
 
 </div>
 </div>
-<a class="anchor" id="a44577729d5b8cc5f5b416adb46ac3cd5"></a>
+<a class="anchor" id="a7487a75ebb6b729a97b5250b101324b4"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Deck::shuffleDeck </td>
+          <td class="memname">virtual void Deck::shuffleDeck </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Shuffles the current deck, no matter what the size is </p>
 
@@ -243,7 +283,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 7 2018 20:11:07 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 8 2018 17:46:25 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -10,27 +10,32 @@
 \item 
 \hyperlink{class_player_a80d1293f6f49b886db318f1dae7be23b}{Player} (int p\-N)
 \item 
-\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\-Player} ()
+virtual \hyperlink{class_player_a8981c201ffb2270c0b6dbd467b627376}{$\sim$\-Player} ()
 \item 
-int \hyperlink{class_player_ae72235dee0a2f7abbcb82002164623aa}{get\-Player\-Number} ()
+virtual int \hyperlink{class_player_a31fbbc1c4386e4cc59622561707de58f}{get\-Player\-Number} ()
 \item 
-int \hyperlink{class_player_abdea2b45e1a98e9942bdaca85f451734}{get\-Num\-Matches} ()
+virtual int \hyperlink{class_player_a529073d2d9fe03d4a257264165fd254d}{get\-Num\-Matches} ()
 \item 
-int \hyperlink{class_player_a8157f88bbd4048e52e4fca94e92b49ac}{get\-Num\-Cards} ()
+virtual int \hyperlink{class_player_afeea001d79927a2a5fd78610e971f789}{get\-Num\-Cards} ()
 \item 
-void \hyperlink{class_player_ace93c12489cea500770591ccb47a2a0c}{add\-To\-Hand} (vector$<$ \hyperlink{class_card}{Card} $>$ c)
+virtual void \hyperlink{class_player_a39cd88ac5969bf7a9f18ae85a3e7ef90}{add\-To\-Hand} (vector$<$ \hyperlink{class_card}{Card} $>$ c)
 \item 
-\hyperlink{class_card}{Card} \hyperlink{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}{take\-From\-Hand} (\hyperlink{class_card}{Card})
+virtual \hyperlink{class_card}{Card} \hyperlink{class_player_a9e4de307960ce9cef2e2704a7a73a931}{take\-From\-Hand} (\hyperlink{class_card}{Card})
 \item 
-bool \hyperlink{class_player_ac9576fddfaa9c54a11f50df5604ec10c}{check\-If\-In\-Hand} (\hyperlink{class_card}{Card})
+virtual bool \hyperlink{class_player_ad5373406c782e50ca655e09e712e9f9a}{check\-If\-In\-Hand} (\hyperlink{class_card}{Card})
 \item 
-bool \hyperlink{class_player_adf635ce5997b0d4647a6f7d09b526dac}{check\-Matching\-Pairs} ()
+virtual bool \hyperlink{class_player_a8f4860c059f1eba073c0e46ef8442266}{check\-Matching\-Pairs} ()
 \item 
-vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a6ca673336972f29fdc094b3f0f1f7f84}{get\-Hand} ()
+virtual vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a3fd21ebb55fff1b382bc1c4ed73c3a29}{get\-Hand} ()
 \item 
-vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a09fbf15e6a001feea60cb53d02ec3912}{get\-Matched\-Hand} ()
+virtual vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_player_a4ccce21812baacf099a025fb90c3862d}{get\-Matched\-Hand} ()
 \item 
-void \hyperlink{class_player_a2369527c90f1168eac2dc3f7bfaefc43}{sort\-Hand} ()
+virtual void \hyperlink{class_player_a2e0498ce6dc3fbbf21d42e010466c41a}{sort\-Hand} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_player_adfea67ca8c4a03b59fee1bb09789f1bc}{player\-Number}
 \end{DoxyCompactItemize}
 
 
@@ -50,35 +55,35 @@ Constructor for \hyperlink{class_player}{Player}
 {\em the} & players number \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{\index{Player@{Player}!$\sim$\-Player@{$\sim$\-Player}}
+\hypertarget{class_player_a8981c201ffb2270c0b6dbd467b627376}{\index{Player@{Player}!$\sim$\-Player@{$\sim$\-Player}}
 \index{$\sim$\-Player@{$\sim$\-Player}!Player@{Player}}
-\subsubsection[{$\sim$\-Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::$\sim$\-Player (
+\subsubsection[{$\sim$\-Player}]{\setlength{\rightskip}{0pt plus 5cm}virtual Player\-::$\sim$\-Player (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_player_a749d2c00e1fe0f5c2746f7505a58c062}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_player_a8981c201ffb2270c0b6dbd467b627376}
 Destructor for \hyperlink{class_player}{Player} 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_player_ace93c12489cea500770591ccb47a2a0c}{\index{Player@{Player}!add\-To\-Hand@{add\-To\-Hand}}
+\hypertarget{class_player_a39cd88ac5969bf7a9f18ae85a3e7ef90}{\index{Player@{Player}!add\-To\-Hand@{add\-To\-Hand}}
 \index{add\-To\-Hand@{add\-To\-Hand}!Player@{Player}}
-\subsubsection[{add\-To\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::add\-To\-Hand (
+\subsubsection[{add\-To\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Player\-::add\-To\-Hand (
 \begin{DoxyParamCaption}
 \item[{vector$<$ {\bf Card} $>$}]{c}
 \end{DoxyParamCaption}
-)}}\label{class_player_ace93c12489cea500770591ccb47a2a0c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a39cd88ac5969bf7a9f18ae85a3e7ef90}
 Add a card to the players hand 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{class_card}{Card(s)}} & to add \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_player_ac9576fddfaa9c54a11f50df5604ec10c}{\index{Player@{Player}!check\-If\-In\-Hand@{check\-If\-In\-Hand}}
+\hypertarget{class_player_ad5373406c782e50ca655e09e712e9f9a}{\index{Player@{Player}!check\-If\-In\-Hand@{check\-If\-In\-Hand}}
 \index{check\-If\-In\-Hand@{check\-If\-In\-Hand}!Player@{Player}}
-\subsubsection[{check\-If\-In\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::check\-If\-In\-Hand (
+\subsubsection[{check\-If\-In\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Player\-::check\-If\-In\-Hand (
 \begin{DoxyParamCaption}
 \item[{{\bf Card}}]{}
 \end{DoxyParamCaption}
-)}}\label{class_player_ac9576fddfaa9c54a11f50df5604ec10c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_ad5373406c782e50ca655e09e712e9f9a}
 Take one or more of the same card Face from the players hand 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{class_card}{Card}} & to check against \\
@@ -87,80 +92,80 @@ Take one or more of the same card Face from the players hand
 \begin{DoxyReturn}{Returns}
 true if it's in the hand, false otherwise 
 \end{DoxyReturn}
-\hypertarget{class_player_adf635ce5997b0d4647a6f7d09b526dac}{\index{Player@{Player}!check\-Matching\-Pairs@{check\-Matching\-Pairs}}
+\hypertarget{class_player_a8f4860c059f1eba073c0e46ef8442266}{\index{Player@{Player}!check\-Matching\-Pairs@{check\-Matching\-Pairs}}
 \index{check\-Matching\-Pairs@{check\-Matching\-Pairs}!Player@{Player}}
-\subsubsection[{check\-Matching\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::check\-Matching\-Pairs (
+\subsubsection[{check\-Matching\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Player\-::check\-Matching\-Pairs (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_adf635ce5997b0d4647a6f7d09b526dac}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a8f4860c059f1eba073c0e46ef8442266}
 Check if there is any matching pairs in the players hand \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-\hypertarget{class_player_a6ca673336972f29fdc094b3f0f1f7f84}{\index{Player@{Player}!get\-Hand@{get\-Hand}}
+\hypertarget{class_player_a3fd21ebb55fff1b382bc1c4ed73c3a29}{\index{Player@{Player}!get\-Hand@{get\-Hand}}
 \index{get\-Hand@{get\-Hand}!Player@{Player}}
-\subsubsection[{get\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Card}$>$ Player\-::get\-Hand (
+\subsubsection[{get\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector$<${\bf Card}$>$ Player\-::get\-Hand (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_a6ca673336972f29fdc094b3f0f1f7f84}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a3fd21ebb55fff1b382bc1c4ed73c3a29}
 Get players hand \begin{DoxyReturn}{Returns}
 vector$<$\-Card$>$ hand 
 \end{DoxyReturn}
-\hypertarget{class_player_a09fbf15e6a001feea60cb53d02ec3912}{\index{Player@{Player}!get\-Matched\-Hand@{get\-Matched\-Hand}}
+\hypertarget{class_player_a4ccce21812baacf099a025fb90c3862d}{\index{Player@{Player}!get\-Matched\-Hand@{get\-Matched\-Hand}}
 \index{get\-Matched\-Hand@{get\-Matched\-Hand}!Player@{Player}}
-\subsubsection[{get\-Matched\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Card}$>$ Player\-::get\-Matched\-Hand (
+\subsubsection[{get\-Matched\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector$<${\bf Card}$>$ Player\-::get\-Matched\-Hand (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_a09fbf15e6a001feea60cb53d02ec3912}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a4ccce21812baacf099a025fb90c3862d}
 Get players matched hand \begin{DoxyReturn}{Returns}
 vector$<$\-Card$>$ hand 
 \end{DoxyReturn}
-\hypertarget{class_player_a8157f88bbd4048e52e4fca94e92b49ac}{\index{Player@{Player}!get\-Num\-Cards@{get\-Num\-Cards}}
+\hypertarget{class_player_afeea001d79927a2a5fd78610e971f789}{\index{Player@{Player}!get\-Num\-Cards@{get\-Num\-Cards}}
 \index{get\-Num\-Cards@{get\-Num\-Cards}!Player@{Player}}
-\subsubsection[{get\-Num\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Num\-Cards (
+\subsubsection[{get\-Num\-Cards}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Player\-::get\-Num\-Cards (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_a8157f88bbd4048e52e4fca94e92b49ac}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_afeea001d79927a2a5fd78610e971f789}
 Getter for the number of cards in their hand \begin{DoxyReturn}{Returns}
 The number of cards in their hand 
 \end{DoxyReturn}
-\hypertarget{class_player_abdea2b45e1a98e9942bdaca85f451734}{\index{Player@{Player}!get\-Num\-Matches@{get\-Num\-Matches}}
+\hypertarget{class_player_a529073d2d9fe03d4a257264165fd254d}{\index{Player@{Player}!get\-Num\-Matches@{get\-Num\-Matches}}
 \index{get\-Num\-Matches@{get\-Num\-Matches}!Player@{Player}}
-\subsubsection[{get\-Num\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Num\-Matches (
+\subsubsection[{get\-Num\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Player\-::get\-Num\-Matches (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_abdea2b45e1a98e9942bdaca85f451734}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a529073d2d9fe03d4a257264165fd254d}
 Getter for the number of matches \begin{DoxyReturn}{Returns}
 The number of matches 
 \end{DoxyReturn}
-\hypertarget{class_player_ae72235dee0a2f7abbcb82002164623aa}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
+\hypertarget{class_player_a31fbbc1c4386e4cc59622561707de58f}{\index{Player@{Player}!get\-Player\-Number@{get\-Player\-Number}}
 \index{get\-Player\-Number@{get\-Player\-Number}!Player@{Player}}
-\subsubsection[{get\-Player\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::get\-Player\-Number (
+\subsubsection[{get\-Player\-Number}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Player\-::get\-Player\-Number (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_ae72235dee0a2f7abbcb82002164623aa}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a31fbbc1c4386e4cc59622561707de58f}
 Getter for the players number \begin{DoxyReturn}{Returns}
 The player number 
 \end{DoxyReturn}
-\hypertarget{class_player_a2369527c90f1168eac2dc3f7bfaefc43}{\index{Player@{Player}!sort\-Hand@{sort\-Hand}}
+\hypertarget{class_player_a2e0498ce6dc3fbbf21d42e010466c41a}{\index{Player@{Player}!sort\-Hand@{sort\-Hand}}
 \index{sort\-Hand@{sort\-Hand}!Player@{Player}}
-\subsubsection[{sort\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::sort\-Hand (
+\subsubsection[{sort\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Player\-::sort\-Hand (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_player_a2369527c90f1168eac2dc3f7bfaefc43}
-Sorting hand helper function. \hypertarget{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}{\index{Player@{Player}!take\-From\-Hand@{take\-From\-Hand}}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a2e0498ce6dc3fbbf21d42e010466c41a}
+Sorting hand helper function. \hypertarget{class_player_a9e4de307960ce9cef2e2704a7a73a931}{\index{Player@{Player}!take\-From\-Hand@{take\-From\-Hand}}
 \index{take\-From\-Hand@{take\-From\-Hand}!Player@{Player}}
-\subsubsection[{take\-From\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card} Player\-::take\-From\-Hand (
+\subsubsection[{take\-From\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Card} Player\-::take\-From\-Hand (
 \begin{DoxyParamCaption}
 \item[{{\bf Card}}]{}
 \end{DoxyParamCaption}
-)}}\label{class_player_aa98f63d75da7cae403510b4c1e2a6ce9}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_player_a9e4de307960ce9cef2e2704a7a73a931}
 Take one of the same card Face from the players hand 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{class_card}{Card}} & to take \\
@@ -170,6 +175,12 @@ Take one of the same card Face from the players hand
 The matching cards 
 \end{DoxyReturn}
 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_player_adfea67ca8c4a03b59fee1bb09789f1bc}{\index{Player@{Player}!player\-Number@{player\-Number}}
+\index{player\-Number@{player\-Number}!Player@{Player}}
+\subsubsection[{player\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::player\-Number\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_player_adfea67ca8c4a03b59fee1bb09789f1bc}
+The players number. 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
