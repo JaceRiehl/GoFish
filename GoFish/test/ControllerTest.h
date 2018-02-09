@@ -37,7 +37,7 @@ class ControllerTest : public ::testing::Test
             players.push_back(p4);
             players.push_back(p5);
             deck = new DeckMock();
-            c = new Controller(deck,players,vI,vO);
+            controller = new Controller(deck,players,vI,vO);
             vIMock = dynamic_cast<ViewInMock*>(vI);
             vOMock = dynamic_cast<ViewOutMock*>(vO);
             p1Mock = dynamic_cast<PlayerMock*>(p1);
@@ -53,10 +53,7 @@ class ControllerTest : public ::testing::Test
         */
         virtual void TearDown()
         {
-            delete c;
-//            delete vIMock;
-//            delete vOMock;
-//            delete deckMock;
+            delete controller;
             delete p1Mock;
             delete p2Mock;
             delete p3Mock;
@@ -65,7 +62,7 @@ class ControllerTest : public ::testing::Test
         }
 
     protected:
-        Controller* c;
+        Controller* controller;
         ViewIn* vI;
         ViewInMock* vIMock;
         ViewOut* vO;

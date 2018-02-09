@@ -12,7 +12,11 @@ class Controller
 {
     public:
         /**
-        *Constructor for Controller
+        *Constructor for Controller, contains dependency injection for the tests.
+        *@param Deck or MockDeck that will be used to play the game
+        *@param The vector of Player or MockPlayer Objects that will be used, always enter the max number of players and choose how many to use in a viewIn function
+        *@param The ViewIn or ViewInMock object to be used to gather input
+        *@param The ViewOut or ViewOutMock object to be used to display messages.
         */
         Controller(Deck*, vector<Player*>, ViewIn*, ViewOut*);
         /**
