@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad65603733541eb7698575f02de8f639d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f08004e5e9c6462d188be01d07befe8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9f08004e5e9c6462d188be01d07befe8">turn</a> (int)</td></tr>
 <tr class="separator:a9f08004e5e9c6462d188be01d07befe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf15c4fbe4a2782b3c5d9bc21df4886"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#acdf15c4fbe4a2782b3c5d9bc21df4886">mostMatches</a> ()</td></tr>
+<tr class="separator:acdf15c4fbe4a2782b3c5d9bc21df4886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The 'game' aspect of GoFish, it controls everything that happens in the game. </p>
@@ -145,7 +147,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor for <a class="el" href="class_controller.html">Controller</a> </p>
+<p>Constructor for <a class="el" href="class_controller.html">Controller</a>, contains dependency injection for the tests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_deck.html">Deck</a></td><td>or MockDeck that will be used to play the game </td></tr>
+    <tr><td class="paramname">The</td><td>vector of <a class="el" href="class_player.html">Player</a> or MockPlayer Objects that will be used, always enter the max number of players and choose how many to use in a viewIn function </td></tr>
+    <tr><td class="paramname">The</td><td><a class="el" href="class_view_in.html">ViewIn</a> or ViewInMock object to be used to gather input </td></tr>
+    <tr><td class="paramname">The</td><td><a class="el" href="class_view_out.html">ViewOut</a> or ViewOutMock object to be used to display messages. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -202,6 +213,23 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Deals Cards to all Players </p>
+
+</div>
+</div>
+<a class="anchor" id="acdf15c4fbe4a2782b3c5d9bc21df4886"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Controller::mostMatches </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks who has the most matches </p>
+<dl class="section return"><dt>Returns</dt><dd>The index of the player who has the most matches. </dd></dl>
 
 </div>
 </div>
@@ -267,7 +295,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 9 2018 15:37:27 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 9 2018 19:33:49 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -19,13 +19,6 @@ void Deck::shuffleDeck()
     random_shuffle(deck.begin(), deck.end());
 }
 
-void Deck::printDeck()
-{
-    for(int i=0;i<maxCards;i++)
-    {
-        cout << deck[i].getSuit() << " " << deck[i].getFace() << endl;
-    }
-}
 
 vector<Card> Deck::getDeck()
 {

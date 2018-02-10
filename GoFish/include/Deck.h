@@ -30,10 +30,6 @@ class Deck
         */
         virtual Card dealCard();
         /**
-        *Prints the deck to console - to be deleted.
-        */
-        virtual void printDeck();
-        /**
         *For Testing purposes
         */
         virtual vector<Card> getDeck();

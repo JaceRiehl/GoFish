@@ -14,7 +14,7 @@ void ViewOut::welcomeMessage()
 void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
 {
     cout << "Your hand is: " << endl;
-    for(int hand=0; hand<playersHand.size();hand++)
+    for(unsigned int hand=0; hand<playersHand.size();hand++)
     {
         if(hand == playersHand.size()-1)
             cout << playersHand[hand].getFace() << " " << playersHand[hand].getSuit() << endl;

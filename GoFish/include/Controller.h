@@ -46,17 +46,17 @@ class Controller
         *@return The Player that the current Player fished
         */
         int turn(int);
-
-
-
-    protected:
-
-    private:
         /**
         *Checks who has the most matches
         *@return The index of the player who has the most matches.
         */
         int mostMatches();
+
+
+    protected:
+
+    private:
+
         /**
         *The players in the game.
         */
