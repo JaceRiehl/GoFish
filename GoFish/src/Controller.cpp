@@ -43,8 +43,6 @@ void Controller::initalDeal()
         {
             Card temp = dealersDeck->dealCard();
             addCard.push_back(temp);
-//            cout << dealersDeck.getDeckSize() << endl;
-//            cout << "-_----- " << temp.getFace() << " " << temp.getSuit() << endl;
 
         }
         players[player]->addToHand(addCard);
@@ -113,7 +111,8 @@ int Controller::turn(int p)
 
 void Controller::goFishDeal(int p)
 {
-    if(dealersDeck->getDeckSize() == 0)
+
+    if(dealersDeck->getDeckSize() <= 0)
     {
         vO->goFish(false);
     }

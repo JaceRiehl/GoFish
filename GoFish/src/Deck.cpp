@@ -29,7 +29,7 @@ Card Deck::dealCard()
 {
     int ind = indexCurrent;
     ++indexCurrent;
-    if(indexCurrent >= 52)
+    if(ind >= 52)
     {
         Card endDeck("NULL","NULL");
         return endDeck;
