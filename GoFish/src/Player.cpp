@@ -19,8 +19,6 @@ int Player::getNumMatches()
 void Player::addToHand(vector<Card> c)
 {
     int vector_size = c.size();
-    cout << "I MADE IT HERE " << vector_size << endl;
-
     if(vector_size >= 1)
     {
     for(int i=0; i<vector_size;i++)
