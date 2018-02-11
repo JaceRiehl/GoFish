@@ -19,23 +19,38 @@ int Player::getNumMatches()
 void Player::addToHand(vector<Card> c)
 {
     int vector_size = c.size();
+    cout << "I MADE IT HERE " << vector_size << endl;
+
+    if(vector_size >= 1)
+    {
     for(int i=0; i<vector_size;i++)
         currentHand.push_back(c[i]);
-    //sortHand();
+    }
 }
-
+bool Player::checkIfInHand(Card c)
+{
+    for(int i = 0; i<(int)currentHand.size();i++)
+    {
+        if(c.getFace() == currentHand[i].getFace())
+        {
+            return true;
+        }
+    }
+    return false;
+}
 Card Player::takeFromHand(Card c)
 {
-    for(int i = 0; i<currentHand.size();i++)
+    for(unsigned int i = 0; i<currentHand.size();i++)
     {
-        if(c == currentHand[i])
+        if(c.getFace() == currentHand[i].getFace())
         {
             Card cR = currentHand[i];
             currentHand.erase(currentHand.begin()+i);
             return cR;
         }
     }
-    return Card("NULL", "NULL");
+    Card ret("NULL","NULL");
+    return ret;
 
 }
     /*
@@ -60,11 +75,11 @@ Card Player::takeFromHand(Card c)
 bool Player::checkMatchingPairs()
 {
     sortHand();
-    int numMatched;
-    for(int i=0;i<currentHand.size();i++)
+    //int numMatched = 0;
+    for(unsigned int i=0;i<currentHand.size();i++)
     {
-        numMatched = 0;
-        for(int j=i+1;j<currentHand.size();j++){
+        int numMatched = 0;
+        for(unsigned int j=i+1;j<currentHand.size();j++){
             if(currentHand[i].getFace() == currentHand[j].getFace())
             {
                 numMatched +=1;
@@ -72,7 +87,7 @@ bool Player::checkMatchingPairs()
             if(numMatched == 3)
             {
                 matchingPairs += 1;
-                for(int k=i;k<=j;k++)
+                for(unsigned int k=i;k<=j;k++)
                     matchingPairsInHand.push_back(currentHand[k]);
                 currentHand.erase(currentHand.begin()+i,currentHand.begin()+i+4);
                 /*
@@ -108,5 +123,9 @@ vector<Card> Player::getHand()
 vector<Card> Player::getMatchedHand()
 {
     return matchingPairsInHand;
+}
+int Player::getNumCards()
+{
+    return currentHand.size();
 }
 

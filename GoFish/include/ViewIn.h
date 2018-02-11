@@ -20,24 +20,26 @@ class ViewIn
         /**
         *ViewIn destructor
         */
-        ~ViewIn();
+        virtual ~ViewIn(){}
         /**
         *Choose the player that will be checked for cards
         *@return The players choice of player to fish
         *@param The number of players currently playing
         *@param The player number of the person fishing
         */
-        int choosePlayer(int,int);
+        virtual int choosePlayer(int,int);
+        /**
+        *Choose the Card number that will be checked against a player
+        *@return The players choice of Card
+        *@param int that is the size of the hand.
+        */
+        virtual int chooseCard(int);
         /**
         *Chooses the number of players that will play the came
+        *@param The maximum number of players
         *@return The number of players
         */
-        int chooseNumPlayers();
-        /**
-        *Ask if the turn is ending
-        *@return True if the turn is ending, False if the player wants to fish another player
-        */
-        bool endTurn();
+        virtual int chooseNumPlayers(int);
     protected:
 
     private:

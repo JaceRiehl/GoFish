@@ -12,15 +12,13 @@
 \item 
 virtual \hyperlink{class_deck_a0455563eccd460a9ff84e74b858beb30}{$\sim$\-Deck} ()
 \item 
-void \hyperlink{class_deck_a44577729d5b8cc5f5b416adb46ac3cd5}{shuffle\-Deck} ()
+virtual void \hyperlink{class_deck_a7487a75ebb6b729a97b5250b101324b4}{shuffle\-Deck} ()
 \item 
-\hyperlink{class_card}{Card} \hyperlink{class_deck_a7a0547af6395feb13f4402a2a63b79fe}{deal\-Card} ()
+virtual \hyperlink{class_card}{Card} \hyperlink{class_deck_a621e5f6f80e45ee17176686833c3299c}{deal\-Card} ()
 \item 
-void \hyperlink{class_deck_a1737fb34704fc23e268725848ecd15ed}{print\-Deck} ()
+virtual vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_deck_a95171bc96437f86ce24aa0103eafcea6}{get\-Deck} ()
 \item 
-vector$<$ \hyperlink{class_card}{Card} $>$ \hyperlink{class_deck_a4a2163e4829f910ec687311ddff45e98}{get\-Deck} ()
-\item 
-int \hyperlink{class_deck_ad775d4b99ec86991402ad12266b1b157}{get\-Deck\-Size} ()
+virtual int \hyperlink{class_deck_a43795439864d704d33feffd43d10adb7}{get\-Deck\-Size} ()
 \end{DoxyCompactItemize}
 
 
@@ -45,46 +43,39 @@ Constructor to build a deck of a standard 52 card deck. \hypertarget{class_deck_
 Destructor for \hyperlink{class_deck}{Deck}. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_deck_a7a0547af6395feb13f4402a2a63b79fe}{\index{Deck@{Deck}!deal\-Card@{deal\-Card}}
+\hypertarget{class_deck_a621e5f6f80e45ee17176686833c3299c}{\index{Deck@{Deck}!deal\-Card@{deal\-Card}}
 \index{deal\-Card@{deal\-Card}!Deck@{Deck}}
-\subsubsection[{deal\-Card}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card} Deck\-::deal\-Card (
+\subsubsection[{deal\-Card}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Card} Deck\-::deal\-Card (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_deck_a7a0547af6395feb13f4402a2a63b79fe}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_deck_a621e5f6f80e45ee17176686833c3299c}
 Constructor to build a card. 
 \begin{DoxyParams}{Parameters}
 {\em The} & \hyperlink{class_card}{Card} that is dealt that is removed from the deck \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_deck_a4a2163e4829f910ec687311ddff45e98}{\index{Deck@{Deck}!get\-Deck@{get\-Deck}}
+\hypertarget{class_deck_a95171bc96437f86ce24aa0103eafcea6}{\index{Deck@{Deck}!get\-Deck@{get\-Deck}}
 \index{get\-Deck@{get\-Deck}!Deck@{Deck}}
-\subsubsection[{get\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Card}$>$ Deck\-::get\-Deck (
+\subsubsection[{get\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector$<${\bf Card}$>$ Deck\-::get\-Deck (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_deck_a4a2163e4829f910ec687311ddff45e98}
-For Testing purposes \hypertarget{class_deck_ad775d4b99ec86991402ad12266b1b157}{\index{Deck@{Deck}!get\-Deck\-Size@{get\-Deck\-Size}}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_deck_a95171bc96437f86ce24aa0103eafcea6}
+For Testing purposes \hypertarget{class_deck_a43795439864d704d33feffd43d10adb7}{\index{Deck@{Deck}!get\-Deck\-Size@{get\-Deck\-Size}}
 \index{get\-Deck\-Size@{get\-Deck\-Size}!Deck@{Deck}}
-\subsubsection[{get\-Deck\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Deck\-::get\-Deck\-Size (
+\subsubsection[{get\-Deck\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Deck\-::get\-Deck\-Size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_deck_ad775d4b99ec86991402ad12266b1b157}
-For Testing purposes \hypertarget{class_deck_a1737fb34704fc23e268725848ecd15ed}{\index{Deck@{Deck}!print\-Deck@{print\-Deck}}
-\index{print\-Deck@{print\-Deck}!Deck@{Deck}}
-\subsubsection[{print\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}void Deck\-::print\-Deck (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_deck_a1737fb34704fc23e268725848ecd15ed}
-Prints the deck to console -\/ to be deleted. \hypertarget{class_deck_a44577729d5b8cc5f5b416adb46ac3cd5}{\index{Deck@{Deck}!shuffle\-Deck@{shuffle\-Deck}}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_deck_a43795439864d704d33feffd43d10adb7}
+For Testing purposes \hypertarget{class_deck_a7487a75ebb6b729a97b5250b101324b4}{\index{Deck@{Deck}!shuffle\-Deck@{shuffle\-Deck}}
 \index{shuffle\-Deck@{shuffle\-Deck}!Deck@{Deck}}
-\subsubsection[{shuffle\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}void Deck\-::shuffle\-Deck (
+\subsubsection[{shuffle\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Deck\-::shuffle\-Deck (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_deck_a44577729d5b8cc5f5b416adb46ac3cd5}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_deck_a7487a75ebb6b729a97b5250b101324b4}
 Shuffles the current deck, no matter what the size is 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

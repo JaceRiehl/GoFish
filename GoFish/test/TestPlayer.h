@@ -55,6 +55,7 @@ class TestPlayer : public ::testing::Test
             delete p3;
             delete p4;
             delete p5;
+            delete p6;
             delete c1;
             delete c2;
             delete c3;

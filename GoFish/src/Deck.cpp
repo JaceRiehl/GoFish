@@ -19,13 +19,7 @@ void Deck::shuffleDeck()
     random_shuffle(deck.begin(), deck.end());
 }
 
-void Deck::printDeck()
-{
-    for(int i=0;i<maxCards;i++)
-    {
-        cout << deck[i].getSuit() << " " << deck[i].getFace() << endl;
-    }
-}
+
 vector<Card> Deck::getDeck()
 {
     return deck;
@@ -33,12 +27,17 @@ vector<Card> Deck::getDeck()
 
 Card Deck::dealCard()
 {
-    int ind = indexCurrent % maxCards;
+    int ind = indexCurrent;
     ++indexCurrent;
+    if(ind >= 52)
+    {
+        Card endDeck("NULL","NULL");
+        return endDeck;
+    }
     return deck[ind];
 }
 
 int Deck::getDeckSize()
 {
-    return deck.size();
+    return maxCards-indexCurrent;
 }

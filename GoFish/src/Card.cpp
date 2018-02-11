@@ -2,20 +2,17 @@
 
 Card::Card(string f, string s)
 {
-    for(int i = 0; i < 13; i++)
+    for(int i = 0; i < 14; i++)
     {
         if(f == this->faces[i])
         {
             face = f;
         }
-        if(s == this->suits[i%4])
+        if(s == this->suits[i%5])
         {
             suit = s;
         }
     }
-    face = f;
-    suit = s;
-
 }
 
 Card::~Card()

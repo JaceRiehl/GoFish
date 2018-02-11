@@ -4,28 +4,29 @@
 	"Card.h"
 	"Deck.h"
 
-1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
+1518052057 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.cpp
 	"Card.h"
 
-1517772877 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
+1517784143 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Card.h
 	<string>
 	<ctype.h>
 	<stdio.h>
 
-1517773145 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
+1518226553 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Deck.cpp
 	"Deck.h"
 
-1517708590 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
+1518226553 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Deck.h
 	<vector>
 	<string>
 	"Card.h"
 	<iostream>
 	<algorithm>
 
-1517352344 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
+1518036752 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/main.cpp
 	<iostream>
 	"Card.h"
 	"Deck.h"
+	"Controller.h"
 	"gtest/gtest.h"
 
 1517352628 /home/riehlj4/sEngAsn1/asn1/GoFish/src/Card.h
@@ -40,56 +41,125 @@
 	<iostream>
 	<algorithm>
 
-1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
+1518052697 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.cpp
 	"TestCard.h"
 
 1517708591 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestCard.h
 	"gtest/gtest.h"
 	"Card.h"
 
-1517708591 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
+1518129276 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.cpp
 	"TestDeck.h"
 
-1517708591 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
+1518050436 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestDeck.h
 	"gtest/gtest.h"
 	"Deck.h"
 	"Card.h"
 	<vector>
 
-1517772855 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
+1518308571 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Player.cpp
 	"Player.h"
 
-1517708590 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
+1518308571 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Player.h
 	<vector>
 	"Card.h"
 	<algorithm>
 	<string>
 	<iostream>
 
-1517773076 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
+1518053210 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.cpp
 	"TestPlayer.h"
 
-1517772632 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
+1518136369 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestPlayer.h
 	"gtest/gtest.h"
 	"Player.h"
 	<vector>
 	"Card.h"
 	<iostream>
 
-1517777998 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
+1518304110 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewIn.cpp
 	"ViewIn.h"
 
-1517779281 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
+1518304110 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewIn.h
 	<iostream>
 	<string>
+	"ViewOut.h"
+	<ctype.h>
+	<stdio.h>
 
-1517779497 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
+1518314181 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/ViewOut.cpp
 	"ViewOut.h"
 
-1517779407 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
+1518229313 /home/riehlj4/sEngAsn1/asn1/GoFish/include/ViewOut.h
 	<iostream>
 	<string>
 	"Player.h"
 	"Card.h"
+	<vector>
+
+1518312173 source:/home/riehlj4/sEngAsn1/asn1/GoFish/src/Controller.cpp
+	"Controller.h"
+
+1518227698 /home/riehlj4/sEngAsn1/asn1/GoFish/include/Controller.h
+	"Player.h"
+	"Deck.h"
+	"ViewIn.h"
+	"ViewOut.h"
+	<iostream>
+
+1517968489 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/TestViewIn.cpp
+	"TestViewIn.h"
+
+1517968142 /home/riehlj4/sEngAsn1/asn1/GoFish/test/TestViewIn.h
+	"gtest/gtest.h"
+	"ViewIn.h"
+	<vector>
+
+1518041535 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/DeckMock.cpp
+	"DeckMock.h"
+
+1518054875 /home/riehlj4/sEngAsn1/asn1/GoFish/test/DeckMock.h
+	"Deck.h"
+	"Card.h"
+	"gmock/gmock.h"
+
+1518313045 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/main.cpp
+	<iostream>
+	"gtest/gtest.h"
+
+1518054876 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.cpp
+	"PlayerMock.h"
+
+1518208882 /home/riehlj4/sEngAsn1/asn1/GoFish/test/PlayerMock.h
+	"Player.h"
+	"Card.h"
+	"gmock/gmock.h"
+
+1518311745 source:/home/riehlj4/sEngAsn1/asn1/GoFish/test/ControllerTest.cpp
+	"ControllerTest.h"
+
+1518234815 /home/riehlj4/sEngAsn1/asn1/GoFish/test/ControllerTest.h
+	"Controller.h"
+	"DeckMock.h"
+	"PlayerMock.h"
+	"ViewInMock.h"
+	"ViewOutMock.h"
+	"Player.h"
+	"Deck.h"
+	"ViewIn.h"
+	"ViewOut.h"
+	"Card.h"
+	"gmock/gmock.h"
+	"gtest/gtest.h"
+	<vector>
+
+1518304268 /home/riehlj4/sEngAsn1/asn1/GoFish/test/ViewInMock.h
+	"ViewIn.h"
+	"gmock/gmock.h"
+
+1518229313 /home/riehlj4/sEngAsn1/asn1/GoFish/test/ViewOutMock.h
+	"ViewIn.h"
+	"gmock/gmock.h"
+	"Player.h"
 	<vector>
 

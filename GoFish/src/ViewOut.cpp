@@ -2,7 +2,7 @@
 
 ViewOut::ViewOut()
 {
-    //ctor
+
 }
 
 void ViewOut::welcomeMessage()
@@ -14,7 +14,7 @@ void ViewOut::welcomeMessage()
 void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
 {
     cout << "Your hand is: " << endl;
-    for(int hand=0; hand<playersHand.size();hand++)
+    for(unsigned int hand=0; hand<playersHand.size();hand++)
     {
         if(hand == playersHand.size()-1)
             cout << playersHand[hand].getFace() << " " << playersHand[hand].getSuit() << endl;
@@ -23,13 +23,34 @@ void ViewOut::coutDisplayPlayersHand(vector<Card> playersHand)
     }
 }
 
+void ViewOut::goFish(bool canGoFish)
+{
+    if(canGoFish)
+        cout << "Go Fish! " << endl;
+    else
+        cout << "The deck is empty. " << endl;;
+
+}
+
 void ViewOut::displayTurn(Player p1)
 {
     cout << "Player " << p1.getPlayerNumber() << "'s turn:" << endl;
-    coutDisplayPlayersHand(p1.getHand());
 }
 
-void ViewOut::endingMessage()
+void ViewOut::endTurn()
 {
-    cout << "Thanks for playing GoFish";
+    cout << "Your turn is ending." << endl;
+}
+
+void ViewOut::clearTerminal()
+{
+    for(int i=0;i<100;i++)
+        cout << '\n';
+}
+
+
+void ViewOut::endingMessage(int winner)
+{
+    cout << "The winner is: Player " << winner << "! "<< endl;
+    cout << "Thanks for playing GoFish" << endl;
 }

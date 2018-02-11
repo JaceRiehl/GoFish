@@ -17,6 +17,7 @@ class TestDeck : public ::testing::Test
           shuffledDeck->shuffleDeck();
           retShufDeck = shuffledDeck->getDeck();
           returnedDeck = deck->getDeck();
+          fullDeck = new Deck();
         }
 
         /**
@@ -26,11 +27,13 @@ class TestDeck : public ::testing::Test
         {
            delete deck;
            delete shuffledDeck;
+           delete fullDeck;
         }
 
 
     protected:
         Deck* deck;
+        Deck* fullDeck;
         vector<Card> returnedDeck;
         Deck* shuffledDeck;
         vector<Card> retShufDeck;

@@ -1,0 +1,126 @@
+\hypertarget{class_controller}{\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+}
+
+
+{\ttfamily \#include $<$Controller.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_acc5b83a368d1b5985f34d28e23c0f4c5}{Controller} (\hyperlink{class_deck}{Deck} $\ast$, vector$<$ \hyperlink{class_player}{Player} $\ast$ $>$, \hyperlink{class_view_in}{View\-In} $\ast$, \hyperlink{class_view_out}{View\-Out} $\ast$)
+\item 
+\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\-Controller} ()
+\item 
+void \hyperlink{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}{start\-Game} ()
+\item 
+void \hyperlink{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}{inital\-Deal} ()
+\item 
+void \hyperlink{class_controller_aa93207ee72313ca40934a10bf36adca9}{go\-Fish\-Deal} (int)
+\item 
+void \hyperlink{class_controller_ad65603733541eb7698575f02de8f639d}{run\-Game} ()
+\item 
+int \hyperlink{class_controller_a9f08004e5e9c6462d188be01d07befe8}{turn} (int)
+\item 
+int \hyperlink{class_controller_acdf15c4fbe4a2782b3c5d9bc21df4886}{most\-Matches} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The 'game' aspect of Go\-Fish, it controls everything that happens in the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_controller_acc5b83a368d1b5985f34d28e23c0f4c5}{\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\-::\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Deck} $\ast$}]{, }
+\item[{vector$<$ {\bf Player} $\ast$ $>$}]{, }
+\item[{{\bf View\-In} $\ast$}]{, }
+\item[{{\bf View\-Out} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_acc5b83a368d1b5985f34d28e23c0f4c5}
+Constructor for \hyperlink{class_controller}{Controller}, contains dependency injection for the tests. 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_deck}{Deck}} & or Mock\-Deck that will be used to play the game \\
+\hline
+{\em The} & vector of \hyperlink{class_player}{Player} or Mock\-Player Objects that will be used, always enter the max number of players and choose how many to use in a view\-In function \\
+\hline
+{\em The} & \hyperlink{class_view_in}{View\-In} or View\-In\-Mock object to be used to gather input \\
+\hline
+{\em The} & \hyperlink{class_view_out}{View\-Out} or View\-Out\-Mock object to be used to display messages. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{\index{Controller@{Controller}!$\sim$\-Controller@{$\sim$\-Controller}}
+\index{$\sim$\-Controller@{$\sim$\-Controller}!Controller@{Controller}}
+\subsubsection[{$\sim$\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\-::$\sim$\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}
+Destructor for \hyperlink{class_controller}{Controller} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_controller_aa93207ee72313ca40934a10bf36adca9}{\index{Controller@{Controller}!go\-Fish\-Deal@{go\-Fish\-Deal}}
+\index{go\-Fish\-Deal@{go\-Fish\-Deal}!Controller@{Controller}}
+\subsubsection[{go\-Fish\-Deal}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::go\-Fish\-Deal (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_aa93207ee72313ca40934a10bf36adca9}
+Deals a card to the player if they get a 'Go\-Fish' 
+\begin{DoxyParams}{Parameters}
+{\em int} & that is the players number \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}{\index{Controller@{Controller}!inital\-Deal@{inital\-Deal}}
+\index{inital\-Deal@{inital\-Deal}!Controller@{Controller}}
+\subsubsection[{inital\-Deal}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::inital\-Deal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_aa2a6716682fa463fc3d6bbdb510630e5}
+Deals Cards to all Players \hypertarget{class_controller_acdf15c4fbe4a2782b3c5d9bc21df4886}{\index{Controller@{Controller}!most\-Matches@{most\-Matches}}
+\index{most\-Matches@{most\-Matches}!Controller@{Controller}}
+\subsubsection[{most\-Matches}]{\setlength{\rightskip}{0pt plus 5cm}int Controller\-::most\-Matches (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_acdf15c4fbe4a2782b3c5d9bc21df4886}
+Checks who has the most matches \begin{DoxyReturn}{Returns}
+The index of the player who has the most matches. 
+\end{DoxyReturn}
+\hypertarget{class_controller_ad65603733541eb7698575f02de8f639d}{\index{Controller@{Controller}!run\-Game@{run\-Game}}
+\index{run\-Game@{run\-Game}!Controller@{Controller}}
+\subsubsection[{run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::run\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_ad65603733541eb7698575f02de8f639d}
+run\-Game does the loop that calls the appropriate functions to run the game until the game is won. \hypertarget{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}{\index{Controller@{Controller}!start\-Game@{start\-Game}}
+\index{start\-Game@{start\-Game}!Controller@{Controller}}
+\subsubsection[{start\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::start\-Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_a3a9e81ea10c63eea81c2612ba3beb5c4}
+Starts the game, creates players, and cascades events. \hypertarget{class_controller_a9f08004e5e9c6462d188be01d07befe8}{\index{Controller@{Controller}!turn@{turn}}
+\index{turn@{turn}!Controller@{Controller}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}int Controller\-::turn (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{class_controller_a9f08004e5e9c6462d188be01d07befe8}
+Calls a turn 
+\begin{DoxyParams}{Parameters}
+{\em int} & that is the players number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_player}{Player} that the current \hyperlink{class_player}{Player} fished 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Go\-Fish/include/Controller.\-h\end{DoxyCompactItemize}

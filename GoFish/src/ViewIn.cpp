@@ -7,52 +7,75 @@ ViewIn::ViewIn()
 
 int ViewIn::choosePlayer(int numPlayers, int playerNum)
 {
-    int playerChoice;
-    cout << "Which Player do you want to fish: ";
-    cin >> playerChoice;
-    cout << endl;
-    while(playerChoice <= 0 && playerChoice >= numPlayers && playerChoice != playerNum)
+    cout << "Player Number: " << playerNum << endl;
+    char playerChoice;
+    int choice;
+    cout << "Which Player do you want to fish: (1-" << numPlayers << ") ";
+    while(cin >> playerChoice)
     {
-        cout << "Enter a valid choice: ";
-        cin >> playerChoice;
-        cout << endl;
+        choice = playerChoice - '0';
+        if(choice > 0 && choice <= numPlayers && choice != playerNum)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid choice (1-" << numPlayers << "): ";
     }
-    return playerChoice;
+    return choice;
 }
 
-int ViewIn::chooseNumPlayers()
+int ViewIn::chooseNumPlayers(int maxPlayers)
 {
-    int numPlayers = 2;
-    cout << "How many players do you want to add? ";
-    cin >> numPlayers;
-    cout << endl;
-    while(numPlayers <= 1 && numPlayers > 5)
+    int players;
+    char numPlayers = 0;
+    int test = 0;
+    cout << "How many players do you want to add (2-" << maxPlayers << ")? ";
+    while(cin >> numPlayers)
     {
-        cout << "Enter a valid choice";
-        cin >> numPlayers;
-        cout << endl;
+        players = numPlayers - '0';
+        if(players >= 2 && players <= maxPlayers)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid input (2-5): ";
     }
-    return numPlayers;
+
+    return players;
 }
 
-bool ViewIn::endTurn()
+int ViewIn::chooseCard(int maxCard)
 {
-    string strInput;
-    char c;
-    cout << "Do you want to end your turn? (Y/N): ";
-    cin >> strInput;
-    c = strInput[0];
-    putchar(toupper(c));
-    while(c != 'Y' || c != 'N')
+    int card;
+    char cardNum;
+    cout << "Which card number do you fish? (1-" << maxCard << ") ";
+    //cin >> cardNum;
+    //cout << endl;
+    while(cin >> cardNum)
     {
-        cin >> strInput;
-        c = strInput[0];
-        putchar(toupper(c));
+        card = cardNum - '0';
+        if(card >= 1 && card <= maxCard)
+            break;
+        cin.ignore(10000, '\n');
+        cout << "Enter a valid input (1-" << maxCard << ") ";
     }
-    if(c == 'Y')
-        return true;
-    else
-        return false;
+    return card;
 }
+//
+//bool ViewIn::endTurn()
+//{
+//    string strInput;
+//    char c;
+//    cout << "Do you want to end your turn? (Y/N): ";
+//    cin >> strInput;
+//    c = strInput[0];
+//    putchar(toupper(c));
+//    while(c != 'Y' || c != 'N')
+//    {
+//        cin >> strInput;
+//        c = strInput[0];
+//        putchar(toupper(c));
+//    }
+//    if(c == 'Y')
+//        return true;
+//    else
+//        return false;
+//}
 
 

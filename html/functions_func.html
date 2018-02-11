@@ -68,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -77,8 +78,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_v"><span>v</span></a></li>
@@ -92,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>addToHand()
-: <a class="el" href="class_player.html#ace93c12489cea500770591ccb47a2a0c">Player</a>
+: <a class="el" href="class_player.html#a39cd88ac5969bf7a9f18ae85a3e7ef90">Player</a>
 </li>
 </ul>
 
@@ -115,68 +119,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Card()
 : <a class="el" href="class_card.html#ac116b6ce69235c84afb8740b162d665a">Card</a>
 </li>
+<li>checkIfInHand()
+: <a class="el" href="class_player.html#ad5373406c782e50ca655e09e712e9f9a">Player</a>
+</li>
 <li>checkMatchingPairs()
-: <a class="el" href="class_player.html#adf635ce5997b0d4647a6f7d09b526dac">Player</a>
+: <a class="el" href="class_player.html#a8f4860c059f1eba073c0e46ef8442266">Player</a>
+</li>
+<li>chooseCard()
+: <a class="el" href="class_view_in.html#ad93dc72d6ac780efa910d0fc0901437c">ViewIn</a>
 </li>
 <li>chooseNumPlayers()
-: <a class="el" href="class_view_in.html#a81408b8c0292c5680da91c75525c8d3b">ViewIn</a>
+: <a class="el" href="class_view_in.html#af3110ca42bc8b38cfea8f8943befd492">ViewIn</a>
 </li>
 <li>choosePlayer()
-: <a class="el" href="class_view_in.html#ab300d2831c402f1eff4039fbf915a6b6">ViewIn</a>
+: <a class="el" href="class_view_in.html#a9b8ec8154354503af00665960d0b7d20">ViewIn</a>
+</li>
+<li>clearTerminal()
+: <a class="el" href="class_view_out.html#af36d4b83ad0a29b7884027c1f8b65d16">ViewOut</a>
+</li>
+<li>Controller()
+: <a class="el" href="class_controller.html#acc5b83a368d1b5985f34d28e23c0f4c5">Controller</a>
 </li>
 <li>coutDisplayPlayersHand()
-: <a class="el" href="class_view_out.html#aa284dd2c46946728bfbeb61f79bdbc1c">ViewOut</a>
+: <a class="el" href="class_view_out.html#a5de3c71ff69ebb628b24c00339bed2ae">ViewOut</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>dealCard()
-: <a class="el" href="class_deck.html#a7a0547af6395feb13f4402a2a63b79fe">Deck</a>
+: <a class="el" href="class_deck.html#a621e5f6f80e45ee17176686833c3299c">Deck</a>
 </li>
 <li>Deck()
 : <a class="el" href="class_deck.html#a57ae1cb4ac6fd61c249cefb2db85eb99">Deck</a>
 </li>
 <li>displayTurn()
-: <a class="el" href="class_view_out.html#adc9f94c7824bbaf97193cf51a06088dc">ViewOut</a>
+: <a class="el" href="class_view_out.html#a5e24ee16b551374dbf04466696e672ac">ViewOut</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>endingMessage()
-: <a class="el" href="class_view_out.html#a6b8f759a8a7a05ed0f271ee564258f9e">ViewOut</a>
+: <a class="el" href="class_view_out.html#a638e1964ff9b7f796dcf4aec4056ac47">ViewOut</a>
 </li>
 <li>endTurn()
-: <a class="el" href="class_view_in.html#a4c5430a20d6f69b989443a0bc2b94593">ViewIn</a>
+: <a class="el" href="class_view_out.html#a122607cb1390f24b681b590c9bd1561e">ViewOut</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>getDeck()
-: <a class="el" href="class_deck.html#a4a2163e4829f910ec687311ddff45e98">Deck</a>
+: <a class="el" href="class_deck.html#a95171bc96437f86ce24aa0103eafcea6">Deck</a>
 </li>
 <li>getDeckSize()
-: <a class="el" href="class_deck.html#ad775d4b99ec86991402ad12266b1b157">Deck</a>
+: <a class="el" href="class_deck.html#a43795439864d704d33feffd43d10adb7">Deck</a>
 </li>
 <li>getFace()
 : <a class="el" href="class_card.html#afb2b73b451cc753663edab09abfc4bd6">Card</a>
 </li>
 <li>getHand()
-: <a class="el" href="class_player.html#a6ca673336972f29fdc094b3f0f1f7f84">Player</a>
+: <a class="el" href="class_player.html#a3fd21ebb55fff1b382bc1c4ed73c3a29">Player</a>
 </li>
 <li>getMatchedHand()
-: <a class="el" href="class_player.html#a09fbf15e6a001feea60cb53d02ec3912">Player</a>
+: <a class="el" href="class_player.html#a4ccce21812baacf099a025fb90c3862d">Player</a>
+</li>
+<li>getNumCards()
+: <a class="el" href="class_player.html#afeea001d79927a2a5fd78610e971f789">Player</a>
 </li>
 <li>getNumMatches()
-: <a class="el" href="class_player.html#abdea2b45e1a98e9942bdaca85f451734">Player</a>
+: <a class="el" href="class_player.html#a529073d2d9fe03d4a257264165fd254d">Player</a>
 </li>
 <li>getPlayerNumber()
-: <a class="el" href="class_player.html#ae72235dee0a2f7abbcb82002164623aa">Player</a>
+: <a class="el" href="class_player.html#a31fbbc1c4386e4cc59622561707de58f">Player</a>
 </li>
 <li>getSuit()
 : <a class="el" href="class_card.html#a6bda7d706eb87b009c94ae2a9654f6d9">Card</a>
+</li>
+<li>goFish()
+: <a class="el" href="class_view_out.html#af105d2c4d0404c4c31ef4ac6daa1fdf8">ViewOut</a>
+</li>
+<li>goFishDeal()
+: <a class="el" href="class_controller.html#aa93207ee72313ca40934a10bf36adca9">Controller</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>initalDeal()
+: <a class="el" href="class_controller.html#aa2a6716682fa463fc3d6bbdb510630e5">Controller</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>mostMatches()
+: <a class="el" href="class_controller.html#acdf15c4fbe4a2782b3c5d9bc21df4886">Controller</a>
 </li>
 </ul>
 
@@ -192,25 +231,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Player()
 : <a class="el" href="class_player.html#a80d1293f6f49b886db318f1dae7be23b">Player</a>
 </li>
-<li>printDeck()
-: <a class="el" href="class_deck.html#a1737fb34704fc23e268725848ecd15ed">Deck</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>runGame()
+: <a class="el" href="class_controller.html#ad65603733541eb7698575f02de8f639d">Controller</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>shuffleDeck()
-: <a class="el" href="class_deck.html#a44577729d5b8cc5f5b416adb46ac3cd5">Deck</a>
+: <a class="el" href="class_deck.html#a7487a75ebb6b729a97b5250b101324b4">Deck</a>
 </li>
 <li>sortHand()
-: <a class="el" href="class_player.html#a2369527c90f1168eac2dc3f7bfaefc43">Player</a>
+: <a class="el" href="class_player.html#a2e0498ce6dc3fbbf21d42e010466c41a">Player</a>
+</li>
+<li>startGame()
+: <a class="el" href="class_controller.html#a3a9e81ea10c63eea81c2612ba3beb5c4">Controller</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>takeFromHand()
-: <a class="el" href="class_player.html#aa98f63d75da7cae403510b4c1e2a6ce9">Player</a>
+: <a class="el" href="class_player.html#a9e4de307960ce9cef2e2704a7a73a931">Player</a>
+</li>
+<li>turn()
+: <a class="el" href="class_controller.html#a9f08004e5e9c6462d188be01d07befe8">Controller</a>
 </li>
 </ul>
 
@@ -236,23 +285,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~Card()
 : <a class="el" href="class_card.html#a2b09fd7321b238b45b2ad2f034760e5d">Card</a>
 </li>
+<li>~Controller()
+: <a class="el" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">Controller</a>
+</li>
 <li>~Deck()
 : <a class="el" href="class_deck.html#a0455563eccd460a9ff84e74b858beb30">Deck</a>
 </li>
 <li>~Player()
-: <a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">Player</a>
+: <a class="el" href="class_player.html#a8981c201ffb2270c0b6dbd467b627376">Player</a>
 </li>
 <li>~ViewIn()
-: <a class="el" href="class_view_in.html#a2ac9c7807cd417cddfbcf9f9f3141057">ViewIn</a>
+: <a class="el" href="class_view_in.html#a5c50b11c7c5a7e43f8d49057b77c1961">ViewIn</a>
 </li>
 <li>~ViewOut()
-: <a class="el" href="class_view_out.html#a8849b000eaa67af379c8257622107b67">ViewOut</a>
+: <a class="el" href="class_view_out.html#ada8a947798c6e46b92a7ce64c21e713e">ViewOut</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 4 2018 15:38:50 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Feb 10 2018 18:10:30 for GoFish by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

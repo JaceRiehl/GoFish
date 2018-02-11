@@ -39,14 +39,15 @@ TEST_F(TestPlayer, testTakeFromHand)
 
     p2->addToHand(addCard);
     currentHand = p2->getHand();
-    ASSERT_TRUE(currentHand[currentHand.size()-1] == *c5);
+
+    ASSERT_TRUE(currentHand[currentHand.size()-1]== *c5);
+    ASSERT_TRUE(p2->checkIfInHand(*c1));
+    ASSERT_FALSE(p2->checkIfInHand(*c6));
     Card takeCard = p2->takeFromHand(*c1);
+    ASSERT_TRUE(p2->getNumCards() == 4);
     currentHand = p2->getHand();
-    //for(int i = 0;i<takeCard.size();i++)
-    //    cout << " __ _ _ __--- - " << takeCard[i].getFace() << endl;
-    //ASSERT_FALSE(takeCard[0].getSuit() == );
-    ASSERT_TRUE(takeCard == *c1);
-    Card cTest = p2->takeFromHand(*c6);
+    ASSERT_TRUE(takeCard.getFace() == c1->getFace());
+    Card cTest = p2->takeFromHand(*c6) ;
     ASSERT_TRUE(cTest.getFace() == "NULL");
     ASSERT_TRUE(cTest.getSuit() == "NULL");
 

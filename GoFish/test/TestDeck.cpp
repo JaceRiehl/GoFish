@@ -12,18 +12,32 @@ TEST_F(TestDeck,testConstructor)
 TEST_F(TestDeck,testShuffleDeck)
 {
     //not sure how to test this, revisit
-    ASSERT_FALSE(retShufDeck[0].getFace() == "2");
+    ASSERT_FALSE(retShufDeck[0].getFace() == "2" && retShufDeck[1].getFace() == "2"&& retShufDeck[2].getFace() == "2"&&
+                  retShufDeck[3].getFace() == "2");
 
 }
 
 TEST_F(TestDeck,testDealCard)
 {
-    ASSERT_TRUE(returnedDeck[0].getFace() == deck->dealCard().getFace());
-    ASSERT_TRUE(returnedDeck[0].getSuit() == deck->dealCard().getSuit());
     Card c1 = deck->dealCard();
-    ASSERT_TRUE(deck->getDeckSize() == 52);
+    Card c2 = deck->dealCard();
+    Card c3 = deck->dealCard();
+    ASSERT_TRUE(returnedDeck[0].getFace() == c1.getFace());
+    ASSERT_TRUE(returnedDeck[0].getSuit() == c1.getSuit());
+    ASSERT_TRUE(returnedDeck[1].getFace() == c2.getFace());
+    ASSERT_TRUE(returnedDeck[1].getSuit() == c2.getSuit());
+    ASSERT_TRUE(returnedDeck[2].getFace() == c3.getFace());
+    ASSERT_TRUE(returnedDeck[2].getSuit() == c3.getSuit());
+
+
+    ASSERT_EQ(49,deck->getDeckSize());
     ASSERT_TRUE(returnedDeck[3].getFace() == deck->dealCard().getFace());
     ASSERT_TRUE(returnedDeck[3].getSuit() == deck->dealCard().getSuit());
+
+    for(int i=0;i<52;i++)
+        Card c4 = fullDeck->dealCard();
+    Card c4 = fullDeck->dealCard();
+    ASSERT_TRUE(c4 == Card("NULL","NULL"));
 
 }
 
