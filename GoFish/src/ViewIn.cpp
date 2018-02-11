@@ -22,16 +22,16 @@ int ViewIn::choosePlayer(int numPlayers, int playerNum)
     return choice;
 }
 
-int ViewIn::chooseNumPlayers()
+int ViewIn::chooseNumPlayers(int maxPlayers)
 {
     int players;
     char numPlayers = 0;
     int test = 0;
-    cout << "How many players do you want to add (2-5)? ";
+    cout << "How many players do you want to add (2-" << maxPlayers << ")? ";
     while(cin >> numPlayers)
     {
         players = numPlayers - '0';
-        if(players >= 2 && players <= 5)
+        if(players >= 2 && players <= maxPlayers)
             break;
         cin.ignore(10000, '\n');
         cout << "Enter a valid input (2-5): ";

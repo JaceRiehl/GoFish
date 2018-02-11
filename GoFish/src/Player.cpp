@@ -19,9 +19,13 @@ int Player::getNumMatches()
 void Player::addToHand(vector<Card> c)
 {
     int vector_size = c.size();
+    cout << "I MADE IT HERE " << vector_size << endl;
+
+    if(vector_size >= 1)
+    {
     for(int i=0; i<vector_size;i++)
         currentHand.push_back(c[i]);
-    //sortHand();
+    }
 }
 bool Player::checkIfInHand(Card c)
 {
@@ -36,7 +40,7 @@ bool Player::checkIfInHand(Card c)
 }
 Card Player::takeFromHand(Card c)
 {
-    for(int i = 0; i<currentHand.size();i++)
+    for(unsigned int i = 0; i<currentHand.size();i++)
     {
         if(c.getFace() == currentHand[i].getFace())
         {
@@ -72,10 +76,10 @@ bool Player::checkMatchingPairs()
 {
     sortHand();
     //int numMatched = 0;
-    for(int i=0;i<currentHand.size();i++)
+    for(unsigned int i=0;i<currentHand.size();i++)
     {
         int numMatched = 0;
-        for(int j=i+1;j<currentHand.size();j++){
+        for(unsigned int j=i+1;j<currentHand.size();j++){
             if(currentHand[i].getFace() == currentHand[j].getFace())
             {
                 numMatched +=1;
@@ -83,7 +87,7 @@ bool Player::checkMatchingPairs()
             if(numMatched == 3)
             {
                 matchingPairs += 1;
-                for(int k=i;k<=j;k++)
+                for(unsigned int k=i;k<=j;k++)
                     matchingPairsInHand.push_back(currentHand[k]);
                 currentHand.erase(currentHand.begin()+i,currentHand.begin()+i+4);
                 /*

@@ -36,9 +36,10 @@ class ViewIn
         virtual int chooseCard(int);
         /**
         *Chooses the number of players that will play the came
+        *@param The maximum number of players
         *@return The number of players
         */
-        virtual int chooseNumPlayers();
+        virtual int chooseNumPlayers(int);
     protected:
 
     private:

@@ -74,7 +74,6 @@ class Player
         */
         virtual void sortHand();
 
-
     protected:
         /**
         *The players number.

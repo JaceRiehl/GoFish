@@ -20,7 +20,7 @@ void Controller::startGame()
 {
     dealersDeck->shuffleDeck();
     vO->welcomeMessage();
-    numPlayers = vI->chooseNumPlayers();
+    numPlayers = vI->chooseNumPlayers(5);
     //numPlayers = 3;
 //    for(int player=0;player<numPlayers;player++)
 //    {
@@ -31,17 +31,11 @@ void Controller::startGame()
 
 void Controller::initalDeal()
 {
-    //cout << "Num PlayersL " << numPlayers << endl;
-    if(numPlayers <= 0 || numPlayers > 5)
-        numPlayers = 5;
     int cardPerPlayer = 7;
     if(numPlayers == 2 || numPlayers == 3)
         cardPerPlayer = 7;
     else if(numPlayers == 4 || numPlayers == 5)
         cardPerPlayer = 5;
-
-    cout << "----------" << numPlayers << endl;
-
     for(int player=0;player<numPlayers;player++)
     {
         vector<Card> addCard;
@@ -69,9 +63,11 @@ void Controller::initalDeal()
 
 void Controller::runGame()
 {
-    int index = 0;
+    int index = -1;
     while(true)
     {
+        index += 1;
+        index = index % numPlayers;
         //vO.clearTerminal();
         int fishedPlayer = turn(index);
         if(players[index]->checkMatchingPairs())
@@ -84,11 +80,8 @@ void Controller::runGame()
                 break;
             }
         }
-
-        index += 1;
-        index = index % numPlayers;
-        if(numMatches == 13)
-            break;
+//        if(numMatches == 13)
+//            break;
     }
 }
 
@@ -102,6 +95,7 @@ int Controller::turn(int p)
 //    bool canFish = players[fishPlayer-1].checkIfInHand(hand[cardNum-1]);
 //    cout << "Player Number : " << players[fishPlayer-1].getPlayerNumber() << " Card: " << hand[cardNum-1].getFace();
 //    cout << "Can Fish: " << canFish << endl;
+
     if(players[fishPlayer-1]->checkIfInHand(hand[cardNum-1]))
     {
         vector<Card> add;
