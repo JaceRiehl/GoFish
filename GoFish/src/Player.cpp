@@ -53,29 +53,10 @@ Card Player::takeFromHand(Card c)
     return ret;
 
 }
-    /*
-    vector<int> er;
-    vector<Card> ret;
-    vector<Card> newVec;
-    for(int i=0;i<currentHand.size();i++)
-    {
-        if(c == currentHand[i])
-            ret.push_back(currentHand[i]);
-            er.push_back(i);
-    }
-    for(int j=0;j<currentHand.size()){
-        for(int i=0;i<er.size();i++){
-            if(j == )
-        }
-    }
-    return ret;
-    */
-
 
 bool Player::checkMatchingPairs()
 {
     sortHand();
-    //int numMatched = 0;
     for(unsigned int i=0;i<currentHand.size();i++)
     {
         int numMatched = 0;
@@ -90,14 +71,6 @@ bool Player::checkMatchingPairs()
                 for(unsigned int k=i;k<=j;k++)
                     matchingPairsInHand.push_back(currentHand[k]);
                 currentHand.erase(currentHand.begin()+i,currentHand.begin()+i+4);
-                /*
-                for(int k=0;k<currentHand.size();k++)
-                    cout << "Member of hand: " << currentHand[k].getFace() << " " << currentHand[k].getSuit() << " " << endl;;
-                cout << endl;
-                for(int k=0;k<matchingPairsInHand.size();k++)
-                    cout << "Member of matching: " << matchingPairsInHand[k].getFace() << " " << matchingPairsInHand[k].getSuit() << " " << endl;;
-                cout << endl;
-                */
                 return true;
             }
         }
