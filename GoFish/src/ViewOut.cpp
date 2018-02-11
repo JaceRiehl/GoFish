@@ -2,7 +2,7 @@
 
 ViewOut::ViewOut()
 {
-    //ctor
+
 }
 
 void ViewOut::welcomeMessage()
@@ -35,7 +35,6 @@ void ViewOut::goFish(bool canGoFish)
 void ViewOut::displayTurn(Player p1)
 {
     cout << "Player " << p1.getPlayerNumber() << "'s turn:" << endl;
-    //coutDisplayPlayersHand(p1.getHand());
 }
 
 void ViewOut::endTurn()
@@ -53,5 +52,5 @@ void ViewOut::clearTerminal()
 void ViewOut::endingMessage(int winner)
 {
     cout << "The winner is: Player " << winner << "! "<< endl;
-    cout << "Thanks for playing GoFish";
+    cout << "Thanks for playing GoFish" << endl;
 }
