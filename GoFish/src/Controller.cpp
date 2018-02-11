@@ -21,6 +21,12 @@ void Controller::startGame()
     dealersDeck->shuffleDeck();
     vO->welcomeMessage();
     numPlayers = vI->chooseNumPlayers(5);
+    //numPlayers = 3;
+//    for(int player=0;player<numPlayers;player++)
+//    {
+//        players.push_back(Player(player+1));
+//    }
+//    initalDeal();
 }
 
 void Controller::initalDeal()
@@ -45,11 +51,11 @@ void Controller::initalDeal()
     /*
     REMOVE AFTER DONE TESTING AND REMOVE FROM TESTS
     */
-//    for(int i=0;i<numPlayers;i++)
-//    {
-//        vector<Card> pr = players[i]->getHand();
-//        vO->coutDisplayPlayersHand(pr);
-//    }
+    for(int i=0;i<numPlayers;i++)
+    {
+        vector<Card> pr = players[i]->getHand();
+        vO->coutDisplayPlayersHand(pr);
+    }
 }
 
 void Controller::runGame()
