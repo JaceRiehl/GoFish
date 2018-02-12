@@ -13,6 +13,9 @@ SRC_INCLUDE = GoFish/include
 TEST_INCLUDE = GoFish/test
 INCLUDE = -I ${SRC_INCLUDE} -I ${TEST_INCLUDE}
 
+HTML = html
+LATEX = latex
+
 GCOV = gcov
 LCOV = lcov
 COVERAGE_RESULTS = results.coverage
@@ -34,7 +37,7 @@ all: memcheck-test coverage $(PROGRAM) docs static remove-extra
 
 .PHONY: clean
 clean:
-	rm -rf *~ $(SRC)/*.o $(TEST_SRC)/*.o *.gcov *.gcda *.gcno $(COVERAGE_RESULTS) $(PROGRAM) $(PROGRAM_TEST) $(MEMCHECK_RESULTS) $(COVERAGE_DIR) $(STATIC_RESULTS)
+	rm -rf *~ $(SRC)/*.o $(TEST_SRC)/*.o *.gcov *.gcda *.gcno $(COVERAGE_RESULTS) $(PROGRAM) $(PROGRAM_TEST) $(MEMCHECK_RESULTS) $(COVERAGE_DIR) $(STATIC_RESULTS) $(HTML) $(LATEX)
 
 
 .PHONY: clean-all
