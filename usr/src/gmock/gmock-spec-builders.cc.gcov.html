@@ -1,0 +1,873 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage - /usr/src/gmock/gmock-spec-builders.cc</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">usr/src/gmock</a> - gmock-spec-builders.cc<span style="font-size: 80%;"> (source / <a href="gmock-spec-builders.cc.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">129</td>
+            <td class="headerCovTableEntry">321</td>
+            <td class="headerCovTableEntryLo">40.2 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-02-12</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">47</td>
+            <td class="headerCovTableEntryLo">48.9 %</td>
+          </tr>
+          <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Copyright 2007, Google Inc.</a>
+<span class="lineNum">       2 </span>            : // All rights reserved.
+<span class="lineNum">       3 </span>            : //
+<span class="lineNum">       4 </span>            : // Redistribution and use in source and binary forms, with or without
+<span class="lineNum">       5 </span>            : // modification, are permitted provided that the following conditions are
+<span class="lineNum">       6 </span>            : // met:
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : //     * Redistributions of source code must retain the above copyright
+<span class="lineNum">       9 </span>            : // notice, this list of conditions and the following disclaimer.
+<span class="lineNum">      10 </span>            : //     * Redistributions in binary form must reproduce the above
+<span class="lineNum">      11 </span>            : // copyright notice, this list of conditions and the following disclaimer
+<span class="lineNum">      12 </span>            : // in the documentation and/or other materials provided with the
+<span class="lineNum">      13 </span>            : // distribution.
+<span class="lineNum">      14 </span>            : //     * Neither the name of Google Inc. nor the names of its
+<span class="lineNum">      15 </span>            : // contributors may be used to endorse or promote products derived from
+<span class="lineNum">      16 </span>            : // this software without specific prior written permission.
+<span class="lineNum">      17 </span>            : //
+<span class="lineNum">      18 </span>            : // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+<span class="lineNum">      19 </span>            : // &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+<span class="lineNum">      20 </span>            : // LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+<span class="lineNum">      21 </span>            : // A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+<span class="lineNum">      22 </span>            : // OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+<span class="lineNum">      23 </span>            : // SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+<span class="lineNum">      24 </span>            : // LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+<span class="lineNum">      25 </span>            : // DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+<span class="lineNum">      26 </span>            : // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+<span class="lineNum">      27 </span>            : // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+<span class="lineNum">      28 </span>            : // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+<span class="lineNum">      29 </span>            : //
+<span class="lineNum">      30 </span>            : // Author: wan@google.com (Zhanyong Wan)
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span>            : // Google Mock - a framework for writing C++ mock classes.
+<span class="lineNum">      33 </span>            : //
+<span class="lineNum">      34 </span>            : // This file implements the spec builder syntax (ON_CALL and
+<span class="lineNum">      35 </span>            : // EXPECT_CALL).
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &quot;gmock/gmock-spec-builders.h&quot;
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : #include &lt;stdlib.h&gt;
+<span class="lineNum">      40 </span>            : #include &lt;iostream&gt;  // NOLINT
+<span class="lineNum">      41 </span>            : #include &lt;map&gt;
+<span class="lineNum">      42 </span>            : #include &lt;set&gt;
+<span class="lineNum">      43 </span>            : #include &lt;string&gt;
+<span class="lineNum">      44 </span>            : #include &quot;gmock/gmock.h&quot;
+<span class="lineNum">      45 </span>            : #include &quot;gtest/gtest.h&quot;
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            : #if GTEST_OS_CYGWIN || GTEST_OS_LINUX || GTEST_OS_MAC
+<span class="lineNum">      48 </span>            : # include &lt;unistd.h&gt;  // NOLINT
+<span class="lineNum">      49 </span>            : #endif
+<span class="lineNum">      50 </span>            : 
+<span class="lineNum">      51 </span>            : namespace testing {
+<span class="lineNum">      52 </span>            : namespace internal {
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            : // Protects the mock object registry (in class Mock), all function
+<span class="lineNum">      55 </span>            : // mockers, and all expectations.
+<span class="lineNum">      56 </span>            : GTEST_DEFINE_STATIC_MUTEX_(g_gmock_mutex);
+<a name="57"><span class="lineNum">      57 </span>            : </a>
+<span class="lineNum">      58 </span>            : // Logs a message including file and line number information.
+<span class="lineNum">      59 </span><span class="lineCov">        460 : void LogWithLocation(testing::internal::LogSeverity severity,</span>
+<span class="lineNum">      60 </span>            :                      const char* file, int line,
+<span class="lineNum">      61 </span>            :                      const string&amp; message) {
+<span class="lineNum">      62 </span><span class="lineCov">        460 :   ::std::ostringstream s;</span>
+<span class="lineNum">      63 </span><span class="lineCov">        460 :   s &lt;&lt; file &lt;&lt; &quot;:&quot; &lt;&lt; line &lt;&lt; &quot;: &quot; &lt;&lt; message &lt;&lt; ::std::endl;</span>
+<span class="lineNum">      64 </span><span class="lineCov">        460 :   Log(severity, s.str(), 0);</span>
+<span class="lineNum">      65 </span><span class="lineCov">        460 : }</span>
+<a name="66"><span class="lineNum">      66 </span>            : </a>
+<span class="lineNum">      67 </span>            : // Constructs an ExpectationBase object.
+<span class="lineNum">      68 </span><span class="lineCov">         89 : ExpectationBase::ExpectationBase(const char* a_file,</span>
+<span class="lineNum">      69 </span>            :                                  int a_line,
+<span class="lineNum">      70 </span>            :                                  const string&amp; a_source_text)
+<span class="lineNum">      71 </span>            :     : file_(a_file),
+<span class="lineNum">      72 </span>            :       line_(a_line),
+<span class="lineNum">      73 </span>            :       source_text_(a_source_text),
+<span class="lineNum">      74 </span>            :       cardinality_specified_(false),
+<span class="lineNum">      75 </span>            :       cardinality_(Exactly(1)),
+<span class="lineNum">      76 </span>            :       call_count_(0),
+<span class="lineNum">      77 </span>            :       retired_(false),
+<span class="lineNum">      78 </span>            :       extra_matcher_specified_(false),
+<span class="lineNum">      79 </span>            :       repeated_action_specified_(false),
+<span class="lineNum">      80 </span>            :       retires_on_saturation_(false),
+<span class="lineNum">      81 </span>            :       last_clause_(kNone),
+<span class="lineNum">      82 </span><span class="lineCov">         89 :       action_count_checked_(false) {}</span>
+<a name="83"><span class="lineNum">      83 </span>            : </a>
+<span class="lineNum">      84 </span>            : // Destructs an ExpectationBase object.
+<span class="lineNum">      85 </span><span class="lineCov">         89 : ExpectationBase::~ExpectationBase() {}</span>
+<span class="lineNum">      86 </span>            : 
+<a name="87"><span class="lineNum">      87 </span>            : // Explicitly specifies the cardinality of this expectation.  Used by</a>
+<span class="lineNum">      88 </span>            : // the subclasses to implement the .Times() clause.
+<span class="lineNum">      89 </span><span class="lineCov">         89 : void ExpectationBase::SpecifyCardinality(const Cardinality&amp; a_cardinality) {</span>
+<span class="lineNum">      90 </span><span class="lineCov">         89 :   cardinality_specified_ = true;</span>
+<span class="lineNum">      91 </span><span class="lineCov">         89 :   cardinality_ = a_cardinality;</span>
+<span class="lineNum">      92 </span><span class="lineCov">         89 : }</span>
+<a name="93"><span class="lineNum">      93 </span>            : </a>
+<span class="lineNum">      94 </span>            : // Retires all pre-requisites of this expectation.
+<span class="lineNum">      95 </span><span class="lineCov">        277 : void ExpectationBase::RetireAllPreRequisites() {</span>
+<span class="lineNum">      96 </span><span class="lineCov">        277 :   if (is_retired()) {</span>
+<span class="lineNum">      97 </span>            :     // We can take this short-cut as we never retire an expectation
+<span class="lineNum">      98 </span>            :     // until we have retired all its pre-requisites.
+<span class="lineNum">      99 </span><span class="lineCov">        277 :     return;</span>
+<span class="lineNum">     100 </span>            :   }
+<span class="lineNum">     101 </span>            : 
+<span class="lineNum">     102 </span><span class="lineCov">        831 :   for (ExpectationSet::const_iterator it = immediate_prerequisites_.begin();</span>
+<span class="lineNum">     103 </span><span class="lineCov">        554 :        it != immediate_prerequisites_.end(); ++it) {</span>
+<span class="lineNum">     104 </span><span class="lineNoCov">          0 :     ExpectationBase* const prerequisite = it-&gt;expectation_base().get();</span>
+<span class="lineNum">     105 </span><span class="lineNoCov">          0 :     if (!prerequisite-&gt;is_retired()) {</span>
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 :       prerequisite-&gt;RetireAllPreRequisites();</span>
+<span class="lineNum">     107 </span><span class="lineNoCov">          0 :       prerequisite-&gt;Retire();</span>
+<span class="lineNum">     108 </span>            :     }
+<span class="lineNum">     109 </span>            :   }
+<span class="lineNum">     110 </span>            : }
+<span class="lineNum">     111 </span>            : 
+<span class="lineNum">     112 </span>            : // Returns true iff all pre-requisites of this expectation have been
+<a name="113"><span class="lineNum">     113 </span>            : // satisfied.</a>
+<span class="lineNum">     114 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     115 </span><span class="lineCov">        277 : bool ExpectationBase::AllPrerequisitesAreSatisfied() const {</span>
+<span class="lineNum">     116 </span><span class="lineCov">        277 :   g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     117 </span><span class="lineCov">        831 :   for (ExpectationSet::const_iterator it = immediate_prerequisites_.begin();</span>
+<span class="lineNum">     118 </span><span class="lineCov">        554 :        it != immediate_prerequisites_.end(); ++it) {</span>
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 :     if (!(it-&gt;expectation_base()-&gt;IsSatisfied()) ||</span>
+<span class="lineNum">     120 </span><span class="lineNoCov">          0 :         !(it-&gt;expectation_base()-&gt;AllPrerequisitesAreSatisfied()))</span>
+<span class="lineNum">     121 </span><span class="lineNoCov">          0 :       return false;</span>
+<span class="lineNum">     122 </span>            :   }
+<span class="lineNum">     123 </span><span class="lineCov">        277 :   return true;</span>
+<span class="lineNum">     124 </span>            : }
+<span class="lineNum">     125 </span>            : 
+<a name="126"><span class="lineNum">     126 </span>            : // Adds unsatisfied pre-requisites of this expectation to 'result'.</a>
+<span class="lineNum">     127 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     128 </span><span class="lineNoCov">          0 : void ExpectationBase::FindUnsatisfiedPrerequisites(</span>
+<span class="lineNum">     129 </span>            :     ExpectationSet* result) const {
+<span class="lineNum">     130 </span><span class="lineNoCov">          0 :   g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     131 </span><span class="lineNoCov">          0 :   for (ExpectationSet::const_iterator it = immediate_prerequisites_.begin();</span>
+<span class="lineNum">     132 </span><span class="lineNoCov">          0 :        it != immediate_prerequisites_.end(); ++it) {</span>
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 :     if (it-&gt;expectation_base()-&gt;IsSatisfied()) {</span>
+<span class="lineNum">     134 </span>            :       // If *it is satisfied and has a call count of 0, some of its
+<span class="lineNum">     135 </span>            :       // pre-requisites may not be satisfied yet.
+<span class="lineNum">     136 </span><span class="lineNoCov">          0 :       if (it-&gt;expectation_base()-&gt;call_count_ == 0) {</span>
+<span class="lineNum">     137 </span><span class="lineNoCov">          0 :         it-&gt;expectation_base()-&gt;FindUnsatisfiedPrerequisites(result);</span>
+<span class="lineNum">     138 </span>            :       }
+<span class="lineNum">     139 </span>            :     } else {
+<span class="lineNum">     140 </span>            :       // Now that we know *it is unsatisfied, we are not so interested
+<span class="lineNum">     141 </span>            :       // in whether its pre-requisites are satisfied.  Therefore we
+<span class="lineNum">     142 </span>            :       // don't recursively call FindUnsatisfiedPrerequisites() here.
+<span class="lineNum">     143 </span><span class="lineNoCov">          0 :       *result += *it;</span>
+<span class="lineNum">     144 </span>            :     }
+<span class="lineNum">     145 </span>            :   }
+<span class="lineNum">     146 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     147 </span>            : 
+<span class="lineNum">     148 </span>            : // Describes how many times a function call matching this
+<a name="149"><span class="lineNum">     149 </span>            : // expectation has occurred.</a>
+<span class="lineNum">     150 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     151 </span><span class="lineNoCov">          0 : void ExpectationBase::DescribeCallCountTo(::std::ostream* os) const {</span>
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 :   g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     153 </span>            : 
+<span class="lineNum">     154 </span>            :   // Describes how many times the function is expected to be called.
+<span class="lineNum">     155 </span><span class="lineNoCov">          0 :   *os &lt;&lt; &quot;         Expected: to be &quot;;</span>
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :   cardinality().DescribeTo(os);</span>
+<span class="lineNum">     157 </span><span class="lineNoCov">          0 :   *os &lt;&lt; &quot;\n           Actual: &quot;;</span>
+<span class="lineNum">     158 </span><span class="lineNoCov">          0 :   Cardinality::DescribeActualCallCountTo(call_count(), os);</span>
+<span class="lineNum">     159 </span>            : 
+<span class="lineNum">     160 </span>            :   // Describes the state of the expectation (e.g. is it satisfied?
+<span class="lineNum">     161 </span>            :   // is it active?).
+<span class="lineNum">     162 </span><span class="lineNoCov">          0 :   *os &lt;&lt; &quot; - &quot; &lt;&lt; (IsOverSaturated() ? &quot;over-saturated&quot; :</span>
+<span class="lineNum">     163 </span><span class="lineNoCov">          0 :                    IsSaturated() ? &quot;saturated&quot; :</span>
+<span class="lineNum">     164 </span><span class="lineNoCov">          0 :                    IsSatisfied() ? &quot;satisfied&quot; : &quot;unsatisfied&quot;)</span>
+<span class="lineNum">     165 </span><span class="lineNoCov">          0 :       &lt;&lt; &quot; and &quot;</span>
+<span class="lineNum">     166 </span><span class="lineNoCov">          0 :       &lt;&lt; (is_retired() ? &quot;retired&quot; : &quot;active&quot;);</span>
+<span class="lineNum">     167 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     168 </span>            : 
+<span class="lineNum">     169 </span>            : // Checks the action count (i.e. the number of WillOnce() and
+<span class="lineNum">     170 </span>            : // WillRepeatedly() clauses) against the cardinality if this hasn't
+<span class="lineNum">     171 </span>            : // been done before.  Prints a warning if there are too many or too
+<a name="172"><span class="lineNum">     172 </span>            : // few actions.</a>
+<span class="lineNum">     173 </span>            : // L &lt; mutex_
+<span class="lineNum">     174 </span><span class="lineCov">        408 : void ExpectationBase::CheckActionCountIfNotDone() const {</span>
+<span class="lineNum">     175 </span><span class="lineCov">        408 :   bool should_check = false;</span>
+<span class="lineNum">     176 </span>            :   {
+<span class="lineNum">     177 </span><span class="lineCov">        408 :     MutexLock l(&amp;mutex_);</span>
+<span class="lineNum">     178 </span><span class="lineCov">        408 :     if (!action_count_checked_) {</span>
+<span class="lineNum">     179 </span><span class="lineCov">         89 :       action_count_checked_ = true;</span>
+<span class="lineNum">     180 </span><span class="lineCov">         89 :       should_check = true;</span>
+<span class="lineNum">     181 </span><span class="lineCov">        408 :     }</span>
+<span class="lineNum">     182 </span>            :   }
+<span class="lineNum">     183 </span>            : 
+<span class="lineNum">     184 </span><span class="lineCov">        408 :   if (should_check) {</span>
+<span class="lineNum">     185 </span><span class="lineCov">         89 :     if (!cardinality_specified_) {</span>
+<span class="lineNum">     186 </span>            :       // The cardinality was inferred - no need to check the action
+<span class="lineNum">     187 </span>            :       // count against it.
+<span class="lineNum">     188 </span><span class="lineCov">         89 :       return;</span>
+<span class="lineNum">     189 </span>            :     }
+<span class="lineNum">     190 </span>            : 
+<span class="lineNum">     191 </span>            :     // The cardinality was explicitly specified.
+<span class="lineNum">     192 </span><span class="lineCov">         89 :     const int action_count = static_cast&lt;int&gt;(untyped_actions_.size());</span>
+<span class="lineNum">     193 </span><span class="lineCov">         89 :     const int upper_bound = cardinality().ConservativeUpperBound();</span>
+<span class="lineNum">     194 </span><span class="lineCov">         89 :     const int lower_bound = cardinality().ConservativeLowerBound();</span>
+<span class="lineNum">     195 </span>            :     bool too_many;  // True if there are too many actions, or false
+<span class="lineNum">     196 </span>            :     // if there are too few.
+<span class="lineNum">     197 </span><span class="lineCov">         89 :     if (action_count &gt; upper_bound ||</span>
+<span class="lineNum">     198 </span><span class="lineCov">         47 :         (action_count == upper_bound &amp;&amp; repeated_action_specified_)) {</span>
+<span class="lineNum">     199 </span><span class="lineNoCov">          0 :       too_many = true;</span>
+<span class="lineNum">     200 </span><span class="lineCov">         89 :     } else if (0 &lt; action_count &amp;&amp; action_count &lt; lower_bound &amp;&amp;</span>
+<span class="lineNum">     201 </span><span class="lineNoCov">          0 :                !repeated_action_specified_) {</span>
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 :       too_many = false;</span>
+<span class="lineNum">     203 </span>            :     } else {
+<span class="lineNum">     204 </span><span class="lineCov">         89 :       return;</span>
+<span class="lineNum">     205 </span>            :     }
+<span class="lineNum">     206 </span>            : 
+<span class="lineNum">     207 </span><span class="lineNoCov">          0 :     ::std::stringstream ss;</span>
+<span class="lineNum">     208 </span><span class="lineNoCov">          0 :     DescribeLocationTo(&amp;ss);</span>
+<span class="lineNum">     209 </span><span class="lineNoCov">          0 :     ss &lt;&lt; &quot;Too &quot; &lt;&lt; (too_many ? &quot;many&quot; : &quot;few&quot;)</span>
+<span class="lineNum">     210 </span><span class="lineNoCov">          0 :        &lt;&lt; &quot; actions specified in &quot; &lt;&lt; source_text() &lt;&lt; &quot;...\n&quot;</span>
+<span class="lineNum">     211 </span><span class="lineNoCov">          0 :        &lt;&lt; &quot;Expected to be &quot;;</span>
+<span class="lineNum">     212 </span><span class="lineNoCov">          0 :     cardinality().DescribeTo(&amp;ss);</span>
+<span class="lineNum">     213 </span><span class="lineNoCov">          0 :     ss &lt;&lt; &quot;, but has &quot; &lt;&lt; (too_many ? &quot;&quot; : &quot;only &quot;)</span>
+<span class="lineNum">     214 </span><span class="lineNoCov">          0 :        &lt;&lt; action_count &lt;&lt; &quot; WillOnce()&quot;</span>
+<span class="lineNum">     215 </span><span class="lineNoCov">          0 :        &lt;&lt; (action_count == 1 ? &quot;&quot; : &quot;s&quot;);</span>
+<span class="lineNum">     216 </span><span class="lineNoCov">          0 :     if (repeated_action_specified_) {</span>
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :       ss &lt;&lt; &quot; and a WillRepeatedly()&quot;;</span>
+<span class="lineNum">     218 </span>            :     }
+<span class="lineNum">     219 </span><span class="lineNoCov">          0 :     ss &lt;&lt; &quot;.&quot;;</span>
+<span class="lineNum">     220 </span><span class="lineNoCov">          0 :     Log(WARNING, ss.str(), -1);  // -1 means &quot;don't print stack trace&quot;.</span>
+<span class="lineNum">     221 </span>            :   }
+<span class="lineNum">     222 </span>            : }
+<a name="223"><span class="lineNum">     223 </span>            : </a>
+<span class="lineNum">     224 </span>            : // Implements the .Times() clause.
+<span class="lineNum">     225 </span><span class="lineCov">         89 : void ExpectationBase::UntypedTimes(const Cardinality&amp; a_cardinality) {</span>
+<span class="lineNum">     226 </span><span class="lineCov">         89 :   if (last_clause_ == kTimes) {</span>
+<span class="lineNum">     227 </span>            :     ExpectSpecProperty(false,
+<span class="lineNum">     228 </span>            :                        &quot;.Times() cannot appear &quot;
+<span class="lineNum">     229 </span><span class="lineNoCov">          0 :                        &quot;more than once in an EXPECT_CALL().&quot;);</span>
+<span class="lineNum">     230 </span>            :   } else {
+<span class="lineNum">     231 </span>            :     ExpectSpecProperty(last_clause_ &lt; kTimes,
+<span class="lineNum">     232 </span>            :                        &quot;.Times() cannot appear after &quot;
+<span class="lineNum">     233 </span>            :                        &quot;.InSequence(), .WillOnce(), .WillRepeatedly(), &quot;
+<span class="lineNum">     234 </span><span class="lineCov">         89 :                        &quot;or .RetiresOnSaturation().&quot;);</span>
+<span class="lineNum">     235 </span>            :   }
+<span class="lineNum">     236 </span><span class="lineCov">         89 :   last_clause_ = kTimes;</span>
+<span class="lineNum">     237 </span>            : 
+<span class="lineNum">     238 </span><span class="lineCov">         89 :   SpecifyCardinality(a_cardinality);</span>
+<span class="lineNum">     239 </span><span class="lineCov">         89 : }</span>
+<span class="lineNum">     240 </span>            : 
+<span class="lineNum">     241 </span>            : // Points to the implicit sequence introduced by a living InSequence
+<span class="lineNum">     242 </span>            : // object (if any) in the current thread or NULL.
+<span class="lineNum">     243 </span><span class="lineCov">          1 : ThreadLocal&lt;Sequence*&gt; g_gmock_implicit_sequence;</span>
+<span class="lineNum">     244 </span>            : 
+<a name="245"><span class="lineNum">     245 </span>            : // Reports an uninteresting call (whose description is in msg) in the</a>
+<span class="lineNum">     246 </span>            : // manner specified by 'reaction'.
+<span class="lineNum">     247 </span><span class="lineNoCov">          0 : void ReportUninterestingCall(CallReaction reaction, const string&amp; msg) {</span>
+<span class="lineNum">     248 </span><span class="lineNoCov">          0 :   switch (reaction) {</span>
+<span class="lineNum">     249 </span>            :     case ALLOW:
+<span class="lineNum">     250 </span><span class="lineNoCov">          0 :       Log(INFO, msg, 3);</span>
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     252 </span>            :     case WARN:
+<span class="lineNum">     253 </span><span class="lineNoCov">          0 :       Log(WARNING, msg, 3);</span>
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :       break;</span>
+<span class="lineNum">     255 </span>            :     default:  // FAIL
+<span class="lineNum">     256 </span><span class="lineNoCov">          0 :       Expect(false, NULL, -1, msg);</span>
+<span class="lineNum">     257 </span>            :   }
+<a name="258"><span class="lineNum">     258 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     259 </span>            : 
+<span class="lineNum">     260 </span><span class="lineCov">        384 : UntypedFunctionMockerBase::UntypedFunctionMockerBase()</span>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">        384 :     : mock_obj_(NULL), name_(&quot;&quot;) {}</span></a>
+<span class="lineNum">     262 </span>            : 
+<span class="lineNum">     263 </span><span class="lineCov">        384 : UntypedFunctionMockerBase::~UntypedFunctionMockerBase() {}</span>
+<span class="lineNum">     264 </span>            : 
+<span class="lineNum">     265 </span>            : // Sets the mock object this mock method belongs to, and registers
+<span class="lineNum">     266 </span>            : // this information in the global mock registry.  Will be called
+<span class="lineNum">     267 </span>            : // whenever an EXPECT_CALL() or ON_CALL() is executed on this mock
+<a name="268"><span class="lineNum">     268 </span>            : // method.</a>
+<span class="lineNum">     269 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     270 </span><span class="lineCov">        460 : void UntypedFunctionMockerBase::RegisterOwner(const void* mock_obj) {</span>
+<span class="lineNum">     271 </span>            :   {
+<span class="lineNum">     272 </span><span class="lineCov">        460 :     MutexLock l(&amp;g_gmock_mutex);</span>
+<span class="lineNum">     273 </span><span class="lineCov">        460 :     mock_obj_ = mock_obj;</span>
+<span class="lineNum">     274 </span>            :   }
+<span class="lineNum">     275 </span><span class="lineCov">        460 :   Mock::Register(mock_obj, this);</span>
+<span class="lineNum">     276 </span><span class="lineCov">        460 : }</span>
+<span class="lineNum">     277 </span>            : 
+<span class="lineNum">     278 </span>            : // Sets the mock object this mock method belongs to, and sets the name
+<span class="lineNum">     279 </span>            : // of the mock function.  Will be called upon each invocation of this
+<a name="280"><span class="lineNum">     280 </span>            : // mock function.</a>
+<span class="lineNum">     281 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     282 </span><span class="lineCov">        277 : void UntypedFunctionMockerBase::SetOwnerAndName(</span>
+<span class="lineNum">     283 </span>            :     const void* mock_obj, const char* name) {
+<span class="lineNum">     284 </span>            :   // We protect name_ under g_gmock_mutex in case this mock function
+<span class="lineNum">     285 </span>            :   // is called from two threads concurrently.
+<span class="lineNum">     286 </span><span class="lineCov">        277 :   MutexLock l(&amp;g_gmock_mutex);</span>
+<span class="lineNum">     287 </span><span class="lineCov">        277 :   mock_obj_ = mock_obj;</span>
+<span class="lineNum">     288 </span><span class="lineCov">        277 :   name_ = name;</span>
+<span class="lineNum">     289 </span><span class="lineCov">        277 : }</span>
+<span class="lineNum">     290 </span>            : 
+<span class="lineNum">     291 </span>            : // Returns the name of the function being mocked.  Must be called
+<a name="292"><span class="lineNum">     292 </span>            : // after RegisterOwner() or SetOwnerAndName() has been called.</a>
+<span class="lineNum">     293 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     294 </span><span class="lineCov">        460 : const void* UntypedFunctionMockerBase::MockObject() const {</span>
+<span class="lineNum">     295 </span>            :   const void* mock_obj;
+<span class="lineNum">     296 </span>            :   {
+<span class="lineNum">     297 </span>            :     // We protect mock_obj_ under g_gmock_mutex in case this mock
+<span class="lineNum">     298 </span>            :     // function is called from two threads concurrently.
+<span class="lineNum">     299 </span><span class="lineCov">        460 :     MutexLock l(&amp;g_gmock_mutex);</span>
+<span class="lineNum">     300 </span>            :     Assert(mock_obj_ != NULL, __FILE__, __LINE__,
+<span class="lineNum">     301 </span>            :            &quot;MockObject() must not be called before RegisterOwner() or &quot;
+<span class="lineNum">     302 </span><span class="lineCov">        460 :            &quot;SetOwnerAndName() has been called.&quot;);</span>
+<span class="lineNum">     303 </span><span class="lineCov">        460 :     mock_obj = mock_obj_;</span>
+<span class="lineNum">     304 </span>            :   }
+<span class="lineNum">     305 </span><span class="lineCov">        460 :   return mock_obj;</span>
+<span class="lineNum">     306 </span>            : }
+<span class="lineNum">     307 </span>            : 
+<span class="lineNum">     308 </span>            : // Returns the name of this mock method.  Must be called after
+<a name="309"><span class="lineNum">     309 </span>            : // SetOwnerAndName() has been called.</a>
+<span class="lineNum">     310 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     311 </span><span class="lineNoCov">          0 : const char* UntypedFunctionMockerBase::Name() const {</span>
+<span class="lineNum">     312 </span>            :   const char* name;
+<span class="lineNum">     313 </span>            :   {
+<span class="lineNum">     314 </span>            :     // We protect name_ under g_gmock_mutex in case this mock
+<span class="lineNum">     315 </span>            :     // function is called from two threads concurrently.
+<span class="lineNum">     316 </span><span class="lineNoCov">          0 :     MutexLock l(&amp;g_gmock_mutex);</span>
+<span class="lineNum">     317 </span>            :     Assert(name_ != NULL, __FILE__, __LINE__,
+<span class="lineNum">     318 </span>            :            &quot;Name() must not be called before SetOwnerAndName() has &quot;
+<span class="lineNum">     319 </span><span class="lineNoCov">          0 :            &quot;been called.&quot;);</span>
+<span class="lineNum">     320 </span><span class="lineNoCov">          0 :     name = name_;</span>
+<span class="lineNum">     321 </span>            :   }
+<span class="lineNum">     322 </span><span class="lineNoCov">          0 :   return name;</span>
+<span class="lineNum">     323 </span>            : }
+<span class="lineNum">     324 </span>            : 
+<span class="lineNum">     325 </span>            : // Calculates the result of invoking this mock function with the given
+<span class="lineNum">     326 </span>            : // arguments, prints it, and returns it.  The caller is responsible
+<span class="lineNum">     327 </span>            : // for deleting the result.
+<a name="328"><span class="lineNum">     328 </span>            : // L &lt; g_gmock_mutex</a>
+<span class="lineNum">     329 </span>            : const UntypedActionResultHolderBase*
+<span class="lineNum">     330 </span><span class="lineCov">        277 : UntypedFunctionMockerBase::UntypedInvokeWith(const void* const untyped_args) {</span>
+<span class="lineNum">     331 </span><span class="lineCov">        277 :   if (untyped_expectations_.size() == 0) {</span>
+<span class="lineNum">     332 </span>            :     // No expectation is set on this mock method - we have an
+<span class="lineNum">     333 </span>            :     // uninteresting call.
+<span class="lineNum">     334 </span>            : 
+<span class="lineNum">     335 </span>            :     // We must get Google Mock's reaction on uninteresting calls
+<span class="lineNum">     336 </span>            :     // made on this mock object BEFORE performing the action,
+<span class="lineNum">     337 </span>            :     // because the action may DELETE the mock object and make the
+<span class="lineNum">     338 </span>            :     // following expression meaningless.
+<span class="lineNum">     339 </span>            :     const CallReaction reaction =
+<span class="lineNum">     340 </span><span class="lineNoCov">          0 :         Mock::GetReactionOnUninterestingCalls(MockObject());</span>
+<span class="lineNum">     341 </span>            : 
+<span class="lineNum">     342 </span>            :     // True iff we need to print this call's arguments and return
+<span class="lineNum">     343 </span>            :     // value.  This definition must be kept in sync with
+<span class="lineNum">     344 </span>            :     // the behavior of ReportUninterestingCall().
+<span class="lineNum">     345 </span>            :     const bool need_to_report_uninteresting_call =
+<span class="lineNum">     346 </span>            :         // If the user allows this uninteresting call, we print it
+<span class="lineNum">     347 </span>            :         // only when he wants informational messages.
+<span class="lineNum">     348 </span>            :         reaction == ALLOW ? LogIsVisible(INFO) :
+<span class="lineNum">     349 </span>            :         // If the user wants this to be a warning, we print it only
+<span class="lineNum">     350 </span>            :         // when he wants to see warnings.
+<span class="lineNum">     351 </span>            :         reaction == WARN ? LogIsVisible(WARNING) :
+<span class="lineNum">     352 </span>            :         // Otherwise, the user wants this to be an error, and we
+<span class="lineNum">     353 </span>            :         // should always print detailed information in the error.
+<span class="lineNum">     354 </span><span class="lineNoCov">          0 :         true;</span>
+<span class="lineNum">     355 </span>            : 
+<span class="lineNum">     356 </span><span class="lineNoCov">          0 :     if (!need_to_report_uninteresting_call) {</span>
+<span class="lineNum">     357 </span>            :       // Perform the action without printing the call information.
+<span class="lineNum">     358 </span><span class="lineNoCov">          0 :       return this-&gt;UntypedPerformDefaultAction(untyped_args, &quot;&quot;);</span>
+<span class="lineNum">     359 </span>            :     }
+<span class="lineNum">     360 </span>            : 
+<span class="lineNum">     361 </span>            :     // Warns about the uninteresting call.
+<span class="lineNum">     362 </span><span class="lineNoCov">          0 :     ::std::stringstream ss;</span>
+<span class="lineNum">     363 </span><span class="lineNoCov">          0 :     this-&gt;UntypedDescribeUninterestingCall(untyped_args, &amp;ss);</span>
+<span class="lineNum">     364 </span>            : 
+<span class="lineNum">     365 </span>            :     // Calculates the function result.
+<span class="lineNum">     366 </span>            :     const UntypedActionResultHolderBase* const result =
+<span class="lineNum">     367 </span><span class="lineNoCov">          0 :         this-&gt;UntypedPerformDefaultAction(untyped_args, ss.str());</span>
+<span class="lineNum">     368 </span>            : 
+<span class="lineNum">     369 </span>            :     // Prints the function result.
+<span class="lineNum">     370 </span><span class="lineNoCov">          0 :     if (result != NULL)</span>
+<span class="lineNum">     371 </span><span class="lineNoCov">          0 :       result-&gt;PrintAsActionResult(&amp;ss);</span>
+<span class="lineNum">     372 </span>            : 
+<span class="lineNum">     373 </span><span class="lineNoCov">          0 :     ReportUninterestingCall(reaction, ss.str());</span>
+<span class="lineNum">     374 </span><span class="lineNoCov">          0 :     return result;</span>
+<span class="lineNum">     375 </span>            :   }
+<span class="lineNum">     376 </span>            : 
+<span class="lineNum">     377 </span><span class="lineCov">        277 :   bool is_excessive = false;</span>
+<span class="lineNum">     378 </span><span class="lineCov">        277 :   ::std::stringstream ss;</span>
+<span class="lineNum">     379 </span><span class="lineCov">        554 :   ::std::stringstream why;</span>
+<span class="lineNum">     380 </span><span class="lineCov">        554 :   ::std::stringstream loc;</span>
+<span class="lineNum">     381 </span><span class="lineCov">        277 :   const void* untyped_action = NULL;</span>
+<span class="lineNum">     382 </span>            : 
+<span class="lineNum">     383 </span>            :   // The UntypedFindMatchingExpectation() function acquires and
+<span class="lineNum">     384 </span>            :   // releases g_gmock_mutex.
+<span class="lineNum">     385 </span>            :   const ExpectationBase* const untyped_expectation =
+<span class="lineNum">     386 </span>            :       this-&gt;UntypedFindMatchingExpectation(
+<span class="lineNum">     387 </span>            :           untyped_args, &amp;untyped_action, &amp;is_excessive,
+<span class="lineNum">     388 </span><span class="lineCov">        277 :           &amp;ss, &amp;why);</span>
+<span class="lineNum">     389 </span><span class="lineCov">        277 :   const bool found = untyped_expectation != NULL;</span>
+<span class="lineNum">     390 </span>            : 
+<span class="lineNum">     391 </span>            :   // True iff we need to print the call's arguments and return value.
+<span class="lineNum">     392 </span>            :   // This definition must be kept in sync with the uses of Expect()
+<span class="lineNum">     393 </span>            :   // and Log() in this function.
+<span class="lineNum">     394 </span><span class="lineCov">        277 :   const bool need_to_report_call = !found || is_excessive || LogIsVisible(INFO);</span>
+<span class="lineNum">     395 </span><span class="lineCov">        277 :   if (!need_to_report_call) {</span>
+<span class="lineNum">     396 </span>            :     // Perform the action without printing the call information.
+<span class="lineNum">     397 </span>            :     return
+<span class="lineNum">     398 </span><span class="lineCov">        277 :         untyped_action == NULL ?</span>
+<span class="lineNum">     399 </span><span class="lineCov">        277 :         this-&gt;UntypedPerformDefaultAction(untyped_args, &quot;&quot;) :</span>
+<span class="lineNum">     400 </span><span class="lineCov">        554 :         this-&gt;UntypedPerformAction(untyped_action, untyped_args);</span>
+<span class="lineNum">     401 </span>            :   }
+<span class="lineNum">     402 </span>            : 
+<span class="lineNum">     403 </span><span class="lineNoCov">          0 :   ss &lt;&lt; &quot;    Function call: &quot; &lt;&lt; Name();</span>
+<span class="lineNum">     404 </span><span class="lineNoCov">          0 :   this-&gt;UntypedPrintArgs(untyped_args, &amp;ss);</span>
+<span class="lineNum">     405 </span>            : 
+<span class="lineNum">     406 </span>            :   // In case the action deletes a piece of the expectation, we
+<span class="lineNum">     407 </span>            :   // generate the message beforehand.
+<span class="lineNum">     408 </span><span class="lineNoCov">          0 :   if (found &amp;&amp; !is_excessive) {</span>
+<span class="lineNum">     409 </span><span class="lineNoCov">          0 :     untyped_expectation-&gt;DescribeLocationTo(&amp;loc);</span>
+<span class="lineNum">     410 </span>            :   }
+<span class="lineNum">     411 </span>            : 
+<span class="lineNum">     412 </span>            :   const UntypedActionResultHolderBase* const result =
+<span class="lineNum">     413 </span><span class="lineNoCov">          0 :       untyped_action == NULL ?</span>
+<span class="lineNum">     414 </span><span class="lineNoCov">          0 :       this-&gt;UntypedPerformDefaultAction(untyped_args, ss.str()) :</span>
+<span class="lineNum">     415 </span><span class="lineNoCov">          0 :       this-&gt;UntypedPerformAction(untyped_action, untyped_args);</span>
+<span class="lineNum">     416 </span><span class="lineNoCov">          0 :   if (result != NULL)</span>
+<span class="lineNum">     417 </span><span class="lineNoCov">          0 :     result-&gt;PrintAsActionResult(&amp;ss);</span>
+<span class="lineNum">     418 </span><span class="lineNoCov">          0 :   ss &lt;&lt; &quot;\n&quot; &lt;&lt; why.str();</span>
+<span class="lineNum">     419 </span>            : 
+<span class="lineNum">     420 </span><span class="lineNoCov">          0 :   if (!found) {</span>
+<span class="lineNum">     421 </span>            :     // No expectation matches this call - reports a failure.
+<span class="lineNum">     422 </span><span class="lineNoCov">          0 :     Expect(false, NULL, -1, ss.str());</span>
+<span class="lineNum">     423 </span><span class="lineNoCov">          0 :   } else if (is_excessive) {</span>
+<span class="lineNum">     424 </span>            :     // We had an upper-bound violation and the failure message is in ss.
+<span class="lineNum">     425 </span>            :     Expect(false, untyped_expectation-&gt;file(),
+<span class="lineNum">     426 </span><span class="lineNoCov">          0 :            untyped_expectation-&gt;line(), ss.str());</span>
+<span class="lineNum">     427 </span>            :   } else {
+<span class="lineNum">     428 </span>            :     // We had an expected call and the matching expectation is
+<span class="lineNum">     429 </span>            :     // described in ss.
+<span class="lineNum">     430 </span><span class="lineNoCov">          0 :     Log(INFO, loc.str() + ss.str(), 2);</span>
+<span class="lineNum">     431 </span>            :   }
+<span class="lineNum">     432 </span>            : 
+<span class="lineNum">     433 </span><span class="lineCov">        277 :   return result;</span>
+<span class="lineNum">     434 </span>            : }
+<span class="lineNum">     435 </span>            : 
+<a name="436"><span class="lineNum">     436 </span>            : // Returns an Expectation object that references and co-owns exp,</a>
+<span class="lineNum">     437 </span>            : // which must be an expectation on this mock function.
+<span class="lineNum">     438 </span><span class="lineNoCov">          0 : Expectation UntypedFunctionMockerBase::GetHandleOf(ExpectationBase* exp) {</span>
+<span class="lineNum">     439 </span><span class="lineNoCov">          0 :   for (UntypedExpectations::const_iterator it =</span>
+<span class="lineNum">     440 </span><span class="lineNoCov">          0 :            untyped_expectations_.begin();</span>
+<span class="lineNum">     441 </span><span class="lineNoCov">          0 :        it != untyped_expectations_.end(); ++it) {</span>
+<span class="lineNum">     442 </span><span class="lineNoCov">          0 :     if (it-&gt;get() == exp) {</span>
+<span class="lineNum">     443 </span><span class="lineNoCov">          0 :       return Expectation(*it);</span>
+<span class="lineNum">     444 </span>            :     }
+<span class="lineNum">     445 </span>            :   }
+<span class="lineNum">     446 </span>            : 
+<span class="lineNum">     447 </span><span class="lineNoCov">          0 :   Assert(false, __FILE__, __LINE__, &quot;Cannot find expectation.&quot;);</span>
+<span class="lineNum">     448 </span><span class="lineNoCov">          0 :   return Expectation();</span>
+<span class="lineNum">     449 </span>            :   // The above statement is just to make the code compile, and will
+<span class="lineNum">     450 </span>            :   // never be executed.
+<span class="lineNum">     451 </span>            : }
+<span class="lineNum">     452 </span>            : 
+<span class="lineNum">     453 </span>            : // Verifies that all expectations on this mock function have been
+<span class="lineNum">     454 </span>            : // satisfied.  Reports one or more Google Test non-fatal failures
+<a name="455"><span class="lineNum">     455 </span>            : // and returns false if not.</a>
+<span class="lineNum">     456 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     457 </span><span class="lineCov">        384 : bool UntypedFunctionMockerBase::VerifyAndClearExpectationsLocked() {</span>
+<span class="lineNum">     458 </span><span class="lineCov">        384 :   g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     459 </span><span class="lineCov">        384 :   bool expectations_met = true;</span>
+<span class="lineNum">     460 </span><span class="lineCov">       1419 :   for (UntypedExpectations::const_iterator it =</span>
+<span class="lineNum">     461 </span><span class="lineCov">        384 :            untyped_expectations_.begin();</span>
+<span class="lineNum">     462 </span><span class="lineCov">        946 :        it != untyped_expectations_.end(); ++it) {</span>
+<span class="lineNum">     463 </span><span class="lineCov">         89 :     ExpectationBase* const untyped_expectation = it-&gt;get();</span>
+<span class="lineNum">     464 </span><span class="lineCov">         89 :     if (untyped_expectation-&gt;IsOverSaturated()) {</span>
+<span class="lineNum">     465 </span>            :       // There was an upper-bound violation.  Since the error was
+<span class="lineNum">     466 </span>            :       // already reported when it occurred, there is no need to do
+<span class="lineNum">     467 </span>            :       // anything here.
+<span class="lineNum">     468 </span><span class="lineNoCov">          0 :       expectations_met = false;</span>
+<span class="lineNum">     469 </span><span class="lineCov">         89 :     } else if (!untyped_expectation-&gt;IsSatisfied()) {</span>
+<span class="lineNum">     470 </span><span class="lineNoCov">          0 :       expectations_met = false;</span>
+<span class="lineNum">     471 </span><span class="lineNoCov">          0 :       ::std::stringstream ss;</span>
+<span class="lineNum">     472 </span><span class="lineNoCov">          0 :       ss  &lt;&lt; &quot;Actual function call count doesn't match &quot;</span>
+<span class="lineNum">     473 </span><span class="lineNoCov">          0 :           &lt;&lt; untyped_expectation-&gt;source_text() &lt;&lt; &quot;...\n&quot;;</span>
+<span class="lineNum">     474 </span>            :       // No need to show the source file location of the expectation
+<span class="lineNum">     475 </span>            :       // in the description, as the Expect() call that follows already
+<span class="lineNum">     476 </span>            :       // takes care of it.
+<span class="lineNum">     477 </span><span class="lineNoCov">          0 :       untyped_expectation-&gt;MaybeDescribeExtraMatcherTo(&amp;ss);</span>
+<span class="lineNum">     478 </span><span class="lineNoCov">          0 :       untyped_expectation-&gt;DescribeCallCountTo(&amp;ss);</span>
+<span class="lineNum">     479 </span>            :       Expect(false, untyped_expectation-&gt;file(),
+<span class="lineNum">     480 </span><span class="lineNoCov">          0 :              untyped_expectation-&gt;line(), ss.str());</span>
+<span class="lineNum">     481 </span>            :     }
+<span class="lineNum">     482 </span>            :   }
+<span class="lineNum">     483 </span><span class="lineCov">        384 :   untyped_expectations_.clear();</span>
+<span class="lineNum">     484 </span><span class="lineCov">        384 :   return expectations_met;</span>
+<span class="lineNum">     485 </span>            : }
+<span class="lineNum">     486 </span>            : 
+<span class="lineNum">     487 </span>            : }  // namespace internal
+<span class="lineNum">     488 </span>            : 
+<span class="lineNum">     489 </span>            : // Class Mock.
+<span class="lineNum">     490 </span>            : 
+<span class="lineNum">     491 </span>            : namespace {
+<span class="lineNum">     492 </span>            : 
+<span class="lineNum">     493 </span>            : typedef std::set&lt;internal::UntypedFunctionMockerBase*&gt; FunctionMockers;
+<span class="lineNum">     494 </span>            : 
+<span class="lineNum">     495 </span>            : // The current state of a mock object.  Such information is needed for
+<a name="496"><span class="lineNum">     496 </span>            : // detecting leaked mock objects and explicitly verifying a mock's</a>
+<a name="497"><span class="lineNum">     497 </span>            : // expectations.</a>
+<span class="lineNum">     498 </span><span class="lineCov">         48 : struct MockObjectState {</span>
+<span class="lineNum">     499 </span><span class="lineCov">         48 :   MockObjectState()</span>
+<span class="lineNum">     500 </span><span class="lineCov">         48 :       : first_used_file(NULL), first_used_line(-1), leakable(false) {}</span>
+<span class="lineNum">     501 </span>            : 
+<span class="lineNum">     502 </span>            :   // Where in the source file an ON_CALL or EXPECT_CALL is first
+<span class="lineNum">     503 </span>            :   // invoked on this mock object.
+<span class="lineNum">     504 </span>            :   const char* first_used_file;
+<span class="lineNum">     505 </span>            :   int first_used_line;
+<span class="lineNum">     506 </span>            :   ::std::string first_used_test_case;
+<span class="lineNum">     507 </span>            :   ::std::string first_used_test;
+<span class="lineNum">     508 </span>            :   bool leakable;  // true iff it's OK to leak the object.
+<span class="lineNum">     509 </span>            :   FunctionMockers function_mockers;  // All registered methods of the object.
+<span class="lineNum">     510 </span>            : };
+<span class="lineNum">     511 </span>            : 
+<span class="lineNum">     512 </span>            : // A global registry holding the state of all mock objects that are
+<span class="lineNum">     513 </span>            : // alive.  A mock object is added to this registry the first time
+<a name="514"><span class="lineNum">     514 </span>            : // Mock::AllowLeak(), ON_CALL(), or EXPECT_CALL() is called on it.  It</a>
+<span class="lineNum">     515 </span>            : // is removed from the registry in the mock object's destructor.
+<span class="lineNum">     516 </span><span class="lineCov">          1 : class MockObjectRegistry {</span>
+<span class="lineNum">     517 </span>            :  public:
+<span class="lineNum">     518 </span>            :   // Maps a mock object (identified by its address) to its state.
+<span class="lineNum">     519 </span>            :   typedef std::map&lt;const void*, MockObjectState&gt; StateMap;
+<span class="lineNum">     520 </span>            : 
+<span class="lineNum">     521 </span>            :   // This destructor will be called when a program exits, after all
+<span class="lineNum">     522 </span>            :   // tests in it have been run.  By then, there should be no mock
+<a name="523"><span class="lineNum">     523 </span>            :   // object alive.  Therefore we report any living object as test</a>
+<span class="lineNum">     524 </span>            :   // failure, unless the user explicitly asked us to ignore it.
+<span class="lineNum">     525 </span><span class="lineCov">          2 :   ~MockObjectRegistry() {</span>
+<span class="lineNum">     526 </span>            :     // &quot;using ::std::cout;&quot; doesn't work with Symbian's STLport, where cout is
+<span class="lineNum">     527 </span>            :     // a macro.
+<span class="lineNum">     528 </span>            : 
+<span class="lineNum">     529 </span><span class="lineCov">          1 :     if (!GMOCK_FLAG(catch_leaked_mocks))</span>
+<span class="lineNum">     530 </span><span class="lineNoCov">          0 :       return;</span>
+<span class="lineNum">     531 </span>            : 
+<span class="lineNum">     532 </span><span class="lineCov">          1 :     int leaked_count = 0;</span>
+<span class="lineNum">     533 </span><span class="lineCov">          1 :     for (StateMap::const_iterator it = states_.begin(); it != states_.end();</span>
+<span class="lineNum">     534 </span>            :          ++it) {
+<span class="lineNum">     535 </span><span class="lineNoCov">          0 :       if (it-&gt;second.leakable)  // The user said it's fine to leak this object.</span>
+<span class="lineNum">     536 </span><span class="lineNoCov">          0 :         continue;</span>
+<span class="lineNum">     537 </span>            : 
+<span class="lineNum">     538 </span>            :       // TODO(wan@google.com): Print the type of the leaked object.
+<span class="lineNum">     539 </span>            :       // This can help the user identify the leaked object.
+<span class="lineNum">     540 </span><span class="lineNoCov">          0 :       std::cout &lt;&lt; &quot;\n&quot;;</span>
+<span class="lineNum">     541 </span><span class="lineNoCov">          0 :       const MockObjectState&amp; state = it-&gt;second;</span>
+<span class="lineNum">     542 </span>            :       std::cout &lt;&lt; internal::FormatFileLocation(state.first_used_file,
+<span class="lineNum">     543 </span><span class="lineNoCov">          0 :                                                 state.first_used_line);</span>
+<span class="lineNum">     544 </span><span class="lineNoCov">          0 :       std::cout &lt;&lt; &quot; ERROR: this mock object&quot;;</span>
+<span class="lineNum">     545 </span><span class="lineNoCov">          0 :       if (state.first_used_test != &quot;&quot;) {</span>
+<span class="lineNum">     546 </span><span class="lineNoCov">          0 :         std::cout &lt;&lt; &quot; (used in test &quot; &lt;&lt; state.first_used_test_case &lt;&lt; &quot;.&quot;</span>
+<span class="lineNum">     547 </span><span class="lineNoCov">          0 :              &lt;&lt; state.first_used_test &lt;&lt; &quot;)&quot;;</span>
+<span class="lineNum">     548 </span>            :       }
+<span class="lineNum">     549 </span><span class="lineNoCov">          0 :       std::cout &lt;&lt; &quot; should be deleted but never is. Its address is @&quot;</span>
+<span class="lineNum">     550 </span><span class="lineNoCov">          0 :            &lt;&lt; it-&gt;first &lt;&lt; &quot;.&quot;;</span>
+<span class="lineNum">     551 </span><span class="lineNoCov">          0 :       leaked_count++;</span>
+<span class="lineNum">     552 </span>            :     }
+<span class="lineNum">     553 </span><span class="lineCov">          1 :     if (leaked_count &gt; 0) {</span>
+<span class="lineNum">     554 </span><span class="lineNoCov">          0 :       std::cout &lt;&lt; &quot;\nERROR: &quot; &lt;&lt; leaked_count</span>
+<span class="lineNum">     555 </span><span class="lineNoCov">          0 :            &lt;&lt; &quot; leaked mock &quot; &lt;&lt; (leaked_count == 1 ? &quot;object&quot; : &quot;objects&quot;)</span>
+<span class="lineNum">     556 </span><span class="lineNoCov">          0 :            &lt;&lt; &quot; found at program exit.\n&quot;;</span>
+<span class="lineNum">     557 </span><span class="lineNoCov">          0 :       std::cout.flush();</span>
+<span class="lineNum">     558 </span><span class="lineNoCov">          0 :       ::std::cerr.flush();</span>
+<span class="lineNum">     559 </span>            :       // RUN_ALL_TESTS() has already returned when this destructor is
+<span class="lineNum">     560 </span>            :       // called.  Therefore we cannot use the normal Google Test
+<span class="lineNum">     561 </span>            :       // failure reporting mechanism.
+<span class="lineNum">     562 </span><span class="lineNoCov">          0 :       _exit(1);  // We cannot call exit() as it is not reentrant and</span>
+<span class="lineNum">     563 </span>            :                  // may already have been called.
+<span class="lineNum">     564 </span>            :     }
+<a name="565"><span class="lineNum">     565 </span><span class="lineCov">          1 :   }</span></a>
+<span class="lineNum">     566 </span>            : 
+<span class="lineNum">     567 </span><span class="lineCov">       2146 :   StateMap&amp; states() { return states_; }</span>
+<span class="lineNum">     568 </span>            :  private:
+<span class="lineNum">     569 </span>            :   StateMap states_;
+<span class="lineNum">     570 </span>            : };
+<span class="lineNum">     571 </span>            : 
+<span class="lineNum">     572 </span>            : // Protected by g_gmock_mutex.
+<span class="lineNum">     573 </span><span class="lineCov">          1 : MockObjectRegistry g_mock_object_registry;</span>
+<span class="lineNum">     574 </span>            : 
+<span class="lineNum">     575 </span>            : // Maps a mock object to the reaction Google Mock should have when an
+<span class="lineNum">     576 </span>            : // uninteresting method is called.  Protected by g_gmock_mutex.
+<span class="lineNum">     577 </span><span class="lineCov">          1 : std::map&lt;const void*, internal::CallReaction&gt; g_uninteresting_call_reaction;</span>
+<span class="lineNum">     578 </span>            : 
+<span class="lineNum">     579 </span>            : // Sets the reaction Google Mock should have when an uninteresting
+<a name="580"><span class="lineNum">     580 </span>            : // method of the given mock object is called.</a>
+<span class="lineNum">     581 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     582 </span><span class="lineNoCov">          0 : void SetReactionOnUninterestingCalls(const void* mock_obj,</span>
+<span class="lineNum">     583 </span>            :                                      internal::CallReaction reaction) {
+<span class="lineNum">     584 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     585 </span><span class="lineNoCov">          0 :   g_uninteresting_call_reaction[mock_obj] = reaction;</span>
+<span class="lineNum">     586 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     587 </span>            : 
+<span class="lineNum">     588 </span>            : }  // namespace
+<span class="lineNum">     589 </span>            : 
+<span class="lineNum">     590 </span>            : // Tells Google Mock to allow uninteresting calls on the given mock
+<a name="591"><span class="lineNum">     591 </span>            : // object.</a>
+<span class="lineNum">     592 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     593 </span><span class="lineNoCov">          0 : void Mock::AllowUninterestingCalls(const void* mock_obj) {</span>
+<span class="lineNum">     594 </span><span class="lineNoCov">          0 :   SetReactionOnUninterestingCalls(mock_obj, internal::ALLOW);</span>
+<span class="lineNum">     595 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     596 </span>            : 
+<span class="lineNum">     597 </span>            : // Tells Google Mock to warn the user about uninteresting calls on the
+<a name="598"><span class="lineNum">     598 </span>            : // given mock object.</a>
+<span class="lineNum">     599 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     600 </span><span class="lineNoCov">          0 : void Mock::WarnUninterestingCalls(const void* mock_obj) {</span>
+<span class="lineNum">     601 </span><span class="lineNoCov">          0 :   SetReactionOnUninterestingCalls(mock_obj, internal::WARN);</span>
+<span class="lineNum">     602 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     603 </span>            : 
+<span class="lineNum">     604 </span>            : // Tells Google Mock to fail uninteresting calls on the given mock
+<a name="605"><span class="lineNum">     605 </span>            : // object.</a>
+<span class="lineNum">     606 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     607 </span><span class="lineNoCov">          0 : void Mock::FailUninterestingCalls(const void* mock_obj) {</span>
+<span class="lineNum">     608 </span><span class="lineNoCov">          0 :   SetReactionOnUninterestingCalls(mock_obj, internal::FAIL);</span>
+<span class="lineNum">     609 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     610 </span>            : 
+<span class="lineNum">     611 </span>            : // Tells Google Mock the given mock object is being destroyed and its
+<a name="612"><span class="lineNum">     612 </span>            : // entry in the call-reaction table should be removed.</a>
+<span class="lineNum">     613 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     614 </span><span class="lineNoCov">          0 : void Mock::UnregisterCallReaction(const void* mock_obj) {</span>
+<span class="lineNum">     615 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     616 </span><span class="lineNoCov">          0 :   g_uninteresting_call_reaction.erase(mock_obj);</span>
+<span class="lineNum">     617 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     618 </span>            : 
+<span class="lineNum">     619 </span>            : // Returns the reaction Google Mock will have on uninteresting calls
+<a name="620"><span class="lineNum">     620 </span>            : // made on the given mock object.</a>
+<span class="lineNum">     621 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     622 </span><span class="lineNoCov">          0 : internal::CallReaction Mock::GetReactionOnUninterestingCalls(</span>
+<span class="lineNum">     623 </span>            :     const void* mock_obj) {
+<span class="lineNum">     624 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     625 </span><span class="lineNoCov">          0 :   return (g_uninteresting_call_reaction.count(mock_obj) == 0) ?</span>
+<span class="lineNum">     626 </span><span class="lineNoCov">          0 :       internal::WARN : g_uninteresting_call_reaction[mock_obj];</span>
+<span class="lineNum">     627 </span>            : }
+<span class="lineNum">     628 </span>            : 
+<span class="lineNum">     629 </span>            : // Tells Google Mock to ignore mock_obj when checking for leaked mock
+<a name="630"><span class="lineNum">     630 </span>            : // objects.</a>
+<span class="lineNum">     631 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     632 </span><span class="lineNoCov">          0 : void Mock::AllowLeak(const void* mock_obj) {</span>
+<span class="lineNum">     633 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     634 </span><span class="lineNoCov">          0 :   g_mock_object_registry.states()[mock_obj].leakable = true;</span>
+<span class="lineNum">     635 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     636 </span>            : 
+<span class="lineNum">     637 </span>            : // Verifies and clears all expectations on the given mock object.  If
+<span class="lineNum">     638 </span>            : // the expectations aren't satisfied, generates one or more Google
+<a name="639"><span class="lineNum">     639 </span>            : // Test non-fatal failures and returns false.</a>
+<span class="lineNum">     640 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     641 </span><span class="lineNoCov">          0 : bool Mock::VerifyAndClearExpectations(void* mock_obj) {</span>
+<span class="lineNum">     642 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     643 </span><span class="lineNoCov">          0 :   return VerifyAndClearExpectationsLocked(mock_obj);</span>
+<span class="lineNum">     644 </span>            : }
+<span class="lineNum">     645 </span>            : 
+<span class="lineNum">     646 </span>            : // Verifies all expectations on the given mock object and clears its
+<span class="lineNum">     647 </span>            : // default actions and expectations.  Returns true iff the
+<a name="648"><span class="lineNum">     648 </span>            : // verification was successful.</a>
+<span class="lineNum">     649 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     650 </span><span class="lineNoCov">          0 : bool Mock::VerifyAndClear(void* mock_obj) {</span>
+<span class="lineNum">     651 </span><span class="lineNoCov">          0 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     652 </span><span class="lineNoCov">          0 :   ClearDefaultActionsLocked(mock_obj);</span>
+<span class="lineNum">     653 </span><span class="lineNoCov">          0 :   return VerifyAndClearExpectationsLocked(mock_obj);</span>
+<span class="lineNum">     654 </span>            : }
+<span class="lineNum">     655 </span>            : 
+<span class="lineNum">     656 </span>            : // Verifies and clears all expectations on the given mock object.  If
+<span class="lineNum">     657 </span>            : // the expectations aren't satisfied, generates one or more Google
+<a name="658"><span class="lineNum">     658 </span>            : // Test non-fatal failures and returns false.</a>
+<span class="lineNum">     659 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     660 </span><span class="lineNoCov">          0 : bool Mock::VerifyAndClearExpectationsLocked(void* mock_obj) {</span>
+<span class="lineNum">     661 </span><span class="lineNoCov">          0 :   internal::g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     662 </span><span class="lineNoCov">          0 :   if (g_mock_object_registry.states().count(mock_obj) == 0) {</span>
+<span class="lineNum">     663 </span>            :     // No EXPECT_CALL() was set on the given mock object.
+<span class="lineNum">     664 </span><span class="lineNoCov">          0 :     return true;</span>
+<span class="lineNum">     665 </span>            :   }
+<span class="lineNum">     666 </span>            : 
+<span class="lineNum">     667 </span>            :   // Verifies and clears the expectations on each mock method in the
+<span class="lineNum">     668 </span>            :   // given mock object.
+<span class="lineNum">     669 </span><span class="lineNoCov">          0 :   bool expectations_met = true;</span>
+<span class="lineNum">     670 </span>            :   FunctionMockers&amp; mockers =
+<span class="lineNum">     671 </span><span class="lineNoCov">          0 :       g_mock_object_registry.states()[mock_obj].function_mockers;</span>
+<span class="lineNum">     672 </span><span class="lineNoCov">          0 :   for (FunctionMockers::const_iterator it = mockers.begin();</span>
+<span class="lineNum">     673 </span><span class="lineNoCov">          0 :        it != mockers.end(); ++it) {</span>
+<span class="lineNum">     674 </span><span class="lineNoCov">          0 :     if (!(*it)-&gt;VerifyAndClearExpectationsLocked()) {</span>
+<span class="lineNum">     675 </span><span class="lineNoCov">          0 :       expectations_met = false;</span>
+<span class="lineNum">     676 </span>            :     }
+<span class="lineNum">     677 </span>            :   }
+<span class="lineNum">     678 </span>            : 
+<span class="lineNum">     679 </span>            :   // We don't clear the content of mockers, as they may still be
+<span class="lineNum">     680 </span>            :   // needed by ClearDefaultActionsLocked().
+<span class="lineNum">     681 </span><span class="lineNoCov">          0 :   return expectations_met;</span>
+<span class="lineNum">     682 </span>            : }
+<span class="lineNum">     683 </span>            : 
+<a name="684"><span class="lineNum">     684 </span>            : // Registers a mock object and a mock method it owns.</a>
+<span class="lineNum">     685 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     686 </span><span class="lineCov">        460 : void Mock::Register(const void* mock_obj,</span>
+<span class="lineNum">     687 </span>            :                     internal::UntypedFunctionMockerBase* mocker) {
+<span class="lineNum">     688 </span><span class="lineCov">        460 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     689 </span><span class="lineCov">        460 :   g_mock_object_registry.states()[mock_obj].function_mockers.insert(mocker);</span>
+<span class="lineNum">     690 </span><span class="lineCov">        460 : }</span>
+<span class="lineNum">     691 </span>            : 
+<span class="lineNum">     692 </span>            : // Tells Google Mock where in the source code mock_obj is used in an
+<span class="lineNum">     693 </span>            : // ON_CALL or EXPECT_CALL.  In case mock_obj is leaked, this
+<a name="694"><span class="lineNum">     694 </span>            : // information helps the user identify which object it is.</a>
+<span class="lineNum">     695 </span>            : // L &lt; g_gmock_mutex
+<span class="lineNum">     696 </span><span class="lineCov">        460 : void Mock::RegisterUseByOnCallOrExpectCall(</span>
+<span class="lineNum">     697 </span>            :     const void* mock_obj, const char* file, int line) {
+<span class="lineNum">     698 </span><span class="lineCov">        460 :   internal::MutexLock l(&amp;internal::g_gmock_mutex);</span>
+<span class="lineNum">     699 </span><span class="lineCov">        460 :   MockObjectState&amp; state = g_mock_object_registry.states()[mock_obj];</span>
+<span class="lineNum">     700 </span><span class="lineCov">        460 :   if (state.first_used_file == NULL) {</span>
+<span class="lineNum">     701 </span><span class="lineCov">         48 :     state.first_used_file = file;</span>
+<span class="lineNum">     702 </span><span class="lineCov">         48 :     state.first_used_line = line;</span>
+<span class="lineNum">     703 </span>            :     const TestInfo* const test_info =
+<span class="lineNum">     704 </span><span class="lineCov">         48 :         UnitTest::GetInstance()-&gt;current_test_info();</span>
+<span class="lineNum">     705 </span><span class="lineCov">         48 :     if (test_info != NULL) {</span>
+<span class="lineNum">     706 </span>            :       // TODO(wan@google.com): record the test case name when the
+<span class="lineNum">     707 </span>            :       // ON_CALL or EXPECT_CALL is invoked from SetUpTestCase() or
+<span class="lineNum">     708 </span>            :       // TearDownTestCase().
+<span class="lineNum">     709 </span><span class="lineCov">         48 :       state.first_used_test_case = test_info-&gt;test_case_name();</span>
+<span class="lineNum">     710 </span><span class="lineCov">         48 :       state.first_used_test = test_info-&gt;name();</span>
+<span class="lineNum">     711 </span>            :     }
+<span class="lineNum">     712 </span><span class="lineCov">        460 :   }</span>
+<span class="lineNum">     713 </span><span class="lineCov">        460 : }</span>
+<span class="lineNum">     714 </span>            : 
+<span class="lineNum">     715 </span>            : // Unregisters a mock method; removes the owning mock object from the
+<span class="lineNum">     716 </span>            : // registry when the last mock method associated with it has been
+<span class="lineNum">     717 </span>            : // unregistered.  This is called only in the destructor of
+<a name="718"><span class="lineNum">     718 </span>            : // FunctionMockerBase.</a>
+<span class="lineNum">     719 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     720 </span><span class="lineCov">        384 : void Mock::UnregisterLocked(internal::UntypedFunctionMockerBase* mocker) {</span>
+<span class="lineNum">     721 </span><span class="lineCov">        384 :   internal::g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     722 </span><span class="lineCov">       2382 :   for (MockObjectRegistry::StateMap::iterator it =</span>
+<span class="lineNum">     723 </span><span class="lineCov">        384 :            g_mock_object_registry.states().begin();</span>
+<span class="lineNum">     724 </span><span class="lineCov">       1588 :        it != g_mock_object_registry.states().end(); ++it) {</span>
+<span class="lineNum">     725 </span><span class="lineCov">        764 :     FunctionMockers&amp; mockers = it-&gt;second.function_mockers;</span>
+<span class="lineNum">     726 </span><span class="lineCov">        764 :     if (mockers.erase(mocker) &gt; 0) {</span>
+<span class="lineNum">     727 </span>            :       // mocker was in mockers and has been just removed.
+<span class="lineNum">     728 </span><span class="lineCov">        354 :       if (mockers.empty()) {</span>
+<span class="lineNum">     729 </span><span class="lineCov">         48 :         g_mock_object_registry.states().erase(it);</span>
+<span class="lineNum">     730 </span>            :       }
+<span class="lineNum">     731 </span><span class="lineCov">        708 :       return;</span>
+<span class="lineNum">     732 </span>            :     }
+<span class="lineNum">     733 </span>            :   }
+<span class="lineNum">     734 </span>            : }
+<span class="lineNum">     735 </span>            : 
+<a name="736"><span class="lineNum">     736 </span>            : // Clears all ON_CALL()s set on the given mock object.</a>
+<span class="lineNum">     737 </span>            : // L &gt;= g_gmock_mutex
+<span class="lineNum">     738 </span><span class="lineNoCov">          0 : void Mock::ClearDefaultActionsLocked(void* mock_obj) {</span>
+<span class="lineNum">     739 </span><span class="lineNoCov">          0 :   internal::g_gmock_mutex.AssertHeld();</span>
+<span class="lineNum">     740 </span>            : 
+<span class="lineNum">     741 </span><span class="lineNoCov">          0 :   if (g_mock_object_registry.states().count(mock_obj) == 0) {</span>
+<span class="lineNum">     742 </span>            :     // No ON_CALL() was set on the given mock object.
+<span class="lineNum">     743 </span><span class="lineNoCov">          0 :     return;</span>
+<span class="lineNum">     744 </span>            :   }
+<span class="lineNum">     745 </span>            : 
+<span class="lineNum">     746 </span>            :   // Clears the default actions for each mock method in the given mock
+<span class="lineNum">     747 </span>            :   // object.
+<span class="lineNum">     748 </span>            :   FunctionMockers&amp; mockers =
+<span class="lineNum">     749 </span><span class="lineNoCov">          0 :       g_mock_object_registry.states()[mock_obj].function_mockers;</span>
+<span class="lineNum">     750 </span><span class="lineNoCov">          0 :   for (FunctionMockers::const_iterator it = mockers.begin();</span>
+<span class="lineNum">     751 </span><span class="lineNoCov">          0 :        it != mockers.end(); ++it) {</span>
+<span class="lineNum">     752 </span><span class="lineNoCov">          0 :     (*it)-&gt;ClearDefaultActionsLocked();</span>
+<span class="lineNum">     753 </span>            :   }
+<span class="lineNum">     754 </span>            : 
+<span class="lineNum">     755 </span>            :   // We don't clear the content of mockers, as they may still be
+<span class="lineNum">     756 </span>            :   // needed by VerifyAndClearExpectationsLocked().
+<a name="757"><span class="lineNum">     757 </span>            : }</a>
+<span class="lineNum">     758 </span>            : 
+<a name="759"><span class="lineNum">     759 </span><span class="lineNoCov">          0 : Expectation::Expectation() {}</span></a>
+<span class="lineNum">     760 </span>            : 
+<span class="lineNum">     761 </span><span class="lineNoCov">          0 : Expectation::Expectation(</span>
+<span class="lineNum">     762 </span>            :     const internal::linked_ptr&lt;internal::ExpectationBase&gt;&amp; an_expectation_base)
+<a name="763"><span class="lineNum">     763 </span><span class="lineNoCov">          0 :     : expectation_base_(an_expectation_base) {}</span></a>
+<span class="lineNum">     764 </span>            : 
+<span class="lineNum">     765 </span><span class="lineNoCov">          0 : Expectation::~Expectation() {}</span>
+<a name="766"><span class="lineNum">     766 </span>            : </a>
+<span class="lineNum">     767 </span>            : // Adds an expectation to a sequence.
+<span class="lineNum">     768 </span><span class="lineNoCov">          0 : void Sequence::AddExpectation(const Expectation&amp; expectation) const {</span>
+<span class="lineNum">     769 </span><span class="lineNoCov">          0 :   if (*last_expectation_ != expectation) {</span>
+<span class="lineNum">     770 </span><span class="lineNoCov">          0 :     if (last_expectation_-&gt;expectation_base() != NULL) {</span>
+<span class="lineNum">     771 </span><span class="lineNoCov">          0 :       expectation.expectation_base()-&gt;immediate_prerequisites_</span>
+<span class="lineNum">     772 </span><span class="lineNoCov">          0 :           += *last_expectation_;</span>
+<span class="lineNum">     773 </span>            :     }
+<span class="lineNum">     774 </span><span class="lineNoCov">          0 :     *last_expectation_ = expectation;</span>
+<span class="lineNum">     775 </span>            :   }
+<span class="lineNum">     776 </span><span class="lineNoCov">          0 : }</span>
+<a name="777"><span class="lineNum">     777 </span>            : </a>
+<span class="lineNum">     778 </span>            : // Creates the implicit sequence if there isn't one.
+<span class="lineNum">     779 </span><span class="lineNoCov">          0 : InSequence::InSequence() {</span>
+<span class="lineNum">     780 </span><span class="lineNoCov">          0 :   if (internal::g_gmock_implicit_sequence.get() == NULL) {</span>
+<span class="lineNum">     781 </span><span class="lineNoCov">          0 :     internal::g_gmock_implicit_sequence.set(new Sequence);</span>
+<span class="lineNum">     782 </span><span class="lineNoCov">          0 :     sequence_created_ = true;</span>
+<span class="lineNum">     783 </span>            :   } else {
+<span class="lineNum">     784 </span><span class="lineNoCov">          0 :     sequence_created_ = false;</span>
+<span class="lineNum">     785 </span>            :   }
+<span class="lineNum">     786 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     787 </span>            : 
+<a name="788"><span class="lineNum">     788 </span>            : // Deletes the implicit sequence if it was created by the constructor</a>
+<span class="lineNum">     789 </span>            : // of this object.
+<span class="lineNum">     790 </span><span class="lineNoCov">          0 : InSequence::~InSequence() {</span>
+<span class="lineNum">     791 </span><span class="lineNoCov">          0 :   if (sequence_created_) {</span>
+<span class="lineNum">     792 </span><span class="lineNoCov">          0 :     delete internal::g_gmock_implicit_sequence.get();</span>
+<span class="lineNum">     793 </span><span class="lineNoCov">          0 :     internal::g_gmock_implicit_sequence.set(NULL);</span>
+<span class="lineNum">     794 </span>            :   }
+<span class="lineNum">     795 </span><span class="lineNoCov">          0 : }</span>
+<span class="lineNum">     796 </span>            : 
+<span class="lineNum">     797 </span>            : }  // namespace testing
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.10</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

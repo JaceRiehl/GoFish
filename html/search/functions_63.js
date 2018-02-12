@@ -7,6 +7,6 @@ var searchData=
   ['choosenumplayers',['chooseNumPlayers',['../class_view_in.html#af3110ca42bc8b38cfea8f8943befd492',1,'ViewIn']]],
   ['chooseplayer',['choosePlayer',['../class_view_in.html#a9b8ec8154354503af00665960d0b7d20',1,'ViewIn']]],
   ['clearterminal',['clearTerminal',['../class_view_out.html#af36d4b83ad0a29b7884027c1f8b65d16',1,'ViewOut']]],
-  ['controller',['Controller',['../class_controller.html#acc5b83a368d1b5985f34d28e23c0f4c5',1,'Controller']]],
+  ['controller',['Controller',['../class_controller.html#acf8bff1d72a321576a4f02fd807890ea',1,'Controller']]],
   ['coutdisplayplayershand',['coutDisplayPlayersHand',['../class_view_out.html#a5de3c71ff69ebb628b24c00339bed2ae',1,'ViewOut']]]
 ];

@@ -38,6 +38,13 @@ int main()
     cont.startGame();
     cont.initalDeal();
     cont.runGame();
-    delete p1, p2, p3, p4, p5, vO, vI, deck;
+    delete p1;
+    delete p2;
+    delete p3;
+    delete p4;
+    delete p5;
+    delete vO;
+    delete vI;
+    delete deck;
     return 0;
 }

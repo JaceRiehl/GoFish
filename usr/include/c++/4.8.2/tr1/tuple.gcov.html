@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage - /usr/include/c++/4.8.2/tr1/tuple</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">usr/include/c++/4.8.2/tr1</a> - tuple<span style="font-size: 80%;"> (source / <a href="tuple.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-02-12</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">132</td>
+            <td class="headerCovTableEntry">132</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // class template tuple -*- C++ -*-</a>
+<span class="lineNum">       2 </span>            : 
+<span class="lineNum">       3 </span>            : // Copyright (C) 2004-2013 Free Software Foundation, Inc.
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : // This file is part of the GNU ISO C++ Library.  This library is free
+<span class="lineNum">       6 </span>            : // software; you can redistribute it and/or modify it under the
+<span class="lineNum">       7 </span>            : // terms of the GNU General Public License as published by the
+<span class="lineNum">       8 </span>            : // Free Software Foundation; either version 3, or (at your option)
+<span class="lineNum">       9 </span>            : // any later version.
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : // This library is distributed in the hope that it will be useful,
+<span class="lineNum">      12 </span>            : // but WITHOUT ANY WARRANTY; without even the implied warranty of
+<span class="lineNum">      13 </span>            : // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<span class="lineNum">      14 </span>            : // GNU General Public License for more details.
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : // Under Section 7 of GPL version 3, you are granted additional
+<span class="lineNum">      17 </span>            : // permissions described in the GCC Runtime Library Exception, version
+<span class="lineNum">      18 </span>            : // 3.1, as published by the Free Software Foundation.
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span>            : // You should have received a copy of the GNU General Public License and
+<span class="lineNum">      21 </span>            : // a copy of the GCC Runtime Library Exception along with this program;
+<span class="lineNum">      22 </span>            : // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<span class="lineNum">      23 </span>            : // &lt;http://www.gnu.org/licenses/&gt;.
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            : /** @file tr1/tuple
+<span class="lineNum">      26 </span>            : *  This is a TR1 C++ Library header.
+<span class="lineNum">      27 </span>            : */
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            : // Chris Jefferson &lt;chris@bubblescope.net&gt;
+<span class="lineNum">      30 </span>            : // Variadic Templates support by Douglas Gregor &lt;doug.gregor@gmail.com&gt;
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span>            : #ifndef _GLIBCXX_TR1_TUPLE
+<span class="lineNum">      33 </span>            : #define _GLIBCXX_TR1_TUPLE 1
+<span class="lineNum">      34 </span>            : 
+<span class="lineNum">      35 </span>            : #pragma GCC system_header
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &lt;utility&gt;
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : namespace std _GLIBCXX_VISIBILITY(default)
+<span class="lineNum">      40 </span>            : {
+<span class="lineNum">      41 </span>            : namespace tr1
+<span class="lineNum">      42 </span>            : {
+<span class="lineNum">      43 </span>            : _GLIBCXX_BEGIN_NAMESPACE_VERSION
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span>            :   // Adds a const reference to a non-reference type.
+<span class="lineNum">      46 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">      47 </span>            :     struct __add_c_ref
+<span class="lineNum">      48 </span>            :     { typedef const _Tp&amp; type; };
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">      51 </span>            :     struct __add_c_ref&lt;_Tp&amp;&gt;
+<span class="lineNum">      52 </span>            :     { typedef _Tp&amp; type; };
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            :   // Adds a reference to a non-reference type.
+<span class="lineNum">      55 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">      56 </span>            :     struct __add_ref
+<span class="lineNum">      57 </span>            :     { typedef _Tp&amp; type; };
+<span class="lineNum">      58 </span>            : 
+<span class="lineNum">      59 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">      60 </span>            :     struct __add_ref&lt;_Tp&amp;&gt;
+<span class="lineNum">      61 </span>            :     { typedef _Tp&amp; type; };
+<span class="lineNum">      62 </span>            : 
+<span class="lineNum">      63 </span>            :   /**
+<span class="lineNum">      64 </span>            :    * Contains the actual implementation of the @c tuple template, stored
+<span class="lineNum">      65 </span>            :    * as a recursive inheritance hierarchy from the first element (most
+<span class="lineNum">      66 </span>            :    * derived class) to the last (least derived class). The @c Idx
+<span class="lineNum">      67 </span>            :    * parameter gives the 0-based index of the element stored at this
+<span class="lineNum">      68 </span>            :    * point in the hierarchy; we use it to implement a constant-time
+<span class="lineNum">      69 </span>            :    * get() operation.
+<span class="lineNum">      70 </span>            :    */
+<span class="lineNum">      71 </span>            :   template&lt;int _Idx, typename... _Elements&gt;
+<span class="lineNum">      72 </span>            :     struct _Tuple_impl; 
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            :   /**
+<span class="lineNum">      75 </span>            :    * Zero-element tuple implementation. This is the basis case for the 
+<span class="lineNum">      76 </span>            :    * inheritance recursion.
+<span class="lineNum">      77 </span>            :    */
+<span class="lineNum">      78 </span>            :   template&lt;int _Idx&gt;
+<span class="lineNum">      79 </span>            :     struct _Tuple_impl&lt;_Idx&gt; { };
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span>            :   /**
+<span class="lineNum">      82 </span>            :    * Recursive tuple implementation. Here we store the @c Head element
+<span class="lineNum">      83 </span>            :    * and derive from a @c Tuple_impl containing the remaining elements
+<span class="lineNum">      84 </span>            :    * (which contains the @c Tail).
+<a name="85"><span class="lineNum">      85 </span>            :    */</a>
+<span class="lineNum">      86 </span>            :   template&lt;int _Idx, typename _Head, typename... _Tail&gt;
+<span class="lineNum">      87 </span><span class="lineCov">        635 :     struct _Tuple_impl&lt;_Idx, _Head, _Tail...&gt;</span>
+<span class="lineNum">      88 </span>            :     : public _Tuple_impl&lt;_Idx + 1, _Tail...&gt;
+<span class="lineNum">      89 </span>            :     {
+<span class="lineNum">      90 </span>            :       typedef _Tuple_impl&lt;_Idx + 1, _Tail...&gt; _Inherited;
+<span class="lineNum">      91 </span>            :       
+<a name="92"><span class="lineNum">      92 </span>            :       _Head _M_head;</a>
+<a name="93"><span class="lineNum">      93 </span>            :       </a>
+<span class="lineNum">      94 </span><span class="lineCov">        216 :       _Inherited&amp;       _M_tail()       { return *this; }</span>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        432 :       const _Inherited&amp; _M_tail() const { return *this; }</span></a>
+<span class="lineNum">      96 </span>            :       
+<span class="lineNum">      97 </span><span class="lineCov">        138 :       _Tuple_impl() : _Inherited(), _M_head() { }</span>
+<a name="98"><span class="lineNum">      98 </span>            :       </a>
+<span class="lineNum">      99 </span>            :       explicit 
+<span class="lineNum">     100 </span><span class="lineCov">        304 :       _Tuple_impl(typename __add_c_ref&lt;_Head&gt;::type __head,</span>
+<span class="lineNum">     101 </span>            :                   typename __add_c_ref&lt;_Tail&gt;::type... __tail)
+<span class="lineNum">     102 </span><span class="lineCov">        304 :       : _Inherited(__tail...), _M_head(__head) { }</span>
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span>            :       template&lt;typename... _UElements&gt;
+<span class="lineNum">     105 </span>            :       _Tuple_impl(const _Tuple_impl&lt;_Idx, _UElements...&gt;&amp; __in)
+<a name="106"><span class="lineNum">     106 </span>            :       : _Inherited(__in._M_tail()), _M_head(__in._M_head) { }</a>
+<span class="lineNum">     107 </span>            : 
+<span class="lineNum">     108 </span><span class="lineCov">        216 :       _Tuple_impl(const _Tuple_impl&amp; __in)</span>
+<span class="lineNum">     109 </span><span class="lineCov">        216 :       : _Inherited(__in._M_tail()), _M_head(__in._M_head) { }</span>
+<span class="lineNum">     110 </span>            :      
+<span class="lineNum">     111 </span>            :       template&lt;typename... _UElements&gt;
+<span class="lineNum">     112 </span>            :         _Tuple_impl&amp;
+<span class="lineNum">     113 </span>            :         operator=(const _Tuple_impl&lt;_Idx, _UElements...&gt;&amp; __in)
+<span class="lineNum">     114 </span>            :         {
+<span class="lineNum">     115 </span>            :           _M_head = __in._M_head;
+<span class="lineNum">     116 </span>            :           _M_tail() = __in._M_tail();
+<span class="lineNum">     117 </span>            :           return *this;
+<span class="lineNum">     118 </span>            :         }
+<a name="119"><span class="lineNum">     119 </span>            : </a>
+<span class="lineNum">     120 </span>            :       _Tuple_impl&amp;
+<span class="lineNum">     121 </span><span class="lineCov">        216 :       operator=(const _Tuple_impl&amp; __in)</span>
+<span class="lineNum">     122 </span>            :       {
+<span class="lineNum">     123 </span><span class="lineCov">        216 :         _M_head = __in._M_head;</span>
+<span class="lineNum">     124 </span><span class="lineCov">        216 :         _M_tail() = __in._M_tail();</span>
+<span class="lineNum">     125 </span><span class="lineCov">        216 :         return *this;</span>
+<span class="lineNum">     126 </span>            :       }
+<span class="lineNum">     127 </span>            :     };
+<a name="128"><span class="lineNum">     128 </span>            : </a>
+<span class="lineNum">     129 </span>            :   template&lt;typename... _Elements&gt; 
+<span class="lineNum">     130 </span><span class="lineCov">        551 :     class tuple : public _Tuple_impl&lt;0, _Elements...&gt;</span>
+<span class="lineNum">     131 </span>            :     {
+<span class="lineNum">     132 </span>            :       typedef _Tuple_impl&lt;0, _Elements...&gt; _Inherited;
+<a name="133"><span class="lineNum">     133 </span>            : </a>
+<span class="lineNum">     134 </span>            :     public:
+<span class="lineNum">     135 </span><span class="lineCov">        126 :       tuple() : _Inherited() { }</span>
+<a name="136"><span class="lineNum">     136 </span>            : </a>
+<span class="lineNum">     137 </span>            :       explicit
+<span class="lineNum">     138 </span><span class="lineCov">        260 :       tuple(typename __add_c_ref&lt;_Elements&gt;::type... __elements)</span>
+<span class="lineNum">     139 </span><span class="lineCov">        260 :       : _Inherited(__elements...) { }</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span>            :       template&lt;typename... _UElements&gt;
+<span class="lineNum">     142 </span>            :         tuple(const tuple&lt;_UElements...&gt;&amp; __in)
+<a name="143"><span class="lineNum">     143 </span>            :         : _Inherited(__in) { }</a>
+<span class="lineNum">     144 </span>            : 
+<span class="lineNum">     145 </span><span class="lineCov">        180 :       tuple(const tuple&amp; __in)</span>
+<span class="lineNum">     146 </span><span class="lineCov">        180 :       : _Inherited(__in) { }</span>
+<span class="lineNum">     147 </span>            : 
+<span class="lineNum">     148 </span>            :       template&lt;typename... _UElements&gt;
+<span class="lineNum">     149 </span>            :         tuple&amp;
+<span class="lineNum">     150 </span>            :         operator=(const tuple&lt;_UElements...&gt;&amp; __in)
+<span class="lineNum">     151 </span>            :         {
+<span class="lineNum">     152 </span>            :           static_cast&lt;_Inherited&amp;&gt;(*this) = __in;
+<span class="lineNum">     153 </span>            :           return *this;
+<span class="lineNum">     154 </span>            :         }
+<a name="155"><span class="lineNum">     155 </span>            : </a>
+<span class="lineNum">     156 </span>            :       tuple&amp;
+<span class="lineNum">     157 </span><span class="lineCov">        180 :       operator=(const tuple&amp; __in)</span>
+<span class="lineNum">     158 </span>            :       {
+<span class="lineNum">     159 </span><span class="lineCov">        180 :         static_cast&lt;_Inherited&amp;&gt;(*this) = __in;</span>
+<span class="lineNum">     160 </span><span class="lineCov">        180 :         return *this;</span>
+<span class="lineNum">     161 </span>            :       }
+<span class="lineNum">     162 </span>            :     };
+<span class="lineNum">     163 </span>            : 
+<span class="lineNum">     164 </span>            :   template&lt;&gt; class tuple&lt;&gt; { };
+<span class="lineNum">     165 </span>            : 
+<a name="166"><span class="lineNum">     166 </span>            :   // 2-element tuple, with construction and assignment from a pair.</a>
+<span class="lineNum">     167 </span>            :   template&lt;typename _T1, typename _T2&gt;
+<span class="lineNum">     168 </span><span class="lineCov">         42 :     class tuple&lt;_T1, _T2&gt; : public _Tuple_impl&lt;0, _T1, _T2&gt;</span>
+<span class="lineNum">     169 </span>            :     {
+<span class="lineNum">     170 </span>            :       typedef _Tuple_impl&lt;0, _T1, _T2&gt; _Inherited;
+<a name="171"><span class="lineNum">     171 </span>            : </a>
+<span class="lineNum">     172 </span>            :     public:
+<span class="lineNum">     173 </span><span class="lineCov">          6 :       tuple() : _Inherited() { }</span>
+<a name="174"><span class="lineNum">     174 </span>            : </a>
+<span class="lineNum">     175 </span>            :       explicit
+<span class="lineNum">     176 </span><span class="lineCov">         22 :       tuple(typename __add_c_ref&lt;_T1&gt;::type __a1,</span>
+<span class="lineNum">     177 </span>            :             typename __add_c_ref&lt;_T2&gt;::type __a2)
+<span class="lineNum">     178 </span><span class="lineCov">         22 :       : _Inherited(__a1, __a2) { }</span>
+<span class="lineNum">     179 </span>            : 
+<span class="lineNum">     180 </span>            :       template&lt;typename _U1, typename _U2&gt;
+<span class="lineNum">     181 </span>            :         tuple(const tuple&lt;_U1, _U2&gt;&amp; __in)
+<a name="182"><span class="lineNum">     182 </span>            :         : _Inherited(__in) { }</a>
+<span class="lineNum">     183 </span>            : 
+<span class="lineNum">     184 </span><span class="lineCov">         18 :       tuple(const tuple&amp; __in)</span>
+<span class="lineNum">     185 </span><span class="lineCov">         18 :       : _Inherited(__in) { }</span>
+<span class="lineNum">     186 </span>            : 
+<span class="lineNum">     187 </span>            :       template&lt;typename _U1, typename _U2&gt;
+<span class="lineNum">     188 </span>            :         tuple(const pair&lt;_U1, _U2&gt;&amp; __in)
+<span class="lineNum">     189 </span>            :         : _Inherited(_Tuple_impl&lt;0, 
+<span class="lineNum">     190 </span>            :                      typename __add_c_ref&lt;_U1&gt;::type,
+<span class="lineNum">     191 </span>            :                      typename __add_c_ref&lt;_U2&gt;::type&gt;(__in.first, 
+<span class="lineNum">     192 </span>            :                                                       __in.second))
+<span class="lineNum">     193 </span>            :         { }
+<span class="lineNum">     194 </span>            :   
+<span class="lineNum">     195 </span>            :       template&lt;typename _U1, typename _U2&gt;
+<span class="lineNum">     196 </span>            :         tuple&amp;
+<span class="lineNum">     197 </span>            :         operator=(const tuple&lt;_U1, _U2&gt;&amp; __in)
+<span class="lineNum">     198 </span>            :         {
+<span class="lineNum">     199 </span>            :           static_cast&lt;_Inherited&amp;&gt;(*this) = __in;
+<span class="lineNum">     200 </span>            :           return *this;
+<span class="lineNum">     201 </span>            :         }
+<a name="202"><span class="lineNum">     202 </span>            : </a>
+<span class="lineNum">     203 </span>            :       tuple&amp;
+<span class="lineNum">     204 </span><span class="lineCov">         18 :       operator=(const tuple&amp; __in)</span>
+<span class="lineNum">     205 </span>            :       {
+<span class="lineNum">     206 </span><span class="lineCov">         18 :         static_cast&lt;_Inherited&amp;&gt;(*this) = __in;</span>
+<span class="lineNum">     207 </span><span class="lineCov">         18 :         return *this;</span>
+<span class="lineNum">     208 </span>            :       }
+<span class="lineNum">     209 </span>            : 
+<span class="lineNum">     210 </span>            :       template&lt;typename _U1, typename _U2&gt;
+<span class="lineNum">     211 </span>            :         tuple&amp;
+<span class="lineNum">     212 </span>            :         operator=(const pair&lt;_U1, _U2&gt;&amp; __in)
+<span class="lineNum">     213 </span>            :         {
+<span class="lineNum">     214 </span>            :           this-&gt;_M_head = __in.first;
+<span class="lineNum">     215 </span>            :           this-&gt;_M_tail()._M_head = __in.second;
+<span class="lineNum">     216 </span>            :           return *this;
+<span class="lineNum">     217 </span>            :         }
+<span class="lineNum">     218 </span>            :     };
+<span class="lineNum">     219 </span>            : 
+<span class="lineNum">     220 </span>            :   
+<span class="lineNum">     221 </span>            :   /// Gives the type of the ith element of a given tuple type.
+<span class="lineNum">     222 </span>            :   template&lt;int __i, typename _Tp&gt;
+<span class="lineNum">     223 </span>            :     struct tuple_element;
+<span class="lineNum">     224 </span>            : 
+<span class="lineNum">     225 </span>            :   /**
+<span class="lineNum">     226 </span>            :    * Recursive case for tuple_element: strip off the first element in
+<span class="lineNum">     227 </span>            :    * the tuple and retrieve the (i-1)th element of the remaining tuple.
+<span class="lineNum">     228 </span>            :    */
+<span class="lineNum">     229 </span>            :   template&lt;int __i, typename _Head, typename... _Tail&gt;
+<span class="lineNum">     230 </span>            :     struct tuple_element&lt;__i, tuple&lt;_Head, _Tail...&gt; &gt;
+<span class="lineNum">     231 </span>            :     : tuple_element&lt;__i - 1, tuple&lt;_Tail...&gt; &gt; { };
+<span class="lineNum">     232 </span>            : 
+<span class="lineNum">     233 </span>            :   /**
+<span class="lineNum">     234 </span>            :    * Basis case for tuple_element: The first element is the one we're seeking.
+<span class="lineNum">     235 </span>            :    */
+<span class="lineNum">     236 </span>            :   template&lt;typename _Head, typename... _Tail&gt;
+<span class="lineNum">     237 </span>            :     struct tuple_element&lt;0, tuple&lt;_Head, _Tail...&gt; &gt;
+<span class="lineNum">     238 </span>            :     {
+<span class="lineNum">     239 </span>            :       typedef _Head type;
+<span class="lineNum">     240 </span>            :     };
+<span class="lineNum">     241 </span>            : 
+<span class="lineNum">     242 </span>            :   /// Finds the size of a given tuple type.
+<span class="lineNum">     243 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">     244 </span>            :     struct tuple_size;
+<span class="lineNum">     245 </span>            : 
+<span class="lineNum">     246 </span>            :   /// class tuple_size
+<span class="lineNum">     247 </span>            :   template&lt;typename... _Elements&gt;
+<span class="lineNum">     248 </span>            :     struct tuple_size&lt;tuple&lt;_Elements...&gt; &gt;
+<span class="lineNum">     249 </span>            :     {
+<span class="lineNum">     250 </span>            :       static const int value = sizeof...(_Elements);
+<span class="lineNum">     251 </span>            :     };
+<span class="lineNum">     252 </span>            : 
+<span class="lineNum">     253 </span>            :   template&lt;typename... _Elements&gt;
+<span class="lineNum">     254 </span>            :     const int tuple_size&lt;tuple&lt;_Elements...&gt; &gt;::value;
+<span class="lineNum">     255 </span>            : 
+<span class="lineNum">     256 </span>            :   template&lt;int __i, typename _Head, typename... _Tail&gt;
+<span class="lineNum">     257 </span>            :     inline typename __add_ref&lt;_Head&gt;::type
+<span class="lineNum">     258 </span>            :     __get_helper(_Tuple_impl&lt;__i, _Head, _Tail...&gt;&amp; __t)
+<span class="lineNum">     259 </span>            :     {
+<span class="lineNum">     260 </span>            :       return __t._M_head;
+<span class="lineNum">     261 </span>            :     }
+<span class="lineNum">     262 </span>            : 
+<a name="263"><span class="lineNum">     263 </span>            :   template&lt;int __i, typename _Head, typename... _Tail&gt;</a>
+<span class="lineNum">     264 </span>            :     inline typename __add_c_ref&lt;_Head&gt;::type
+<span class="lineNum">     265 </span><span class="lineCov">        176 :     __get_helper(const _Tuple_impl&lt;__i, _Head, _Tail...&gt;&amp; __t)</span>
+<span class="lineNum">     266 </span>            :     {
+<span class="lineNum">     267 </span><span class="lineCov">        176 :       return __t._M_head;</span>
+<span class="lineNum">     268 </span>            :     }
+<span class="lineNum">     269 </span>            : 
+<span class="lineNum">     270 </span>            :   // Return a reference (const reference) to the ith element of a tuple.
+<span class="lineNum">     271 </span>            :   // Any const or non-const ref elements are returned with their original type.
+<span class="lineNum">     272 </span>            :   template&lt;int __i, typename... _Elements&gt;
+<span class="lineNum">     273 </span>            :     inline typename __add_ref&lt;
+<span class="lineNum">     274 </span>            :                       typename tuple_element&lt;__i, tuple&lt;_Elements...&gt; &gt;::type
+<span class="lineNum">     275 </span>            :                     &gt;::type
+<span class="lineNum">     276 </span>            :     get(tuple&lt;_Elements...&gt;&amp; __t)
+<span class="lineNum">     277 </span>            :     { 
+<span class="lineNum">     278 </span>            :       return __get_helper&lt;__i&gt;(__t); 
+<span class="lineNum">     279 </span>            :     }
+<span class="lineNum">     280 </span>            : 
+<span class="lineNum">     281 </span>            :   template&lt;int __i, typename... _Elements&gt;
+<span class="lineNum">     282 </span>            :     inline typename __add_c_ref&lt;
+<a name="283"><span class="lineNum">     283 </span>            :                       typename tuple_element&lt;__i, tuple&lt;_Elements...&gt; &gt;::type</a>
+<span class="lineNum">     284 </span>            :                     &gt;::type
+<span class="lineNum">     285 </span><span class="lineCov">        176 :     get(const tuple&lt;_Elements...&gt;&amp; __t)</span>
+<span class="lineNum">     286 </span>            :     {
+<span class="lineNum">     287 </span><span class="lineCov">        176 :       return __get_helper&lt;__i&gt;(__t);</span>
+<span class="lineNum">     288 </span>            :     }
+<span class="lineNum">     289 </span>            : 
+<span class="lineNum">     290 </span>            :   // This class helps construct the various comparison operations on tuples
+<span class="lineNum">     291 </span>            :   template&lt;int __check_equal_size, int __i, int __j,
+<span class="lineNum">     292 </span>            :            typename _Tp, typename _Up&gt;
+<span class="lineNum">     293 </span>            :     struct __tuple_compare;
+<span class="lineNum">     294 </span>            : 
+<span class="lineNum">     295 </span>            :   template&lt;int __i, int __j, typename _Tp, typename _Up&gt;
+<span class="lineNum">     296 </span>            :     struct __tuple_compare&lt;0, __i, __j, _Tp, _Up&gt;
+<span class="lineNum">     297 </span>            :     {
+<span class="lineNum">     298 </span>            :       static bool __eq(const _Tp&amp; __t, const _Up&amp; __u)
+<span class="lineNum">     299 </span>            :       {
+<span class="lineNum">     300 </span>            :         return (get&lt;__i&gt;(__t) == get&lt;__i&gt;(__u) &amp;&amp;
+<span class="lineNum">     301 </span>            :                 __tuple_compare&lt;0, __i+1, __j, _Tp, _Up&gt;::__eq(__t, __u));
+<span class="lineNum">     302 </span>            :       }
+<span class="lineNum">     303 </span>            :      
+<span class="lineNum">     304 </span>            :       static bool __less(const _Tp&amp; __t, const _Up&amp; __u)
+<span class="lineNum">     305 </span>            :       {
+<span class="lineNum">     306 </span>            :         return ((get&lt;__i&gt;(__t) &lt; get&lt;__i&gt;(__u))
+<span class="lineNum">     307 </span>            :                 || !(get&lt;__i&gt;(__u) &lt; get&lt;__i&gt;(__t)) &amp;&amp;
+<span class="lineNum">     308 </span>            :                 __tuple_compare&lt;0, __i+1, __j, _Tp, _Up&gt;::__less(__t, __u));
+<span class="lineNum">     309 </span>            :       }
+<span class="lineNum">     310 </span>            :     };
+<span class="lineNum">     311 </span>            : 
+<span class="lineNum">     312 </span>            :   template&lt;int __i, typename _Tp, typename _Up&gt;
+<span class="lineNum">     313 </span>            :     struct __tuple_compare&lt;0, __i, __i, _Tp, _Up&gt;
+<span class="lineNum">     314 </span>            :     {
+<span class="lineNum">     315 </span>            :       static bool __eq(const _Tp&amp;, const _Up&amp;)
+<span class="lineNum">     316 </span>            :       { return true; }
+<span class="lineNum">     317 </span>            :      
+<span class="lineNum">     318 </span>            :       static bool __less(const _Tp&amp;, const _Up&amp;)
+<span class="lineNum">     319 </span>            :       { return false; }
+<span class="lineNum">     320 </span>            :     };
+<span class="lineNum">     321 </span>            : 
+<span class="lineNum">     322 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     323 </span>            :     bool
+<span class="lineNum">     324 </span>            :     operator==(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     325 </span>            :                const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     326 </span>            :     {
+<span class="lineNum">     327 </span>            :       typedef tuple&lt;_TElements...&gt; _Tp;
+<span class="lineNum">     328 </span>            :       typedef tuple&lt;_UElements...&gt; _Up;
+<span class="lineNum">     329 </span>            :       return (__tuple_compare&lt;tuple_size&lt;_Tp&gt;::value - tuple_size&lt;_Up&gt;::value,
+<span class="lineNum">     330 </span>            :               0, tuple_size&lt;_Tp&gt;::value, _Tp, _Up&gt;::__eq(__t, __u));
+<span class="lineNum">     331 </span>            :     }
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     334 </span>            :     bool
+<span class="lineNum">     335 </span>            :     operator&lt;(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     336 </span>            :               const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     337 </span>            :     {
+<span class="lineNum">     338 </span>            :       typedef tuple&lt;_TElements...&gt; _Tp;
+<span class="lineNum">     339 </span>            :       typedef tuple&lt;_UElements...&gt; _Up;
+<span class="lineNum">     340 </span>            :       return (__tuple_compare&lt;tuple_size&lt;_Tp&gt;::value - tuple_size&lt;_Up&gt;::value,
+<span class="lineNum">     341 </span>            :               0, tuple_size&lt;_Tp&gt;::value, _Tp, _Up&gt;::__less(__t, __u));
+<span class="lineNum">     342 </span>            :     }
+<span class="lineNum">     343 </span>            : 
+<span class="lineNum">     344 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     345 </span>            :     inline bool
+<span class="lineNum">     346 </span>            :     operator!=(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     347 </span>            :                const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     348 </span>            :     { return !(__t == __u); }
+<span class="lineNum">     349 </span>            : 
+<span class="lineNum">     350 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     351 </span>            :     inline bool
+<span class="lineNum">     352 </span>            :     operator&gt;(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     353 </span>            :               const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     354 </span>            :     { return __u &lt; __t; }
+<span class="lineNum">     355 </span>            : 
+<span class="lineNum">     356 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     357 </span>            :     inline bool
+<span class="lineNum">     358 </span>            :     operator&lt;=(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     359 </span>            :                const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     360 </span>            :     { return !(__u &lt; __t); }
+<span class="lineNum">     361 </span>            : 
+<span class="lineNum">     362 </span>            :   template&lt;typename... _TElements, typename... _UElements&gt;
+<span class="lineNum">     363 </span>            :     inline bool
+<span class="lineNum">     364 </span>            :     operator&gt;=(const tuple&lt;_TElements...&gt;&amp; __t,
+<span class="lineNum">     365 </span>            :                const tuple&lt;_UElements...&gt;&amp; __u)
+<span class="lineNum">     366 </span>            :     { return !(__t &lt; __u); }
+<span class="lineNum">     367 </span>            : 
+<span class="lineNum">     368 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">     369 </span>            :     class reference_wrapper;
+<span class="lineNum">     370 </span>            : 
+<span class="lineNum">     371 </span>            :   // Helper which adds a reference to a type when given a reference_wrapper
+<span class="lineNum">     372 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">     373 </span>            :     struct __strip_reference_wrapper
+<span class="lineNum">     374 </span>            :     {
+<span class="lineNum">     375 </span>            :       typedef _Tp __type;
+<span class="lineNum">     376 </span>            :     };
+<span class="lineNum">     377 </span>            : 
+<span class="lineNum">     378 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">     379 </span>            :     struct __strip_reference_wrapper&lt;reference_wrapper&lt;_Tp&gt; &gt;
+<span class="lineNum">     380 </span>            :     {
+<span class="lineNum">     381 </span>            :       typedef _Tp&amp; __type;
+<span class="lineNum">     382 </span>            :     };
+<span class="lineNum">     383 </span>            : 
+<span class="lineNum">     384 </span>            :   template&lt;typename _Tp&gt;
+<span class="lineNum">     385 </span>            :     struct __strip_reference_wrapper&lt;const reference_wrapper&lt;_Tp&gt; &gt;
+<span class="lineNum">     386 </span>            :     {
+<span class="lineNum">     387 </span>            :       typedef _Tp&amp; __type;
+<span class="lineNum">     388 </span>            :     };
+<span class="lineNum">     389 </span>            : 
+<a name="390"><span class="lineNum">     390 </span>            :   template&lt;typename... _Elements&gt;</a>
+<span class="lineNum">     391 </span>            :     inline tuple&lt;typename __strip_reference_wrapper&lt;_Elements&gt;::__type...&gt;
+<span class="lineNum">     392 </span><span class="lineCov">        198 :     make_tuple(_Elements... __args)</span>
+<span class="lineNum">     393 </span>            :     {
+<span class="lineNum">     394 </span>            :       typedef tuple&lt;typename __strip_reference_wrapper&lt;_Elements&gt;::__type...&gt;
+<span class="lineNum">     395 </span>            :         __result_type;
+<span class="lineNum">     396 </span><span class="lineCov">        198 :       return __result_type(__args...);</span>
+<span class="lineNum">     397 </span>            :     }
+<span class="lineNum">     398 </span>            : 
+<span class="lineNum">     399 </span>            :   template&lt;typename... _Elements&gt;
+<span class="lineNum">     400 </span>            :     inline tuple&lt;_Elements&amp;...&gt;
+<span class="lineNum">     401 </span>            :     tie(_Elements&amp;... __args)
+<span class="lineNum">     402 </span>            :     {
+<span class="lineNum">     403 </span>            :       return tuple&lt;_Elements&amp;...&gt;(__args...);
+<span class="lineNum">     404 </span>            :     }
+<span class="lineNum">     405 </span>            : 
+<span class="lineNum">     406 </span>            :   // A class (and instance) which can be used in 'tie' when an element
+<span class="lineNum">     407 </span>            :   // of a tuple is not required
+<span class="lineNum">     408 </span>            :   struct _Swallow_assign
+<span class="lineNum">     409 </span>            :   {
+<span class="lineNum">     410 </span>            :     template&lt;class _Tp&gt;
+<span class="lineNum">     411 </span>            :       _Swallow_assign&amp;
+<span class="lineNum">     412 </span>            :       operator=(const _Tp&amp;)
+<span class="lineNum">     413 </span>            :       { return *this; }
+<span class="lineNum">     414 </span>            :   };
+<span class="lineNum">     415 </span>            : 
+<span class="lineNum">     416 </span>            :   // TODO: Put this in some kind of shared file.
+<span class="lineNum">     417 </span>            :   namespace
+<span class="lineNum">     418 </span>            :   {
+<span class="lineNum">     419 </span>            :     _Swallow_assign ignore;
+<span class="lineNum">     420 </span>            :   }; // anonymous namespace
+<span class="lineNum">     421 </span>            : 
+<span class="lineNum">     422 </span>            : _GLIBCXX_END_NAMESPACE_VERSION
+<span class="lineNum">     423 </span>            : }
+<span class="lineNum">     424 </span>            : }
+<span class="lineNum">     425 </span>            : 
+<span class="lineNum">     426 </span>            : #endif // _GLIBCXX_TR1_TUPLE
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.10</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

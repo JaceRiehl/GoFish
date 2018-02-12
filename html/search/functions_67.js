@@ -10,5 +10,5 @@ var searchData=
   ['getplayernumber',['getPlayerNumber',['../class_player.html#a31fbbc1c4386e4cc59622561707de58f',1,'Player']]],
   ['getsuit',['getSuit',['../class_card.html#a6bda7d706eb87b009c94ae2a9654f6d9',1,'Card']]],
   ['gofish',['goFish',['../class_view_out.html#af105d2c4d0404c4c31ef4ac6daa1fdf8',1,'ViewOut']]],
-  ['gofishdeal',['goFishDeal',['../class_controller.html#aa93207ee72313ca40934a10bf36adca9',1,'Controller']]]
+  ['gofishdeal',['goFishDeal',['../class_controller.html#acab8e5a490b0d4ad04691d8b6adf2f37',1,'Controller']]]
 ];
