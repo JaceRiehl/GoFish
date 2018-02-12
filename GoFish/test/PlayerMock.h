@@ -7,7 +7,7 @@
 class PlayerMock : public Player
 {
     public:
-        PlayerMock(int pN): Player(pN){}
+        explicit PlayerMock(int pN): Player(pN){}
         MOCK_METHOD0(getPlayerNumber, int());
         MOCK_METHOD0(getNumMatches, int());
         MOCK_METHOD0(getNumCards, int());

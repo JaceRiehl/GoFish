@@ -198,26 +198,6 @@ TEST_F(ControllerTest,testInitalDeal)
     .Times(1)
     .WillOnce(Return());
 
-//    EXPECT_CALL(*p1Mock,getHand())
-//    .Times(2)
-//    .WillRepeatedly(Return(ret));
-//    EXPECT_CALL(*p2Mock,getHand())
-//    .Times(2)
-//    .WillRepeatedly(Return(ret));
-//    EXPECT_CALL(*p3Mock,getHand())
-//    .Times(2)
-//    .WillRepeatedly(Return(ret));
-//    EXPECT_CALL(*p4Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p5Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//
-//    EXPECT_CALL(*vOMock,coutDisplayPlayersHand(_))
-//    .Times(8)
-//    .WillRepeatedly(Return());
-
     controller->startGame();
     controller->initalDeal();
 
@@ -340,25 +320,10 @@ TEST_F(ControllerTest,testGoFishDeal)
     .Times(1)
     .WillOnce(Return());
 
-//    EXPECT_CALL(*p1Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
     EXPECT_CALL(*p2Mock,getHand())
     .Times(1)
     .WillRepeatedly(Return(ret));
-//    EXPECT_CALL(*p3Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p4Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p5Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
 
-//    EXPECT_CALL(*vOMock,coutDisplayPlayersHand(_))
-//    .Times(1)
-//    .WillRepeatedly(Return());
 
     EXPECT_CALL(*vOMock,goFish(false))
     .Times(1)
@@ -503,26 +468,6 @@ TEST_F(ControllerTest,testMostMatches)
     EXPECT_CALL(*p5Mock,addToHand(_))
     .Times(1)
     .WillOnce(Return());
-
-//    EXPECT_CALL(*p1Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p2Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p3Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p4Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p5Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-
-//    EXPECT_CALL(*vOMock,coutDisplayPlayersHand(_))
-//    .Times(5)
-//    .WillRepeatedly(Return());
 
     EXPECT_CALL(*p1Mock,getNumMatches())
     .Times(1)
@@ -670,22 +615,6 @@ TEST_F(ControllerTest,turnTest)
     EXPECT_CALL(*p5Mock,addToHand(_))
     .Times(1)
     .WillOnce(Return());
-
-
-//    EXPECT_CALL(*p2Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p3Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//
-//    EXPECT_CALL(*p4Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p5Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-
     //Game*************************************************************************************************
 
     EXPECT_CALL(*deckMock,getDeckSize())
@@ -872,18 +801,6 @@ TEST_F(ControllerTest,runGameTest)
     EXPECT_CALL(*p2Mock,getHand())
     .Times(3)
     .WillRepeatedly(Return(ret));
-//    EXPECT_CALL(*p3Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//
-//    EXPECT_CALL(*p4Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-//    EXPECT_CALL(*p5Mock,getHand())
-//    .Times(1)
-//    .WillOnce(Return(ret));
-
-
     //Game*************************************************************************************************
 
     EXPECT_CALL(*vOMock, clearTerminal())

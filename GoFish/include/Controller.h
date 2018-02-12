@@ -18,39 +18,39 @@ class Controller
         *@param The ViewIn or ViewInMock object to be used to gather input
         *@param The ViewOut or ViewOutMock object to be used to display messages.
         */
-        Controller(Deck*, vector<Player*>, ViewIn*, ViewOut*);
+        Controller(Deck*, const vector<Player*>&, ViewIn*, ViewOut*);
         /**
         *Destructor for Controller
         */
-        ~Controller();
+        virtual ~Controller();
         /**
         *Starts the game, creates players, and cascades events.
         */
-        void startGame();
+        virtual void startGame();
         /**
         *Deals Cards to all Players
         */
-        void initalDeal();
+        virtual void initalDeal();
         /**
         *Deals a card to the player if they get a 'GoFish'
         @param int that is the players number
         */
-        void goFishDeal(int);
+        virtual void goFishDeal(int);
         /**
         *runGame does the loop that calls the appropriate functions to run the game until the game is won.
         */
-        void runGame();
+        virtual void runGame();
         /**
         *Calls a turn
         *@param int that is the players number
         *@return The Player that the current Player fished
         */
-        int turn(int);
+        virtual int turn(int);
         /**
         *Checks who has the most matches
         *@return The index of the player who has the most matches.
         */
-        int mostMatches();
+        virtual int mostMatches();
 
 
     protected:

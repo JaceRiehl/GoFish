@@ -26,7 +26,7 @@ PROGRAM = cardGame
 PROGRAM_TEST = testGame
 
 .PHONY: all
-all: $(PROGRAM) $(PROGRAM_TEST) memcheck-test coverage docs static
+all: memcheck-test coverage $(PROGRAM) docs static remove-extra
 
 # default rule for compiling .cc to .o
 %.o: %.cpp
@@ -63,7 +63,9 @@ coverage: $(PROGRAM_TEST)
 	#Generate the HTML reports
 	genhtml $(COVERAGE_RESULTS) --output-directory $(COVERAGE_DIR)
 	#Remove all of the generated files from gcov
-	#rm -f *.gc*
+	rm -f *.gc*
+remove-extra:
+	rm -f *.gc*
 
 static: ${SRC_DIR}
 	cppcheck --verbose --enable=all --xml ${SRC_DIR} ${TEST_DIR} ${INCLUDE} --suppress=missingInclude &> $(STATIC_RESULTS)

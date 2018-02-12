@@ -1,13 +1,6 @@
 #include "Controller.h"
 
-Controller::Controller(Deck* dealer, vector<Player*> play, ViewIn* viewIn, ViewOut* viewOut)
-{
-    players = play;
-    dealersDeck = dealer;
-    vI = viewIn;
-    vO = viewOut;
-
-}
+Controller::Controller(Deck* dealer, const vector<Player*> &play, ViewIn* viewIn, ViewOut* viewOut):players{play},dealersDeck{dealer},vI{viewIn},vO{viewOut} {}
 
 Controller::~Controller()
 {
@@ -41,15 +34,6 @@ void Controller::initalDeal()
         }
         players[player]->addToHand(addCard);
     }
-
-    /*
-    REMOVE AFTER DONE TESTING AND REMOVE FROM TESTS
-    */
-//    for(int i=0;i<numPlayers;i++)
-//    {
-//        vector<Card> pr = players[i]->getHand();
-//        vO->coutDisplayPlayersHand(pr);
-//    }
 }
 
 void Controller::runGame()
