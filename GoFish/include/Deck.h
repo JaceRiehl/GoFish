@@ -21,20 +21,20 @@ class Deck
         */
         virtual ~Deck();
         /**
-        Shuffles the current deck, no matter what the size is
+        *Shuffles the current deck, no matter what the size is.
         */
         virtual void shuffleDeck();
         /**
-        *Constructor to build a card.
-        *@param The Card that is dealt that is removed from the deck
+        *Deals a card from the 'top' of the deck, that card is returned and removed from the deck.
+        *@param The Card that is dealt.
         */
         virtual Card dealCard();
         /**
-        *For Testing purposes
+        *Getter for the entire deck for testing purposes
         */
         virtual vector<Card> getDeck();
         /**
-        *For Testing purposes
+        *Getter for the size of the deck.
         */
         virtual int getDeckSize();
 
@@ -43,23 +43,23 @@ class Deck
 
     private:
         /**
-        *Current deck size
+        *The size of the original deck.
         */
         int maxCards = 52;
         /**
-        *Current deck
+        *Current deck of cards.
         */
         vector<Card> deck;
         /**
-        *Index of the deck
+        *Current index in the deck.
         */
         int indexCurrent = 0;
         /**
-        *Faces that cards can have - to be deleted
+        *Faces that cards can have. This is used in the constructor to construct a deck.
         */
         string faces[13] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King","Ace"};
         /**
-        *Suits that the cards can have - to be deleted
+        *The values that that cards will have. This is used in the constructor to construct a deck.
         */
         string suits[4] = {"Spades", "Clubs", "Hearts", "Diamonds"};
 };

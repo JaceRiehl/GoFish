@@ -69,7 +69,6 @@ void Controller::runGame()
         int fishedPlayer = turn(index);
         if(players[index]->checkMatchingPairs())
         {
-            numMatches++;
             if(players[index]->getNumCards() == 0 || players[fishedPlayer]->getNumCards() == 0)
             {
                 int winner = mostMatches();

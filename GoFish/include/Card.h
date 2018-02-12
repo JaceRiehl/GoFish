@@ -31,7 +31,9 @@ class Card
         */
         string getFace();
         /**
-        *Overloading ==
+        *Overloading == to compare two cards
+        *@param The card to be compared.
+        *@param True if their suits and faces are the same, false otherwise.
         */
         bool operator==(Card c);
 

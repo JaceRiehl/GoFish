@@ -8,17 +8,17 @@
 using namespace std;
 
 /**
-*Class for the output statements. (View Class)
+*Class for the output statements. (cout potion of View)
 */
 class ViewOut
 {
     public:
         /**
-        *Constructor for ViewOut
+        *Constructor for ViewOut.
         */
         ViewOut();
         /**
-        *Destructor for ViewOut
+        *Destructor for ViewOut.
         */
         virtual ~ViewOut(){}
         /**
@@ -26,8 +26,8 @@ class ViewOut
         */
         virtual void welcomeMessage();
         /**
-        *Display the hand of the person inputted
-        *@param Vector of Card objects
+        *Display the hand inputted.
+        *@param Vector of Card to be displayed
         */
         virtual void coutDisplayPlayersHand(vector<Card>);
         /**
@@ -37,19 +37,20 @@ class ViewOut
         virtual void goFish(bool);
         /**
         *Displays which Players' turn it is.
-        *@param The Player who's turn is ending.
+        *@param The Player who's turn it is.
         */
         virtual void displayTurn(Player);
         /**
-        *The display message for the end of a players turn
+        *The display message for the end of a turn.
         */
         virtual void endTurn();
         /**
         *Displays the ending message to the game. To be displayed when the game has ended.
+        *@param The player number of the winner.
         */
         virtual void endingMessage(int);
         /**
-        *Clears the terminal so that the player doesn't see the other players hand
+        *Clears the terminal so that the player can't see the other players hand.
         */
         virtual void clearTerminal();
 
