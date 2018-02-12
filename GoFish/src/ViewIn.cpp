@@ -7,7 +7,6 @@ ViewIn::ViewIn()
 
 int ViewIn::choosePlayer(int numPlayers, int playerNum)
 {
-    cout << "Player Number: " << playerNum << endl;
     char playerChoice;
     int choice;
     cout << "Which Player do you want to fish: (1-" << numPlayers << ") ";
